@@ -4,7 +4,7 @@ module ESM_core_IIM #(
 ) (
     input [$clog2(bs)-1:0] issue_index,
     input clk,
-    output [$clog2(bs)-1: 0]random_index
+    output reg [$clog2(bs)-1: 0] buffer_index
 );
     reg [bs-1:0] candidate_list = 0;
     reg [$clog2(bs)-1:0] mapping_table [0:bs-1];
@@ -20,9 +20,16 @@ module ESM_core_IIM #(
         end
     end
 
+    always @(posedge clk) begin
+        buffer_index = mapping_table[map_issue_index];
+    end
+
     wire [31:0] rand_num;
     PRNG random_num(clk, 1'b1, 1'b0, rand_num);
 
-    assign random_index = rand_num % count;
+    wire [$clog2(bs)-1: 0] map_issue_index;
+    assign map_issue_index = rand_num % count;
+
+
     
 endmodule
