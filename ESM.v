@@ -6,7 +6,7 @@ module ESM #(
     parameter bs = 16
 ) (
     input [Instr_word_size-1:0] Instr_in,
-    input ALUSrc, RegWrite, clk,
+    input ALUSrc, RegWrite, clk, rst,
     output reg [Instr_word_size-1:0] Instr_out
 );
 
@@ -18,7 +18,7 @@ module ESM #(
     end
     
     wire [$clog2(bs)-1:0] buffer_index;
-    ESM_core #(Instr_word_size, regnum, bs) core (Instr_in, ALUSrc, RegWrite, clk, buffer_index);
+    ESM_core #(Instr_word_size, regnum, bs) core (Instr_in, ALUSrc, RegWrite, clk, rst, buffer_index);
 
     always @(posedge clk) begin
         Instr_out <= Instr_Buffer[buffer_index];

@@ -6,9 +6,9 @@ module ESM_core_IDA #(
     parameter bs = 16
 ) (
     input [Instr_word_size-1:0] Instr_in,
-    input ALUSrc, RegWrite, clk,
+    input ALUSrc, RegWrite, clk, rst,
     input  [$clog2(bs)-1:0] buffer_index,
-    output [$clog2(bs)-1:0] issue_index
+    output [$clog2(bs)-1:0] ready_index
 );
     localparam reg_addr_bits = $clog2(regnum);
 
@@ -21,8 +21,16 @@ module ESM_core_IDA #(
     
     reg [bs-1: 0] IDT [bs-1:0]; // imp note idt is not like irt, it has current instruction in row and dependencies in column
 
-    always @(posedge clk) begin
-        IDT[buffer_index] = current_idt;
+    always @(posedge clk or posedge rst) begin
+        // initalizing idt with all 1's => we assume that all the instructions are dependent
+        if(rst) begin
+            for(integer i = 0; i<bs; i=i+1) begin
+                IDT[i] = {bs{1'b1}};
+            end
+        end else 
+            IDT[buffer_index] = current_idt;
     end
+
+
 
 endmodule

@@ -6,13 +6,13 @@ module ESM_core #(
     parameter bs = 16
 ) (
     input [Instr_word_size-1:0] Instr_in,
-    input ALUSrc, RegWrite, clk,
+    input ALUSrc, RegWrite, clk, rst,
     output [$clog2(bs)-1:0] buffer_index 
 );  
 
-    wire [$clog2(bs)-1:0] issue_index;
-    ESM_core_IDA #(Instr_word_size, regnum, bs) IDA_core(Instr_in, ALUSrc, RegWrite, clk, buffer_index, issue_index);
+    wire [$clog2(bs)-1:0] ready_index;
+    ESM_core_IDA #(Instr_word_size, regnum, bs) IDA_core(Instr_in, ALUSrc, RegWrite, clk, rst, buffer_index, ready_index);
 
-    ESM_core_IIM #(bs) IIM_core(issue_index, clk, buffer_index);
+    ESM_core_IIM #(bs) IIM_core(ready_index, clk, rst, buffer_index);
     
 endmodule
