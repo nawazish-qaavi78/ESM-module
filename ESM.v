@@ -1,5 +1,6 @@
 module ESM (
     input [31:0] Instr_in,
+    input clk,
     output reg [31:0] Instr_out
 );
     localparam BUFFER_SIZE = 16;

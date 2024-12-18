@@ -10,7 +10,7 @@ module ESM_core_IIM #(
     reg [$clog2(bs)-1:0] mapping_table [0:bs-1];
     reg [$clog2(bs)-1: 0] count = 0;
     
-    always @(*) begin
+    always @(posedge clk) begin
         candidate_list[issue_index] = 1;
     end
 

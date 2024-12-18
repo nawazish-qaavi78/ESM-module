@@ -4,13 +4,14 @@ module IRT #(
 ) (
     input [$clog2(regnum)-1:0] rs1, rs2, rd,
     input [$clog2(bs)-1:0] buffer_index, 
+    input clk,
     output reg [bs-1:0] idt
 );
     // IRT has instruction in columns while registers as rows
     reg [0:bs-1] IRT_RS [0:regnum-1];
     reg [0:bs-1] IRT_RD [0:regnum-1];
 
-    always @(rs1, rs2, rd) begin
+    always @(posedge clk) begin
         // for every new instruction at column buffer_index, resetting the previous values stored
         for (integer i=0; i<regnum; i=i+1) begin
             IRT_RS[buffer_index][i] = 0;
