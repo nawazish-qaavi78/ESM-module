@@ -8,7 +8,7 @@ module ESM_core_IDA #(
     input [Instr_word_size-1:0] Instr_in,
     input ALUSrc, RegWrite, clk, rst,
     input  [$clog2(bs)-1:0] buffer_index,
-    output [$clog2(bs)-1:0] ready_index
+    output reg [$clog2(bs)-1:0] ready_index
 );
     localparam reg_addr_bits = $clog2(regnum);
 
@@ -17,7 +17,7 @@ module ESM_core_IDA #(
     wire [reg_addr_bits-1:0] rd  = RegWrite ? Instr_in[11:7] : 0;
 
     wire [bs-1:0] current_idt;
-    IRT #(regnum, bs) irt (rs1, rs2, rd, buffer_index, clk, current_idt);
+    IRT #(regnum, bs) irt (rs1, rs2, rd, buffer_index, clk, rst, current_idt);
     
     reg [bs-1: 0] IDT [bs-1:0]; // imp note idt is not like irt, it has current instruction in row and dependencies in column
 
@@ -29,6 +29,13 @@ module ESM_core_IDA #(
             end
         end else 
             IDT[buffer_index] = current_idt;
+    end
+
+    always @(posedge clk) begin
+        ready_index = 0;
+        for(integer i=0; i<bs; i=i+1) begin
+            if(IDT[i] == 0) ready_index = i;
+        end
     end
 
 
