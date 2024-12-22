@@ -2,13 +2,16 @@
 module ESM_core_IIM #(
     parameter bs = 16
 ) (
-    input [$clog2(bs)-1:0] ready_index,
+    input [bs_bits-1:0] ready_index,
     input clk, rst,
-    output reg [$clog2(bs)-1: 0] buffer_index
+    output reg [bs_bits-1: 0] buffer_index
 );
+
+    localparam bs_bits = $clog2(bs);
+
     reg [bs-1:0] candidate_list = 0;
-    reg [$clog2(bs)-1:0] mapping_table [0:bs-1];
-    reg [$clog2(bs)-1: 0] count = 0;
+    reg [bs_bits-1:0] mapping_table [0:bs-1];
+    reg [bs_bits-1: 0] count = 0;
     
     always @(posedge clk, posedge rst) begin
         if(rst) candidate_list = 0;
@@ -30,7 +33,7 @@ module ESM_core_IIM #(
     wire [31:0] rand_num;
     PRNG random_num(clk, 1'b1, rst, rand_num);
 
-    wire [$clog2(bs)-1: 0] map_ready_index;
+    wire [bs_bits-1: 0] map_ready_index;
     assign map_ready_index = rand_num % count;
 
 
