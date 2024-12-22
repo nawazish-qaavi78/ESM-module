@@ -27,8 +27,8 @@ module IRT #(
         end else begin
             // for every new instruction at column buffer_index, resetting the previous values stored
             for (integer i=0; i<regnum; i=i+1) begin
-                IRT_RS[i][buffer_index] = 0;
-                IRT_RD[i][buffer_index] = 0;
+                IRT_RS[buffer_index][i] = 0;
+                IRT_RD[buffer_index][i] = 0;
             end
 
             // setting the register dependencies to 1

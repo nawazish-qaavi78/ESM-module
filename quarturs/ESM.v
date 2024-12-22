@@ -1,5 +1,3 @@
-`include "ESM_core.v"
-`include "Instr_Buffer.v"
 module ESM #(
     parameter Instr_word_size = 32,
     parameter regnum = 32,

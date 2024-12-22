@@ -10,6 +10,8 @@ module IRT #(
 
     localparam reg_addr_bits = $clog2(regnum);
     localparam bs_bits = $clog2(bs);
+	 
+	 integer i,j;
 
     // IRT has instruction in columns while registers as rows
     reg [0:bs-1] IRT_RS [0:regnum-1];
@@ -19,16 +21,16 @@ module IRT #(
         
         if(rst) begin
             // resetting everything to 1, results in assuming everything is dependent
-            for(integer i=0; i<bs; i=i+1) begin
+            for(i=0; i<bs; i=i+1) begin
                 IRT_RS[i] = 1;
                 IRT_RD[i] = 1;
             end
             idt = 0;
         end else begin
             // for every new instruction at column buffer_index, resetting the previous values stored
-            for (integer i=0; i<regnum; i=i+1) begin
-                IRT_RS[i][buffer_index] = 0;
-                IRT_RD[i][buffer_index] = 0;
+            for (j=0; j<regnum; j=j+1) begin
+                IRT_RS[j][buffer_index] = 0;
+                IRT_RD[j][buffer_index] = 0;
             end
 
             // setting the register dependencies to 1

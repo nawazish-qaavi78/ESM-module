@@ -1,4 +1,3 @@
-`include "PRNG.v"
 module ESM_core_IIM #(
     parameter bs = 16
 ) (
@@ -8,6 +7,8 @@ module ESM_core_IIM #(
 );
 
     localparam bs_bits = $clog2(bs);
+	 
+	 integer i;
 
     reg [bs-1:0] candidate_list = 0;
     reg [bs_bits-1:0] mapping_table [0:bs-1];
@@ -19,7 +20,7 @@ module ESM_core_IIM #(
     end
 
     always@(candidate_list, rst) begin
-        for(integer i =0; i<bs; i=i+1) begin
+        for(i =0; i<bs; i=i+1) begin
             if(rst) mapping_table[i] <= 0;
             else if(candidate_list[i]) begin
                 mapping_table[count] <= i;
