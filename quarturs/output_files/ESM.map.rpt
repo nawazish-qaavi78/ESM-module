@@ -1,5 +1,5 @@
 Analysis & Synthesis report for ESM
-Sun Dec 22 14:31:43 2024
+Sun Dec 22 21:46:35 2024
 Quartus Prime Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
 
 
@@ -13,21 +13,24 @@ Quartus Prime Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
   5. Analysis & Synthesis Source Files Read
   6. Analysis & Synthesis Resource Usage Summary
   7. Analysis & Synthesis Resource Utilization by Entity
-  8. User-Specified and Inferred Latches
-  9. General Register Statistics
- 10. Inverted Register Statistics
- 11. Multiplexer Restructuring Statistics (Restructuring Performed)
- 12. Parameter Settings for User Entity Instance: Top-level Entity: |ESM
- 13. Parameter Settings for User Entity Instance: Instr_Buffer:buffer
- 14. Parameter Settings for User Entity Instance: ESM_core:core
- 15. Parameter Settings for User Entity Instance: ESM_core:core|ESM_core_IDA:IDA_core
- 16. Parameter Settings for User Entity Instance: ESM_core:core|ESM_core_IDA:IDA_core|IRT:irt
+  8. General Register Statistics
+  9. Inverted Register Statistics
+ 10. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 11. Parameter Settings for User Entity Instance: Top-level Entity: |ESM
+ 12. Parameter Settings for User Entity Instance: Instr_Buffer:buffer
+ 13. Parameter Settings for User Entity Instance: ESM_core:core
+ 14. Parameter Settings for User Entity Instance: ESM_core:core|ESM_core_IDA:IDA_core
+ 15. Parameter Settings for User Entity Instance: ESM_core:core|ESM_core_IDA:IDA_core|IRT:irt
+ 16. Parameter Settings for User Entity Instance: ESM_core:core|ESM_core_IDA:IDA_core|IDT:idt
  17. Parameter Settings for User Entity Instance: ESM_core:core|ESM_core_IIM:IIM_core
- 18. Parameter Settings for Inferred Entity Instance: ESM_core:core|ESM_core_IIM:IIM_core|lpm_divide:Mod0
- 19. Port Connectivity Checks: "ESM_core:core|ESM_core_IIM:IIM_core|PRNG:random_num"
- 20. Post-Synthesis Netlist Statistics for Top Partition
- 21. Elapsed Time Per Partition
- 22. Analysis & Synthesis Messages
+ 18. Parameter Settings for User Entity Instance: ESM_core:core|ESM_core_IIM:IIM_core|candidate_list:c_list
+ 19. Parameter Settings for User Entity Instance: ESM_core:core|ESM_core_IIM:IIM_core|mapping_table:m_table
+ 20. Parameter Settings for Inferred Entity Instance: ESM_core:core|ESM_core_IIM:IIM_core|mapping_table:m_table|lpm_divide:Mod0
+ 21. Port Connectivity Checks: "ESM_core:core|ESM_core_IIM:IIM_core|mapping_table:m_table|PRNG:random_num"
+ 22. Post-Synthesis Netlist Statistics for Top Partition
+ 23. Elapsed Time Per Partition
+ 24. Analysis & Synthesis Messages
+ 25. Analysis & Synthesis Suppressed Messages
 
 
 
@@ -54,15 +57,15 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +------------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Sun Dec 22 14:31:43 2024       ;
+; Analysis & Synthesis Status        ; Successful - Sun Dec 22 21:46:35 2024       ;
 ; Quartus Prime Version              ; 20.1.1 Build 720 11/11/2020 SJ Lite Edition ;
 ; Revision Name                      ; ESM                                         ;
 ; Top-level Entity Name              ; ESM                                         ;
 ; Family                             ; Cyclone IV E                                ;
-; Total logic elements               ; 4,342                                       ;
-;     Total combinational functions  ; 3,382                                       ;
-;     Dedicated logic registers      ; 1,880                                       ;
-; Total registers                    ; 1880                                        ;
+; Total logic elements               ; 4,215                                       ;
+;     Total combinational functions  ; 3,255                                       ;
+;     Dedicated logic registers      ; 1,948                                       ;
+; Total registers                    ; 1948                                        ;
 ; Total pins                         ; 68                                          ;
 ; Total virtual pins                 ; 0                                           ;
 ; Total memory bits                  ; 0                                           ;
@@ -187,6 +190,9 @@ https://fpgasoftware.intel.com/eula.
 ; IRT.v                            ; yes             ; User Verilog HDL File        ; C:/Users/nawaz/OneDrive/Desktop/pdf/winter intern/ESM-module/quarturs/IRT.v                      ;         ;
 ; PRNG.v                           ; yes             ; User Verilog HDL File        ; C:/Users/nawaz/OneDrive/Desktop/pdf/winter intern/ESM-module/quarturs/PRNG.v                     ;         ;
 ; Instr_Buffer.v                   ; yes             ; User Verilog HDL File        ; C:/Users/nawaz/OneDrive/Desktop/pdf/winter intern/ESM-module/quarturs/Instr_Buffer.v             ;         ;
+; IDT.v                            ; yes             ; User Verilog HDL File        ; C:/Users/nawaz/OneDrive/Desktop/pdf/winter intern/ESM-module/quarturs/IDT.v                      ;         ;
+; candidate_list.v                 ; yes             ; User Verilog HDL File        ; C:/Users/nawaz/OneDrive/Desktop/pdf/winter intern/ESM-module/quarturs/candidate_list.v           ;         ;
+; mapping_table.v                  ; yes             ; User Verilog HDL File        ; C:/Users/nawaz/OneDrive/Desktop/pdf/winter intern/ESM-module/quarturs/mapping_table.v            ;         ;
 ; lpm_divide.tdf                   ; yes             ; Megafunction                 ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/lpm_divide.tdf                            ;         ;
 ; abs_divider.inc                  ; yes             ; Megafunction                 ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/abs_divider.inc                           ;         ;
 ; sign_div_unsign.inc              ; yes             ; Megafunction                 ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/sign_div_unsign.inc                       ;         ;
@@ -204,20 +210,20 @@ https://fpgasoftware.intel.com/eula.
 +---------------------------------------------+-----------+
 ; Resource                                    ; Usage     ;
 +---------------------------------------------+-----------+
-; Estimated Total logic elements              ; 4,342     ;
+; Estimated Total logic elements              ; 4,215     ;
 ;                                             ;           ;
-; Total combinational functions               ; 3382      ;
+; Total combinational functions               ; 3255      ;
 ; Logic element usage by number of LUT inputs ;           ;
-;     -- 4 input functions                    ; 2650      ;
-;     -- 3 input functions                    ; 281       ;
-;     -- <=2 input functions                  ; 451       ;
+;     -- 4 input functions                    ; 2547      ;
+;     -- 3 input functions                    ; 274       ;
+;     -- <=2 input functions                  ; 434       ;
 ;                                             ;           ;
 ; Logic elements by mode                      ;           ;
-;     -- normal mode                          ; 3235      ;
+;     -- normal mode                          ; 3108      ;
 ;     -- arithmetic mode                      ; 147       ;
 ;                                             ;           ;
-; Total registers                             ; 1880      ;
-;     -- Dedicated logic registers            ; 1880      ;
+; Total registers                             ; 1948      ;
+;     -- Dedicated logic registers            ; 1948      ;
 ;     -- I/O registers                        ; 0         ;
 ;                                             ;           ;
 ; I/O pins                                    ; 68        ;
@@ -225,108 +231,33 @@ https://fpgasoftware.intel.com/eula.
 ; Embedded Multiplier 9-bit elements          ; 0         ;
 ;                                             ;           ;
 ; Maximum fan-out node                        ; clk~input ;
-; Maximum fan-out                             ; 1880      ;
-; Total fan-out                               ; 18470     ;
+; Maximum fan-out                             ; 1948      ;
+; Total fan-out                               ; 18267     ;
 ; Average fan-out                             ; 3.42      ;
 +---------------------------------------------+-----------+
 
 
-+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                                                                                                     ;
-+----------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+------------------------------------------------------------------------------------------------------------------------------------------+---------------------+--------------+
-; Compilation Hierarchy Node                   ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                                                      ; Entity Name         ; Library Name ;
-+----------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+------------------------------------------------------------------------------------------------------------------------------------------+---------------------+--------------+
-; |ESM                                         ; 3382 (0)            ; 1880 (0)                  ; 0           ; 0            ; 0       ; 0         ; 68   ; 0            ; |ESM                                                                                                                                     ; ESM                 ; work         ;
-;    |ESM_core:core|                           ; 3046 (0)            ; 1336 (0)                  ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ESM|ESM_core:core                                                                                                                       ; ESM_core            ; work         ;
-;       |ESM_core_IDA:IDA_core|                ; 2367 (340)          ; 1284 (244)                ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ESM|ESM_core:core|ESM_core_IDA:IDA_core                                                                                                 ; ESM_core_IDA        ; work         ;
-;          |IRT:irt|                           ; 2027 (2027)         ; 1040 (1040)               ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ESM|ESM_core:core|ESM_core_IDA:IDA_core|IRT:irt                                                                                         ; IRT                 ; work         ;
-;       |ESM_core_IIM:IIM_core|                ; 679 (315)           ; 52 (20)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ESM|ESM_core:core|ESM_core_IIM:IIM_core                                                                                                 ; ESM_core_IIM        ; work         ;
-;          |PRNG:random_num|                   ; 36 (36)             ; 32 (32)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ESM|ESM_core:core|ESM_core_IIM:IIM_core|PRNG:random_num                                                                                 ; PRNG                ; work         ;
-;          |lpm_divide:Mod0|                   ; 328 (0)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ESM|ESM_core:core|ESM_core_IIM:IIM_core|lpm_divide:Mod0                                                                                 ; lpm_divide          ; work         ;
-;             |lpm_divide_3bm:auto_generated|  ; 328 (0)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ESM|ESM_core:core|ESM_core_IIM:IIM_core|lpm_divide:Mod0|lpm_divide_3bm:auto_generated                                                   ; lpm_divide_3bm      ; work         ;
-;                |sign_div_unsign_olh:divider| ; 328 (0)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ESM|ESM_core:core|ESM_core_IIM:IIM_core|lpm_divide:Mod0|lpm_divide_3bm:auto_generated|sign_div_unsign_olh:divider                       ; sign_div_unsign_olh ; work         ;
-;                   |alt_u_div_47f:divider|    ; 328 (328)           ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ESM|ESM_core:core|ESM_core_IIM:IIM_core|lpm_divide:Mod0|lpm_divide_3bm:auto_generated|sign_div_unsign_olh:divider|alt_u_div_47f:divider ; alt_u_div_47f       ; work         ;
-;    |Instr_Buffer:buffer|                     ; 336 (336)           ; 544 (544)                 ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ESM|Instr_Buffer:buffer                                                                                                                 ; Instr_Buffer        ; work         ;
-+----------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+------------------------------------------------------------------------------------------------------------------------------------------+---------------------+--------------+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                                                                                                                              ;
++-------------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------+---------------------+--------------+
+; Compilation Hierarchy Node                      ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                                                                            ; Entity Name         ; Library Name ;
++-------------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------+---------------------+--------------+
+; |ESM                                            ; 3255 (0)            ; 1948 (0)                  ; 0           ; 0            ; 0       ; 0         ; 68   ; 0            ; |ESM                                                                                                                                                           ; ESM                 ; work         ;
+;    |ESM_core:core|                              ; 2919 (0)            ; 1404 (0)                  ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ESM|ESM_core:core                                                                                                                                             ; ESM_core            ; work         ;
+;       |ESM_core_IDA:IDA_core|                   ; 2367 (10)           ; 1284 (0)                  ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ESM|ESM_core:core|ESM_core_IDA:IDA_core                                                                                                                       ; ESM_core_IDA        ; work         ;
+;          |IDT:idt|                              ; 330 (330)           ; 244 (244)                 ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ESM|ESM_core:core|ESM_core_IDA:IDA_core|IDT:idt                                                                                                               ; IDT                 ; work         ;
+;          |IRT:irt|                              ; 2027 (2027)         ; 1040 (1040)               ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ESM|ESM_core:core|ESM_core_IDA:IDA_core|IRT:irt                                                                                                               ; IRT                 ; work         ;
+;       |ESM_core_IIM:IIM_core|                   ; 552 (0)             ; 120 (0)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ESM|ESM_core:core|ESM_core_IIM:IIM_core                                                                                                                       ; ESM_core_IIM        ; work         ;
+;          |candidate_list:c_list|                ; 32 (32)             ; 16 (16)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ESM|ESM_core:core|ESM_core_IIM:IIM_core|candidate_list:c_list                                                                                                 ; candidate_list      ; work         ;
+;          |mapping_table:m_table|                ; 520 (156)           ; 104 (72)                  ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ESM|ESM_core:core|ESM_core_IIM:IIM_core|mapping_table:m_table                                                                                                 ; mapping_table       ; work         ;
+;             |PRNG:random_num|                   ; 36 (36)             ; 32 (32)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ESM|ESM_core:core|ESM_core_IIM:IIM_core|mapping_table:m_table|PRNG:random_num                                                                                 ; PRNG                ; work         ;
+;             |lpm_divide:Mod0|                   ; 328 (0)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ESM|ESM_core:core|ESM_core_IIM:IIM_core|mapping_table:m_table|lpm_divide:Mod0                                                                                 ; lpm_divide          ; work         ;
+;                |lpm_divide_3bm:auto_generated|  ; 328 (0)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ESM|ESM_core:core|ESM_core_IIM:IIM_core|mapping_table:m_table|lpm_divide:Mod0|lpm_divide_3bm:auto_generated                                                   ; lpm_divide_3bm      ; work         ;
+;                   |sign_div_unsign_olh:divider| ; 328 (0)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ESM|ESM_core:core|ESM_core_IIM:IIM_core|mapping_table:m_table|lpm_divide:Mod0|lpm_divide_3bm:auto_generated|sign_div_unsign_olh:divider                       ; sign_div_unsign_olh ; work         ;
+;                      |alt_u_div_47f:divider|    ; 328 (328)           ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ESM|ESM_core:core|ESM_core_IIM:IIM_core|mapping_table:m_table|lpm_divide:Mod0|lpm_divide_3bm:auto_generated|sign_div_unsign_olh:divider|alt_u_div_47f:divider ; alt_u_div_47f       ; work         ;
+;    |Instr_Buffer:buffer|                        ; 336 (336)           ; 544 (544)                 ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ESM|Instr_Buffer:buffer                                                                                                                                       ; Instr_Buffer        ; work         ;
++-------------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------+---------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
-
-
-+----------------------------------------------------------------------------------------------------------------------------------------------+
-; User-Specified and Inferred Latches                                                                                                          ;
-+----------------------------------------------------------+----------------------------------------------------------+------------------------+
-; Latch Name                                               ; Latch Enable Signal                                      ; Free of Timing Hazards ;
-+----------------------------------------------------------+----------------------------------------------------------+------------------------+
-; ESM_core:core|ESM_core_IIM:IIM_core|mapping_table[6][2]  ; ESM_core:core|ESM_core_IIM:IIM_core|mapping_table[6][3]  ; yes                    ;
-; ESM_core:core|ESM_core_IIM:IIM_core|mapping_table[5][2]  ; ESM_core:core|ESM_core_IIM:IIM_core|mapping_table[5][3]  ; yes                    ;
-; ESM_core:core|ESM_core_IIM:IIM_core|mapping_table[4][2]  ; ESM_core:core|ESM_core_IIM:IIM_core|mapping_table[4][3]  ; yes                    ;
-; ESM_core:core|ESM_core_IIM:IIM_core|mapping_table[7][2]  ; ESM_core:core|ESM_core_IIM:IIM_core|mapping_table[7][3]  ; yes                    ;
-; ESM_core:core|ESM_core_IIM:IIM_core|mapping_table[9][2]  ; ESM_core:core|ESM_core_IIM:IIM_core|mapping_table[9][3]  ; yes                    ;
-; ESM_core:core|ESM_core_IIM:IIM_core|mapping_table[10][2] ; ESM_core:core|ESM_core_IIM:IIM_core|mapping_table[10][3] ; yes                    ;
-; ESM_core:core|ESM_core_IIM:IIM_core|mapping_table[8][2]  ; ESM_core:core|ESM_core_IIM:IIM_core|mapping_table[8][3]  ; yes                    ;
-; ESM_core:core|ESM_core_IIM:IIM_core|mapping_table[11][2] ; ESM_core:core|ESM_core_IIM:IIM_core|mapping_table[11][2] ; yes                    ;
-; ESM_core:core|ESM_core_IIM:IIM_core|mapping_table[1][2]  ; ESM_core:core|ESM_core_IIM:IIM_core|mapping_table[1][3]  ; yes                    ;
-; ESM_core:core|ESM_core_IIM:IIM_core|mapping_table[2][2]  ; ESM_core:core|ESM_core_IIM:IIM_core|mapping_table[2][3]  ; yes                    ;
-; ESM_core:core|ESM_core_IIM:IIM_core|mapping_table[0][2]  ; ESM_core:core|ESM_core_IIM:IIM_core|mapping_table[0][3]  ; yes                    ;
-; ESM_core:core|ESM_core_IIM:IIM_core|mapping_table[3][2]  ; ESM_core:core|ESM_core_IIM:IIM_core|mapping_table[3][3]  ; yes                    ;
-; ESM_core:core|ESM_core_IIM:IIM_core|mapping_table[14][2] ; ESM_core:core|ESM_core_IIM:IIM_core|mapping_table[14][3] ; yes                    ;
-; ESM_core:core|ESM_core_IIM:IIM_core|mapping_table[13][2] ; ESM_core:core|ESM_core_IIM:IIM_core|mapping_table[13][3] ; yes                    ;
-; ESM_core:core|ESM_core_IIM:IIM_core|mapping_table[12][2] ; ESM_core:core|ESM_core_IIM:IIM_core|mapping_table[12][3] ; yes                    ;
-; ESM_core:core|ESM_core_IIM:IIM_core|mapping_table[15][2] ; ESM_core:core|ESM_core_IIM:IIM_core|mapping_table[15][3] ; yes                    ;
-; ESM_core:core|ESM_core_IIM:IIM_core|mapping_table[6][1]  ; ESM_core:core|ESM_core_IIM:IIM_core|mapping_table[6][3]  ; yes                    ;
-; ESM_core:core|ESM_core_IIM:IIM_core|mapping_table[10][1] ; ESM_core:core|ESM_core_IIM:IIM_core|mapping_table[10][3] ; yes                    ;
-; ESM_core:core|ESM_core_IIM:IIM_core|mapping_table[2][1]  ; ESM_core:core|ESM_core_IIM:IIM_core|mapping_table[2][3]  ; yes                    ;
-; ESM_core:core|ESM_core_IIM:IIM_core|mapping_table[14][1] ; ESM_core:core|ESM_core_IIM:IIM_core|mapping_table[14][3] ; yes                    ;
-; ESM_core:core|ESM_core_IIM:IIM_core|mapping_table[9][1]  ; ESM_core:core|ESM_core_IIM:IIM_core|mapping_table[9][3]  ; yes                    ;
-; ESM_core:core|ESM_core_IIM:IIM_core|mapping_table[5][1]  ; ESM_core:core|ESM_core_IIM:IIM_core|mapping_table[5][3]  ; yes                    ;
-; ESM_core:core|ESM_core_IIM:IIM_core|mapping_table[1][1]  ; ESM_core:core|ESM_core_IIM:IIM_core|mapping_table[1][3]  ; yes                    ;
-; ESM_core:core|ESM_core_IIM:IIM_core|mapping_table[13][1] ; ESM_core:core|ESM_core_IIM:IIM_core|mapping_table[13][3] ; yes                    ;
-; ESM_core:core|ESM_core_IIM:IIM_core|mapping_table[4][1]  ; ESM_core:core|ESM_core_IIM:IIM_core|mapping_table[4][3]  ; yes                    ;
-; ESM_core:core|ESM_core_IIM:IIM_core|mapping_table[8][1]  ; ESM_core:core|ESM_core_IIM:IIM_core|mapping_table[8][3]  ; yes                    ;
-; ESM_core:core|ESM_core_IIM:IIM_core|mapping_table[0][1]  ; ESM_core:core|ESM_core_IIM:IIM_core|mapping_table[0][3]  ; yes                    ;
-; ESM_core:core|ESM_core_IIM:IIM_core|mapping_table[12][1] ; ESM_core:core|ESM_core_IIM:IIM_core|mapping_table[12][3] ; yes                    ;
-; ESM_core:core|ESM_core_IIM:IIM_core|mapping_table[11][1] ; ESM_core:core|ESM_core_IIM:IIM_core|mapping_table[11][1] ; yes                    ;
-; ESM_core:core|ESM_core_IIM:IIM_core|mapping_table[7][1]  ; ESM_core:core|ESM_core_IIM:IIM_core|mapping_table[7][3]  ; yes                    ;
-; ESM_core:core|ESM_core_IIM:IIM_core|mapping_table[3][1]  ; ESM_core:core|ESM_core_IIM:IIM_core|mapping_table[3][3]  ; yes                    ;
-; ESM_core:core|ESM_core_IIM:IIM_core|mapping_table[15][1] ; ESM_core:core|ESM_core_IIM:IIM_core|mapping_table[15][3] ; yes                    ;
-; ESM_core:core|ESM_core_IIM:IIM_core|mapping_table[10][0] ; ESM_core:core|ESM_core_IIM:IIM_core|mapping_table[10][0] ; yes                    ;
-; ESM_core:core|ESM_core_IIM:IIM_core|mapping_table[9][0]  ; ESM_core:core|ESM_core_IIM:IIM_core|mapping_table[9][0]  ; yes                    ;
-; ESM_core:core|ESM_core_IIM:IIM_core|mapping_table[8][0]  ; ESM_core:core|ESM_core_IIM:IIM_core|mapping_table[8][3]  ; yes                    ;
-; ESM_core:core|ESM_core_IIM:IIM_core|mapping_table[11][0] ; ESM_core:core|ESM_core_IIM:IIM_core|mapping_table[11][1] ; yes                    ;
-; ESM_core:core|ESM_core_IIM:IIM_core|mapping_table[5][0]  ; ESM_core:core|ESM_core_IIM:IIM_core|mapping_table[5][0]  ; yes                    ;
-; ESM_core:core|ESM_core_IIM:IIM_core|mapping_table[6][0]  ; ESM_core:core|ESM_core_IIM:IIM_core|mapping_table[6][0]  ; yes                    ;
-; ESM_core:core|ESM_core_IIM:IIM_core|mapping_table[4][0]  ; ESM_core:core|ESM_core_IIM:IIM_core|mapping_table[4][0]  ; yes                    ;
-; ESM_core:core|ESM_core_IIM:IIM_core|mapping_table[7][0]  ; ESM_core:core|ESM_core_IIM:IIM_core|mapping_table[7][3]  ; yes                    ;
-; ESM_core:core|ESM_core_IIM:IIM_core|mapping_table[2][0]  ; ESM_core:core|ESM_core_IIM:IIM_core|mapping_table[2][0]  ; yes                    ;
-; ESM_core:core|ESM_core_IIM:IIM_core|mapping_table[1][0]  ; ESM_core:core|ESM_core_IIM:IIM_core|mapping_table[1][0]  ; yes                    ;
-; ESM_core:core|ESM_core_IIM:IIM_core|mapping_table[0][0]  ; ESM_core:core|ESM_core_IIM:IIM_core|mapping_table[0][0]  ; yes                    ;
-; ESM_core:core|ESM_core_IIM:IIM_core|mapping_table[3][0]  ; ESM_core:core|ESM_core_IIM:IIM_core|mapping_table[3][0]  ; yes                    ;
-; ESM_core:core|ESM_core_IIM:IIM_core|mapping_table[13][0] ; ESM_core:core|ESM_core_IIM:IIM_core|mapping_table[13][3] ; yes                    ;
-; ESM_core:core|ESM_core_IIM:IIM_core|mapping_table[14][0] ; ESM_core:core|ESM_core_IIM:IIM_core|mapping_table[14][3] ; yes                    ;
-; ESM_core:core|ESM_core_IIM:IIM_core|mapping_table[12][0] ; ESM_core:core|ESM_core_IIM:IIM_core|mapping_table[12][3] ; yes                    ;
-; ESM_core:core|ESM_core_IIM:IIM_core|mapping_table[15][0] ; ESM_core:core|ESM_core_IIM:IIM_core|mapping_table[15][3] ; yes                    ;
-; ESM_core:core|ESM_core_IIM:IIM_core|mapping_table[5][3]  ; ESM_core:core|ESM_core_IIM:IIM_core|mapping_table[5][3]  ; yes                    ;
-; ESM_core:core|ESM_core_IIM:IIM_core|mapping_table[9][3]  ; ESM_core:core|ESM_core_IIM:IIM_core|mapping_table[9][3]  ; yes                    ;
-; ESM_core:core|ESM_core_IIM:IIM_core|mapping_table[1][3]  ; ESM_core:core|ESM_core_IIM:IIM_core|mapping_table[1][3]  ; yes                    ;
-; ESM_core:core|ESM_core_IIM:IIM_core|mapping_table[13][3] ; ESM_core:core|ESM_core_IIM:IIM_core|mapping_table[13][3] ; yes                    ;
-; ESM_core:core|ESM_core_IIM:IIM_core|mapping_table[10][3] ; ESM_core:core|ESM_core_IIM:IIM_core|mapping_table[10][3] ; yes                    ;
-; ESM_core:core|ESM_core_IIM:IIM_core|mapping_table[6][3]  ; ESM_core:core|ESM_core_IIM:IIM_core|mapping_table[6][3]  ; yes                    ;
-; ESM_core:core|ESM_core_IIM:IIM_core|mapping_table[2][3]  ; ESM_core:core|ESM_core_IIM:IIM_core|mapping_table[2][3]  ; yes                    ;
-; ESM_core:core|ESM_core_IIM:IIM_core|mapping_table[14][3] ; ESM_core:core|ESM_core_IIM:IIM_core|mapping_table[14][3] ; yes                    ;
-; ESM_core:core|ESM_core_IIM:IIM_core|mapping_table[8][3]  ; ESM_core:core|ESM_core_IIM:IIM_core|mapping_table[8][3]  ; yes                    ;
-; ESM_core:core|ESM_core_IIM:IIM_core|mapping_table[4][3]  ; ESM_core:core|ESM_core_IIM:IIM_core|mapping_table[4][3]  ; yes                    ;
-; ESM_core:core|ESM_core_IIM:IIM_core|mapping_table[0][3]  ; ESM_core:core|ESM_core_IIM:IIM_core|mapping_table[0][3]  ; yes                    ;
-; ESM_core:core|ESM_core_IIM:IIM_core|mapping_table[12][3] ; ESM_core:core|ESM_core_IIM:IIM_core|mapping_table[12][3] ; yes                    ;
-; ESM_core:core|ESM_core_IIM:IIM_core|mapping_table[7][3]  ; ESM_core:core|ESM_core_IIM:IIM_core|mapping_table[7][3]  ; yes                    ;
-; ESM_core:core|ESM_core_IIM:IIM_core|mapping_table[11][3] ; ESM_core:core|ESM_core_IIM:IIM_core|mapping_table[11][2] ; yes                    ;
-; ESM_core:core|ESM_core_IIM:IIM_core|mapping_table[3][3]  ; ESM_core:core|ESM_core_IIM:IIM_core|mapping_table[3][3]  ; yes                    ;
-; ESM_core:core|ESM_core_IIM:IIM_core|mapping_table[15][3] ; ESM_core:core|ESM_core_IIM:IIM_core|mapping_table[15][3] ; yes                    ;
-; ESM_core:core|ESM_core_IIM:IIM_core|count[0]             ; ESM_core:core|ESM_core_IIM:IIM_core|count[3]             ; yes                    ;
-; ESM_core:core|ESM_core_IIM:IIM_core|count[1]             ; ESM_core:core|ESM_core_IIM:IIM_core|count[3]             ; yes                    ;
-; ESM_core:core|ESM_core_IIM:IIM_core|count[2]             ; ESM_core:core|ESM_core_IIM:IIM_core|count[3]             ; yes                    ;
-; ESM_core:core|ESM_core_IIM:IIM_core|count[3]             ; ESM_core:core|ESM_core_IIM:IIM_core|count[3]             ; yes                    ;
-; Number of user-specified and inferred latches = 68       ;                                                          ;                        ;
-+----------------------------------------------------------+----------------------------------------------------------+------------------------+
-Note: All latches listed above may not be present at the end of synthesis due to various synthesis optimizations.
 
 
 +------------------------------------------------------+
@@ -334,140 +265,153 @@ Note: All latches listed above may not be present at the end of synthesis due to
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 1880  ;
+; Total registers                              ; 1948  ;
 ; Number of registers using Synchronous Clear  ; 0     ;
 ; Number of registers using Synchronous Load   ; 0     ;
-; Number of registers using Asynchronous Clear ; 1332  ;
+; Number of registers using Asynchronous Clear ; 1396  ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 1296  ;
+; Number of registers using Clock Enable       ; 1360  ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
 
 
-+---------------------------------------------------------------------+
-; Inverted Register Statistics                                        ;
-+-----------------------------------------------------------+---------+
-; Inverted Register                                         ; Fan out ;
-+-----------------------------------------------------------+---------+
-; ESM_core:core|ESM_core_IIM:IIM_core|PRNG:random_num|q[1]  ; 3       ;
-; ESM_core:core|ESM_core_IIM:IIM_core|PRNG:random_num|q[31] ; 3       ;
-; ESM_core:core|ESM_core_IIM:IIM_core|PRNG:random_num|q[29] ; 4       ;
-; ESM_core:core|ESM_core_IIM:IIM_core|PRNG:random_num|q[27] ; 4       ;
-; ESM_core:core|ESM_core_IIM:IIM_core|PRNG:random_num|q[25] ; 3       ;
-; ESM_core:core|ESM_core_IIM:IIM_core|PRNG:random_num|q[23] ; 4       ;
-; ESM_core:core|ESM_core_IIM:IIM_core|PRNG:random_num|q[21] ; 3       ;
-; ESM_core:core|ESM_core_IIM:IIM_core|PRNG:random_num|q[19] ; 4       ;
-; ESM_core:core|ESM_core_IIM:IIM_core|PRNG:random_num|q[17] ; 4       ;
-; ESM_core:core|ESM_core_IIM:IIM_core|PRNG:random_num|q[15] ; 4       ;
-; ESM_core:core|ESM_core_IIM:IIM_core|PRNG:random_num|q[13] ; 3       ;
-; ESM_core:core|ESM_core_IIM:IIM_core|PRNG:random_num|q[11] ; 4       ;
-; ESM_core:core|ESM_core_IIM:IIM_core|PRNG:random_num|q[9]  ; 4       ;
-; ESM_core:core|ESM_core_IIM:IIM_core|PRNG:random_num|q[7]  ; 3       ;
-; ESM_core:core|ESM_core_IIM:IIM_core|PRNG:random_num|q[5]  ; 3       ;
-; ESM_core:core|ESM_core_IIM:IIM_core|PRNG:random_num|q[3]  ; 4       ;
-; ESM_core:core|ESM_core_IDA:IDA_core|IDT[15][15]           ; 1       ;
-; ESM_core:core|ESM_core_IDA:IDA_core|IDT[15][14]           ; 1       ;
-; ESM_core:core|ESM_core_IDA:IDA_core|IDT[15][13]           ; 1       ;
-; ESM_core:core|ESM_core_IDA:IDA_core|IDT[15][12]           ; 1       ;
-; ESM_core:core|ESM_core_IDA:IDA_core|IDT[15][11]           ; 1       ;
-; ESM_core:core|ESM_core_IDA:IDA_core|IDT[15][10]           ; 1       ;
-; ESM_core:core|ESM_core_IDA:IDA_core|IDT[15][9]            ; 1       ;
-; ESM_core:core|ESM_core_IDA:IDA_core|IDT[15][8]            ; 1       ;
-; ESM_core:core|ESM_core_IDA:IDA_core|IDT[15][7]            ; 1       ;
-; ESM_core:core|ESM_core_IDA:IDA_core|IDT[15][6]            ; 1       ;
-; ESM_core:core|ESM_core_IDA:IDA_core|IDT[15][5]            ; 1       ;
-; ESM_core:core|ESM_core_IDA:IDA_core|IDT[15][4]            ; 1       ;
-; ESM_core:core|ESM_core_IDA:IDA_core|IDT[15][3]            ; 1       ;
-; ESM_core:core|ESM_core_IDA:IDA_core|IDT[15][2]            ; 1       ;
-; ESM_core:core|ESM_core_IDA:IDA_core|IDT[15][1]            ; 1       ;
-; ESM_core:core|ESM_core_IDA:IDA_core|IDT[15][0]            ; 1       ;
-; ESM_core:core|ESM_core_IDA:IDA_core|IDT[13][15]           ; 1       ;
-; ESM_core:core|ESM_core_IDA:IDA_core|IDT[13][14]           ; 1       ;
-; ESM_core:core|ESM_core_IDA:IDA_core|IDT[13][13]           ; 1       ;
-; ESM_core:core|ESM_core_IDA:IDA_core|IDT[13][12]           ; 1       ;
-; ESM_core:core|ESM_core_IDA:IDA_core|IDT[13][11]           ; 1       ;
-; ESM_core:core|ESM_core_IDA:IDA_core|IDT[13][10]           ; 1       ;
-; ESM_core:core|ESM_core_IDA:IDA_core|IDT[13][9]            ; 1       ;
-; ESM_core:core|ESM_core_IDA:IDA_core|IDT[13][8]            ; 1       ;
-; ESM_core:core|ESM_core_IDA:IDA_core|IDT[13][7]            ; 1       ;
-; ESM_core:core|ESM_core_IDA:IDA_core|IDT[13][6]            ; 1       ;
-; ESM_core:core|ESM_core_IDA:IDA_core|IDT[13][5]            ; 1       ;
-; ESM_core:core|ESM_core_IDA:IDA_core|IDT[13][4]            ; 1       ;
-; ESM_core:core|ESM_core_IDA:IDA_core|IDT[13][3]            ; 1       ;
-; ESM_core:core|ESM_core_IDA:IDA_core|IDT[13][2]            ; 1       ;
-; ESM_core:core|ESM_core_IDA:IDA_core|IDT[13][1]            ; 1       ;
-; ESM_core:core|ESM_core_IDA:IDA_core|IDT[13][0]            ; 1       ;
-; ESM_core:core|ESM_core_IDA:IDA_core|IDT[9][15]            ; 1       ;
-; ESM_core:core|ESM_core_IDA:IDA_core|IDT[9][14]            ; 1       ;
-; ESM_core:core|ESM_core_IDA:IDA_core|IDT[9][13]            ; 1       ;
-; ESM_core:core|ESM_core_IDA:IDA_core|IDT[9][12]            ; 1       ;
-; ESM_core:core|ESM_core_IDA:IDA_core|IDT[9][11]            ; 1       ;
-; ESM_core:core|ESM_core_IDA:IDA_core|IDT[9][10]            ; 1       ;
-; ESM_core:core|ESM_core_IDA:IDA_core|IDT[9][9]             ; 1       ;
-; ESM_core:core|ESM_core_IDA:IDA_core|IDT[9][8]             ; 1       ;
-; ESM_core:core|ESM_core_IDA:IDA_core|IDT[9][7]             ; 1       ;
-; ESM_core:core|ESM_core_IDA:IDA_core|IDT[9][6]             ; 1       ;
-; ESM_core:core|ESM_core_IDA:IDA_core|IDT[9][5]             ; 1       ;
-; ESM_core:core|ESM_core_IDA:IDA_core|IDT[9][4]             ; 1       ;
-; ESM_core:core|ESM_core_IDA:IDA_core|IDT[9][3]             ; 1       ;
-; ESM_core:core|ESM_core_IDA:IDA_core|IDT[9][2]             ; 1       ;
-; ESM_core:core|ESM_core_IDA:IDA_core|IDT[9][1]             ; 1       ;
-; ESM_core:core|ESM_core_IDA:IDA_core|IDT[9][0]             ; 1       ;
-; ESM_core:core|ESM_core_IDA:IDA_core|IDT[7][15]            ; 1       ;
-; ESM_core:core|ESM_core_IDA:IDA_core|IDT[7][14]            ; 1       ;
-; ESM_core:core|ESM_core_IDA:IDA_core|IDT[7][13]            ; 1       ;
-; ESM_core:core|ESM_core_IDA:IDA_core|IDT[7][12]            ; 1       ;
-; ESM_core:core|ESM_core_IDA:IDA_core|IDT[7][11]            ; 1       ;
-; ESM_core:core|ESM_core_IDA:IDA_core|IDT[7][10]            ; 1       ;
-; ESM_core:core|ESM_core_IDA:IDA_core|IDT[7][9]             ; 1       ;
-; ESM_core:core|ESM_core_IDA:IDA_core|IDT[7][8]             ; 1       ;
-; ESM_core:core|ESM_core_IDA:IDA_core|IDT[7][7]             ; 1       ;
-; ESM_core:core|ESM_core_IDA:IDA_core|IDT[7][6]             ; 1       ;
-; ESM_core:core|ESM_core_IDA:IDA_core|IDT[7][5]             ; 1       ;
-; ESM_core:core|ESM_core_IDA:IDA_core|IDT[7][4]             ; 1       ;
-; ESM_core:core|ESM_core_IDA:IDA_core|IDT[7][3]             ; 1       ;
-; ESM_core:core|ESM_core_IDA:IDA_core|IDT[7][2]             ; 1       ;
-; ESM_core:core|ESM_core_IDA:IDA_core|IDT[7][1]             ; 1       ;
-; ESM_core:core|ESM_core_IDA:IDA_core|IDT[7][0]             ; 1       ;
-; ESM_core:core|ESM_core_IDA:IDA_core|IDT[3][15]            ; 1       ;
-; ESM_core:core|ESM_core_IDA:IDA_core|IDT[3][14]            ; 1       ;
-; ESM_core:core|ESM_core_IDA:IDA_core|IDT[3][13]            ; 1       ;
-; ESM_core:core|ESM_core_IDA:IDA_core|IDT[3][12]            ; 1       ;
-; ESM_core:core|ESM_core_IDA:IDA_core|IDT[3][11]            ; 1       ;
-; ESM_core:core|ESM_core_IDA:IDA_core|IDT[3][10]            ; 1       ;
-; ESM_core:core|ESM_core_IDA:IDA_core|IDT[3][9]             ; 1       ;
-; ESM_core:core|ESM_core_IDA:IDA_core|IDT[3][8]             ; 1       ;
-; ESM_core:core|ESM_core_IDA:IDA_core|IDT[3][7]             ; 1       ;
-; ESM_core:core|ESM_core_IDA:IDA_core|IDT[3][6]             ; 1       ;
-; ESM_core:core|ESM_core_IDA:IDA_core|IDT[3][5]             ; 1       ;
-; ESM_core:core|ESM_core_IDA:IDA_core|IDT[3][4]             ; 1       ;
-; ESM_core:core|ESM_core_IDA:IDA_core|IDT[3][3]             ; 1       ;
-; ESM_core:core|ESM_core_IDA:IDA_core|IDT[3][2]             ; 1       ;
-; ESM_core:core|ESM_core_IDA:IDA_core|IDT[3][1]             ; 1       ;
-; ESM_core:core|ESM_core_IDA:IDA_core|IDT[3][0]             ; 1       ;
-; ESM_core:core|ESM_core_IDA:IDA_core|IDT[1][15]            ; 1       ;
-; ESM_core:core|ESM_core_IDA:IDA_core|IDT[1][14]            ; 1       ;
-; ESM_core:core|ESM_core_IDA:IDA_core|IDT[1][13]            ; 1       ;
-; ESM_core:core|ESM_core_IDA:IDA_core|IDT[1][12]            ; 1       ;
-; Total number of inverted registers = 288*                 ;         ;
-+-----------------------------------------------------------+---------+
++-------------------------------------------------------------------------------------------+
+; Inverted Register Statistics                                                              ;
++---------------------------------------------------------------------------------+---------+
+; Inverted Register                                                               ; Fan out ;
++---------------------------------------------------------------------------------+---------+
+; ESM_core:core|ESM_core_IIM:IIM_core|mapping_table:m_table|PRNG:random_num|q[1]  ; 3       ;
+; ESM_core:core|ESM_core_IIM:IIM_core|mapping_table:m_table|PRNG:random_num|q[31] ; 3       ;
+; ESM_core:core|ESM_core_IIM:IIM_core|mapping_table:m_table|PRNG:random_num|q[29] ; 4       ;
+; ESM_core:core|ESM_core_IIM:IIM_core|mapping_table:m_table|PRNG:random_num|q[27] ; 4       ;
+; ESM_core:core|ESM_core_IIM:IIM_core|mapping_table:m_table|PRNG:random_num|q[25] ; 3       ;
+; ESM_core:core|ESM_core_IIM:IIM_core|mapping_table:m_table|PRNG:random_num|q[23] ; 4       ;
+; ESM_core:core|ESM_core_IIM:IIM_core|mapping_table:m_table|PRNG:random_num|q[21] ; 3       ;
+; ESM_core:core|ESM_core_IIM:IIM_core|mapping_table:m_table|PRNG:random_num|q[19] ; 4       ;
+; ESM_core:core|ESM_core_IIM:IIM_core|mapping_table:m_table|PRNG:random_num|q[17] ; 4       ;
+; ESM_core:core|ESM_core_IIM:IIM_core|mapping_table:m_table|PRNG:random_num|q[15] ; 4       ;
+; ESM_core:core|ESM_core_IIM:IIM_core|mapping_table:m_table|PRNG:random_num|q[13] ; 3       ;
+; ESM_core:core|ESM_core_IIM:IIM_core|mapping_table:m_table|PRNG:random_num|q[11] ; 4       ;
+; ESM_core:core|ESM_core_IIM:IIM_core|mapping_table:m_table|PRNG:random_num|q[9]  ; 4       ;
+; ESM_core:core|ESM_core_IIM:IIM_core|mapping_table:m_table|PRNG:random_num|q[7]  ; 3       ;
+; ESM_core:core|ESM_core_IIM:IIM_core|mapping_table:m_table|PRNG:random_num|q[5]  ; 3       ;
+; ESM_core:core|ESM_core_IIM:IIM_core|mapping_table:m_table|PRNG:random_num|q[3]  ; 4       ;
+; ESM_core:core|ESM_core_IDA:IDA_core|IDT:idt|IDT_table[15][15]                   ; 1       ;
+; ESM_core:core|ESM_core_IDA:IDA_core|IDT:idt|IDT_table[15][14]                   ; 1       ;
+; ESM_core:core|ESM_core_IDA:IDA_core|IDT:idt|IDT_table[15][13]                   ; 1       ;
+; ESM_core:core|ESM_core_IDA:IDA_core|IDT:idt|IDT_table[15][12]                   ; 1       ;
+; ESM_core:core|ESM_core_IDA:IDA_core|IDT:idt|IDT_table[15][11]                   ; 1       ;
+; ESM_core:core|ESM_core_IDA:IDA_core|IDT:idt|IDT_table[15][10]                   ; 1       ;
+; ESM_core:core|ESM_core_IDA:IDA_core|IDT:idt|IDT_table[15][9]                    ; 1       ;
+; ESM_core:core|ESM_core_IDA:IDA_core|IDT:idt|IDT_table[15][8]                    ; 1       ;
+; ESM_core:core|ESM_core_IDA:IDA_core|IDT:idt|IDT_table[15][7]                    ; 1       ;
+; ESM_core:core|ESM_core_IDA:IDA_core|IDT:idt|IDT_table[15][6]                    ; 1       ;
+; ESM_core:core|ESM_core_IDA:IDA_core|IDT:idt|IDT_table[15][5]                    ; 1       ;
+; ESM_core:core|ESM_core_IDA:IDA_core|IDT:idt|IDT_table[15][4]                    ; 1       ;
+; ESM_core:core|ESM_core_IDA:IDA_core|IDT:idt|IDT_table[15][3]                    ; 1       ;
+; ESM_core:core|ESM_core_IDA:IDA_core|IDT:idt|IDT_table[15][2]                    ; 1       ;
+; ESM_core:core|ESM_core_IDA:IDA_core|IDT:idt|IDT_table[15][1]                    ; 1       ;
+; ESM_core:core|ESM_core_IDA:IDA_core|IDT:idt|IDT_table[15][0]                    ; 1       ;
+; ESM_core:core|ESM_core_IDA:IDA_core|IDT:idt|IDT_table[13][15]                   ; 1       ;
+; ESM_core:core|ESM_core_IDA:IDA_core|IDT:idt|IDT_table[13][14]                   ; 1       ;
+; ESM_core:core|ESM_core_IDA:IDA_core|IDT:idt|IDT_table[13][13]                   ; 1       ;
+; ESM_core:core|ESM_core_IDA:IDA_core|IDT:idt|IDT_table[13][12]                   ; 1       ;
+; ESM_core:core|ESM_core_IDA:IDA_core|IDT:idt|IDT_table[13][11]                   ; 1       ;
+; ESM_core:core|ESM_core_IDA:IDA_core|IDT:idt|IDT_table[13][10]                   ; 1       ;
+; ESM_core:core|ESM_core_IDA:IDA_core|IDT:idt|IDT_table[13][9]                    ; 1       ;
+; ESM_core:core|ESM_core_IDA:IDA_core|IDT:idt|IDT_table[13][8]                    ; 1       ;
+; ESM_core:core|ESM_core_IDA:IDA_core|IDT:idt|IDT_table[13][7]                    ; 1       ;
+; ESM_core:core|ESM_core_IDA:IDA_core|IDT:idt|IDT_table[13][6]                    ; 1       ;
+; ESM_core:core|ESM_core_IDA:IDA_core|IDT:idt|IDT_table[13][5]                    ; 1       ;
+; ESM_core:core|ESM_core_IDA:IDA_core|IDT:idt|IDT_table[13][4]                    ; 1       ;
+; ESM_core:core|ESM_core_IDA:IDA_core|IDT:idt|IDT_table[13][3]                    ; 1       ;
+; ESM_core:core|ESM_core_IDA:IDA_core|IDT:idt|IDT_table[13][2]                    ; 1       ;
+; ESM_core:core|ESM_core_IDA:IDA_core|IDT:idt|IDT_table[13][1]                    ; 1       ;
+; ESM_core:core|ESM_core_IDA:IDA_core|IDT:idt|IDT_table[13][0]                    ; 1       ;
+; ESM_core:core|ESM_core_IDA:IDA_core|IDT:idt|IDT_table[9][15]                    ; 1       ;
+; ESM_core:core|ESM_core_IDA:IDA_core|IDT:idt|IDT_table[9][14]                    ; 1       ;
+; ESM_core:core|ESM_core_IDA:IDA_core|IDT:idt|IDT_table[9][13]                    ; 1       ;
+; ESM_core:core|ESM_core_IDA:IDA_core|IDT:idt|IDT_table[9][12]                    ; 1       ;
+; ESM_core:core|ESM_core_IDA:IDA_core|IDT:idt|IDT_table[9][11]                    ; 1       ;
+; ESM_core:core|ESM_core_IDA:IDA_core|IDT:idt|IDT_table[9][10]                    ; 1       ;
+; ESM_core:core|ESM_core_IDA:IDA_core|IDT:idt|IDT_table[9][9]                     ; 1       ;
+; ESM_core:core|ESM_core_IDA:IDA_core|IDT:idt|IDT_table[9][8]                     ; 1       ;
+; ESM_core:core|ESM_core_IDA:IDA_core|IDT:idt|IDT_table[9][7]                     ; 1       ;
+; ESM_core:core|ESM_core_IDA:IDA_core|IDT:idt|IDT_table[9][6]                     ; 1       ;
+; ESM_core:core|ESM_core_IDA:IDA_core|IDT:idt|IDT_table[9][5]                     ; 1       ;
+; ESM_core:core|ESM_core_IDA:IDA_core|IDT:idt|IDT_table[9][4]                     ; 1       ;
+; ESM_core:core|ESM_core_IDA:IDA_core|IDT:idt|IDT_table[9][3]                     ; 1       ;
+; ESM_core:core|ESM_core_IDA:IDA_core|IDT:idt|IDT_table[9][2]                     ; 1       ;
+; ESM_core:core|ESM_core_IDA:IDA_core|IDT:idt|IDT_table[9][1]                     ; 1       ;
+; ESM_core:core|ESM_core_IDA:IDA_core|IDT:idt|IDT_table[9][0]                     ; 1       ;
+; ESM_core:core|ESM_core_IDA:IDA_core|IDT:idt|IDT_table[7][15]                    ; 1       ;
+; ESM_core:core|ESM_core_IDA:IDA_core|IDT:idt|IDT_table[7][14]                    ; 1       ;
+; ESM_core:core|ESM_core_IDA:IDA_core|IDT:idt|IDT_table[7][13]                    ; 1       ;
+; ESM_core:core|ESM_core_IDA:IDA_core|IDT:idt|IDT_table[7][12]                    ; 1       ;
+; ESM_core:core|ESM_core_IDA:IDA_core|IDT:idt|IDT_table[7][11]                    ; 1       ;
+; ESM_core:core|ESM_core_IDA:IDA_core|IDT:idt|IDT_table[7][10]                    ; 1       ;
+; ESM_core:core|ESM_core_IDA:IDA_core|IDT:idt|IDT_table[7][9]                     ; 1       ;
+; ESM_core:core|ESM_core_IDA:IDA_core|IDT:idt|IDT_table[7][8]                     ; 1       ;
+; ESM_core:core|ESM_core_IDA:IDA_core|IDT:idt|IDT_table[7][7]                     ; 1       ;
+; ESM_core:core|ESM_core_IDA:IDA_core|IDT:idt|IDT_table[7][6]                     ; 1       ;
+; ESM_core:core|ESM_core_IDA:IDA_core|IDT:idt|IDT_table[7][5]                     ; 1       ;
+; ESM_core:core|ESM_core_IDA:IDA_core|IDT:idt|IDT_table[7][4]                     ; 1       ;
+; ESM_core:core|ESM_core_IDA:IDA_core|IDT:idt|IDT_table[7][3]                     ; 1       ;
+; ESM_core:core|ESM_core_IDA:IDA_core|IDT:idt|IDT_table[7][2]                     ; 1       ;
+; ESM_core:core|ESM_core_IDA:IDA_core|IDT:idt|IDT_table[7][1]                     ; 1       ;
+; ESM_core:core|ESM_core_IDA:IDA_core|IDT:idt|IDT_table[7][0]                     ; 1       ;
+; ESM_core:core|ESM_core_IDA:IDA_core|IDT:idt|IDT_table[3][15]                    ; 1       ;
+; ESM_core:core|ESM_core_IDA:IDA_core|IDT:idt|IDT_table[3][14]                    ; 1       ;
+; ESM_core:core|ESM_core_IDA:IDA_core|IDT:idt|IDT_table[3][13]                    ; 1       ;
+; ESM_core:core|ESM_core_IDA:IDA_core|IDT:idt|IDT_table[3][12]                    ; 1       ;
+; ESM_core:core|ESM_core_IDA:IDA_core|IDT:idt|IDT_table[3][11]                    ; 1       ;
+; ESM_core:core|ESM_core_IDA:IDA_core|IDT:idt|IDT_table[3][10]                    ; 1       ;
+; ESM_core:core|ESM_core_IDA:IDA_core|IDT:idt|IDT_table[3][9]                     ; 1       ;
+; ESM_core:core|ESM_core_IDA:IDA_core|IDT:idt|IDT_table[3][8]                     ; 1       ;
+; ESM_core:core|ESM_core_IDA:IDA_core|IDT:idt|IDT_table[3][7]                     ; 1       ;
+; ESM_core:core|ESM_core_IDA:IDA_core|IDT:idt|IDT_table[3][6]                     ; 1       ;
+; ESM_core:core|ESM_core_IDA:IDA_core|IDT:idt|IDT_table[3][5]                     ; 1       ;
+; ESM_core:core|ESM_core_IDA:IDA_core|IDT:idt|IDT_table[3][4]                     ; 1       ;
+; ESM_core:core|ESM_core_IDA:IDA_core|IDT:idt|IDT_table[3][3]                     ; 1       ;
+; ESM_core:core|ESM_core_IDA:IDA_core|IDT:idt|IDT_table[3][2]                     ; 1       ;
+; ESM_core:core|ESM_core_IDA:IDA_core|IDT:idt|IDT_table[3][1]                     ; 1       ;
+; ESM_core:core|ESM_core_IDA:IDA_core|IDT:idt|IDT_table[3][0]                     ; 1       ;
+; ESM_core:core|ESM_core_IDA:IDA_core|IDT:idt|IDT_table[1][15]                    ; 1       ;
+; ESM_core:core|ESM_core_IDA:IDA_core|IDT:idt|IDT_table[1][14]                    ; 1       ;
+; ESM_core:core|ESM_core_IDA:IDA_core|IDT:idt|IDT_table[1][13]                    ; 1       ;
+; ESM_core:core|ESM_core_IDA:IDA_core|IDT:idt|IDT_table[1][12]                    ; 1       ;
+; Total number of inverted registers = 288*                                       ;         ;
++---------------------------------------------------------------------------------+---------+
 * Table truncated at 100 items. To change the number of inverted registers reported, set the "Number of Inverted Registers Reported" option under Assignments->Settings->Analysis and Synthesis Settings->More Settings
 
 
-+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                              ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------------------------------+
-; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                    ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------------------------------+
-; 16:1               ; 32 bits   ; 320 LEs       ; 320 LEs              ; 0 LEs                  ; Yes        ; |ESM|Instr_Buffer:buffer|Instr_out[10]                        ;
-; 16:1               ; 4 bits    ; 40 LEs        ; 40 LEs               ; 0 LEs                  ; Yes        ; |ESM|ESM_core:core|ESM_core_IIM:IIM_core|buffer_index[2]      ;
-; 4:1                ; 11 bits   ; 22 LEs        ; 22 LEs               ; 0 LEs                  ; No         ; |ESM|ESM_core:core|ESM_core_IIM:IIM_core|mapping_table[6][3]  ;
-; 32:1               ; 16 bits   ; 336 LEs       ; 336 LEs              ; 0 LEs                  ; No         ; |ESM|ESM_core:core|ESM_core_IDA:IDA_core|IRT:irt|Mux11        ;
-; 6:1                ; 21 bits   ; 84 LEs        ; 84 LEs               ; 0 LEs                  ; No         ; |ESM|ESM_core:core|ESM_core_IIM:IIM_core|mapping_table[11][1] ;
-; 32:1               ; 16 bits   ; 336 LEs       ; 336 LEs              ; 0 LEs                  ; No         ; |ESM|ESM_core:core|ESM_core_IDA:IDA_core|IRT:irt|Mux31        ;
-; 32:1               ; 32 bits   ; 672 LEs       ; 672 LEs              ; 0 LEs                  ; No         ; |ESM|ESM_core:core|ESM_core_IDA:IDA_core|IRT:irt|Mux47        ;
-; 9:1                ; 5 bits    ; 30 LEs        ; 30 LEs               ; 0 LEs                  ; No         ; |ESM|ESM_core:core|ESM_core_IIM:IIM_core|mapping_table[14][3] ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------------------------------+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                                                ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                                      ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------------------------------------------------+
+; 16:1               ; 32 bits   ; 320 LEs       ; 320 LEs              ; 0 LEs                  ; Yes        ; |ESM|Instr_Buffer:buffer|Instr_out[25]                                          ;
+; 16:1               ; 4 bits    ; 40 LEs        ; 40 LEs               ; 0 LEs                  ; Yes        ; |ESM|ESM_core:core|ESM_core_IIM:IIM_core|mapping_table:m_table|buffer_index[0]  ;
+; 17:1               ; 4 bits    ; 44 LEs        ; 40 LEs               ; 4 LEs                  ; Yes        ; |ESM|ESM_core:core|ESM_core_IIM:IIM_core|mapping_table:m_table|map_table[0][1]  ;
+; 17:1               ; 4 bits    ; 44 LEs        ; 40 LEs               ; 4 LEs                  ; Yes        ; |ESM|ESM_core:core|ESM_core_IIM:IIM_core|mapping_table:m_table|map_table[1][2]  ;
+; 17:1               ; 4 bits    ; 44 LEs        ; 40 LEs               ; 4 LEs                  ; Yes        ; |ESM|ESM_core:core|ESM_core_IIM:IIM_core|mapping_table:m_table|map_table[2][3]  ;
+; 17:1               ; 4 bits    ; 44 LEs        ; 40 LEs               ; 4 LEs                  ; Yes        ; |ESM|ESM_core:core|ESM_core_IIM:IIM_core|mapping_table:m_table|map_table[3][1]  ;
+; 17:1               ; 4 bits    ; 44 LEs        ; 40 LEs               ; 4 LEs                  ; Yes        ; |ESM|ESM_core:core|ESM_core_IIM:IIM_core|mapping_table:m_table|map_table[4][1]  ;
+; 17:1               ; 4 bits    ; 44 LEs        ; 40 LEs               ; 4 LEs                  ; Yes        ; |ESM|ESM_core:core|ESM_core_IIM:IIM_core|mapping_table:m_table|map_table[5][1]  ;
+; 17:1               ; 4 bits    ; 44 LEs        ; 40 LEs               ; 4 LEs                  ; Yes        ; |ESM|ESM_core:core|ESM_core_IIM:IIM_core|mapping_table:m_table|map_table[6][1]  ;
+; 17:1               ; 4 bits    ; 44 LEs        ; 40 LEs               ; 4 LEs                  ; Yes        ; |ESM|ESM_core:core|ESM_core_IIM:IIM_core|mapping_table:m_table|map_table[7][0]  ;
+; 17:1               ; 4 bits    ; 44 LEs        ; 40 LEs               ; 4 LEs                  ; Yes        ; |ESM|ESM_core:core|ESM_core_IIM:IIM_core|mapping_table:m_table|map_table[8][0]  ;
+; 17:1               ; 4 bits    ; 44 LEs        ; 40 LEs               ; 4 LEs                  ; Yes        ; |ESM|ESM_core:core|ESM_core_IIM:IIM_core|mapping_table:m_table|map_table[9][0]  ;
+; 17:1               ; 4 bits    ; 44 LEs        ; 40 LEs               ; 4 LEs                  ; Yes        ; |ESM|ESM_core:core|ESM_core_IIM:IIM_core|mapping_table:m_table|map_table[10][1] ;
+; 17:1               ; 4 bits    ; 44 LEs        ; 40 LEs               ; 4 LEs                  ; Yes        ; |ESM|ESM_core:core|ESM_core_IIM:IIM_core|mapping_table:m_table|map_table[11][1] ;
+; 17:1               ; 4 bits    ; 44 LEs        ; 40 LEs               ; 4 LEs                  ; Yes        ; |ESM|ESM_core:core|ESM_core_IIM:IIM_core|mapping_table:m_table|map_table[12][2] ;
+; 17:1               ; 4 bits    ; 44 LEs        ; 40 LEs               ; 4 LEs                  ; Yes        ; |ESM|ESM_core:core|ESM_core_IIM:IIM_core|mapping_table:m_table|map_table[13][3] ;
+; 17:1               ; 4 bits    ; 44 LEs        ; 40 LEs               ; 4 LEs                  ; Yes        ; |ESM|ESM_core:core|ESM_core_IIM:IIM_core|mapping_table:m_table|map_table[14][1] ;
+; 17:1               ; 4 bits    ; 44 LEs        ; 40 LEs               ; 4 LEs                  ; Yes        ; |ESM|ESM_core:core|ESM_core_IIM:IIM_core|mapping_table:m_table|map_table[15][2] ;
+; 32:1               ; 16 bits   ; 336 LEs       ; 336 LEs              ; 0 LEs                  ; No         ; |ESM|ESM_core:core|ESM_core_IDA:IDA_core|IRT:irt|Mux13                          ;
+; 32:1               ; 16 bits   ; 336 LEs       ; 336 LEs              ; 0 LEs                  ; No         ; |ESM|ESM_core:core|ESM_core_IDA:IDA_core|IRT:irt|Mux28                          ;
+; 32:1               ; 32 bits   ; 672 LEs       ; 672 LEs              ; 0 LEs                  ; No         ; |ESM|ESM_core:core|ESM_core_IDA:IDA_core|IRT:irt|Mux33                          ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------------------------------------------------+
 
 
 +---------------------------------------------------------------------+
@@ -528,6 +472,16 @@ Note: In order to hide this table in the UI and the text report file, please set
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
++------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: ESM_core:core|ESM_core_IDA:IDA_core|IDT:idt ;
++----------------+-------+-----------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                            ;
++----------------+-------+-----------------------------------------------------------------+
+; bs             ; 16    ; Signed Integer                                                  ;
++----------------+-------+-----------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
 +----------------------------------------------------------------------------------+
 ; Parameter Settings for User Entity Instance: ESM_core:core|ESM_core_IIM:IIM_core ;
 +----------------+-------+---------------------------------------------------------+
@@ -538,36 +492,56 @@ Note: In order to hide this table in the UI and the text report file, please set
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
-+------------------------------------------------------------------------------------------------------+
-; Parameter Settings for Inferred Entity Instance: ESM_core:core|ESM_core_IIM:IIM_core|lpm_divide:Mod0 ;
-+------------------------+----------------+------------------------------------------------------------+
-; Parameter Name         ; Value          ; Type                                                       ;
-+------------------------+----------------+------------------------------------------------------------+
-; LPM_WIDTHN             ; 32             ; Untyped                                                    ;
-; LPM_WIDTHD             ; 4              ; Untyped                                                    ;
-; LPM_NREPRESENTATION    ; UNSIGNED       ; Untyped                                                    ;
-; LPM_DREPRESENTATION    ; UNSIGNED       ; Untyped                                                    ;
-; LPM_PIPELINE           ; 0              ; Untyped                                                    ;
-; LPM_REMAINDERPOSITIVE  ; TRUE           ; Untyped                                                    ;
-; MAXIMIZE_SPEED         ; 5              ; Untyped                                                    ;
-; CBXI_PARAMETER         ; lpm_divide_3bm ; Untyped                                                    ;
-; CARRY_CHAIN            ; MANUAL         ; Untyped                                                    ;
-; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                                                    ;
-; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY                                                 ;
-; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY                                               ;
-; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE                                               ;
-; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE                                             ;
-+------------------------+----------------+------------------------------------------------------------+
++--------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: ESM_core:core|ESM_core_IIM:IIM_core|candidate_list:c_list ;
++----------------+-------+-------------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                          ;
++----------------+-------+-------------------------------------------------------------------------------+
+; bs             ; 16    ; Signed Integer                                                                ;
++----------------+-------+-------------------------------------------------------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
-+---------------------------------------------------------------------------------+
-; Port Connectivity Checks: "ESM_core:core|ESM_core_IIM:IIM_core|PRNG:random_num" ;
-+------+-------+----------+-------------------------------------------------------+
-; Port ; Type  ; Severity ; Details                                               ;
-+------+-------+----------+-------------------------------------------------------+
-; ce   ; Input ; Info     ; Stuck at VCC                                          ;
-+------+-------+----------+-------------------------------------------------------+
++--------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: ESM_core:core|ESM_core_IIM:IIM_core|mapping_table:m_table ;
++----------------+-------+-------------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                          ;
++----------------+-------+-------------------------------------------------------------------------------+
+; bs             ; 16    ; Signed Integer                                                                ;
++----------------+-------+-------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: ESM_core:core|ESM_core_IIM:IIM_core|mapping_table:m_table|lpm_divide:Mod0 ;
++------------------------+----------------+----------------------------------------------------------------------------------+
+; Parameter Name         ; Value          ; Type                                                                             ;
++------------------------+----------------+----------------------------------------------------------------------------------+
+; LPM_WIDTHN             ; 32             ; Untyped                                                                          ;
+; LPM_WIDTHD             ; 4              ; Untyped                                                                          ;
+; LPM_NREPRESENTATION    ; UNSIGNED       ; Untyped                                                                          ;
+; LPM_DREPRESENTATION    ; UNSIGNED       ; Untyped                                                                          ;
+; LPM_PIPELINE           ; 0              ; Untyped                                                                          ;
+; LPM_REMAINDERPOSITIVE  ; TRUE           ; Untyped                                                                          ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                                                                          ;
+; CBXI_PARAMETER         ; lpm_divide_3bm ; Untyped                                                                          ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                                                                          ;
+; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                                                                          ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY                                                                       ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY                                                                     ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE                                                                     ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE                                                                   ;
++------------------------+----------------+----------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "ESM_core:core|ESM_core_IIM:IIM_core|mapping_table:m_table|PRNG:random_num" ;
++------+-------+----------+-----------------------------------------------------------------------------+
+; Port ; Type  ; Severity ; Details                                                                     ;
++------+-------+----------+-----------------------------------------------------------------------------+
+; ce   ; Input ; Info     ; Stuck at VCC                                                                ;
++------+-------+----------+-----------------------------------------------------------------------------+
 
 
 +-----------------------------------------------------+
@@ -576,23 +550,23 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
 ; boundary_port         ; 68                          ;
-; cycloneiii_ff         ; 1880                        ;
+; cycloneiii_ff         ; 1948                        ;
 ;     CLR               ; 68                          ;
 ;     ENA               ; 32                          ;
-;     ENA CLR           ; 1264                        ;
-;     plain             ; 516                         ;
-; cycloneiii_lcell_comb ; 3382                        ;
+;     ENA CLR           ; 1328                        ;
+;     plain             ; 520                         ;
+; cycloneiii_lcell_comb ; 3255                        ;
 ;     arith             ; 147                         ;
 ;         3 data inputs ; 147                         ;
-;     normal            ; 3235                        ;
+;     normal            ; 3108                        ;
 ;         0 data inputs ; 30                          ;
 ;         1 data inputs ; 303                         ;
-;         2 data inputs ; 118                         ;
-;         3 data inputs ; 134                         ;
-;         4 data inputs ; 2650                        ;
+;         2 data inputs ; 101                         ;
+;         3 data inputs ; 127                         ;
+;         4 data inputs ; 2547                        ;
 ;                       ;                             ;
 ; Max LUT depth         ; 77.70                       ;
-; Average LUT depth     ; 11.20                       ;
+; Average LUT depth     ; 11.31                       ;
 +-----------------------+-----------------------------+
 
 
@@ -601,7 +575,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 +----------------+--------------+
 ; Partition Name ; Elapsed Time ;
 +----------------+--------------+
-; Top            ; 00:00:06     ;
+; Top            ; 00:00:04     ;
 +----------------+--------------+
 
 
@@ -611,7 +585,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
-    Info: Processing started: Sun Dec 22 14:31:29 2024
+    Info: Processing started: Sun Dec 22 21:46:23 2024
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off ESM -c ESM
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
@@ -629,98 +603,36 @@ Info (12021): Found 1 design units, including 1 entities, in source file prng.v
     Info (12023): Found entity 1: PRNG File: C:/Users/nawaz/OneDrive/Desktop/pdf/winter intern/ESM-module/quarturs/PRNG.v Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file instr_buffer.v
     Info (12023): Found entity 1: Instr_Buffer File: C:/Users/nawaz/OneDrive/Desktop/pdf/winter intern/ESM-module/quarturs/Instr_Buffer.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file idt.v
+    Info (12023): Found entity 1: IDT File: C:/Users/nawaz/OneDrive/Desktop/pdf/winter intern/ESM-module/quarturs/IDT.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file candidate_list.v
+    Info (12023): Found entity 1: candidate_list File: C:/Users/nawaz/OneDrive/Desktop/pdf/winter intern/ESM-module/quarturs/candidate_list.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file mapping_table.v
+    Info (12023): Found entity 1: mapping_table File: C:/Users/nawaz/OneDrive/Desktop/pdf/winter intern/ESM-module/quarturs/mapping_table.v Line: 1
 Info (12127): Elaborating entity "ESM" for the top level hierarchy
 Info (12128): Elaborating entity "Instr_Buffer" for hierarchy "Instr_Buffer:buffer" File: C:/Users/nawaz/OneDrive/Desktop/pdf/winter intern/ESM-module/quarturs/ESM.v Line: 14
 Warning (10240): Verilog HDL Always Construct warning at Instr_Buffer.v(21): inferring latch(es) for variable "i", which holds its previous value in one or more paths through the always construct File: C:/Users/nawaz/OneDrive/Desktop/pdf/winter intern/ESM-module/quarturs/Instr_Buffer.v Line: 21
 Info (12128): Elaborating entity "ESM_core" for hierarchy "ESM_core:core" File: C:/Users/nawaz/OneDrive/Desktop/pdf/winter intern/ESM-module/quarturs/ESM.v Line: 16
 Info (12128): Elaborating entity "ESM_core_IDA" for hierarchy "ESM_core:core|ESM_core_IDA:IDA_core" File: C:/Users/nawaz/OneDrive/Desktop/pdf/winter intern/ESM-module/quarturs/ESM_core.v Line: 14
-Warning (10230): Verilog HDL assignment warning at ESM_core_IDA.v(17): truncated value with size 32 to match size of target (5) File: C:/Users/nawaz/OneDrive/Desktop/pdf/winter intern/ESM-module/quarturs/ESM_core_IDA.v Line: 17
-Warning (10230): Verilog HDL assignment warning at ESM_core_IDA.v(18): truncated value with size 32 to match size of target (5) File: C:/Users/nawaz/OneDrive/Desktop/pdf/winter intern/ESM-module/quarturs/ESM_core_IDA.v Line: 18
-Warning (10240): Verilog HDL Always Construct warning at ESM_core_IDA.v(25): inferring latch(es) for variable "i", which holds its previous value in one or more paths through the always construct File: C:/Users/nawaz/OneDrive/Desktop/pdf/winter intern/ESM-module/quarturs/ESM_core_IDA.v Line: 25
-Warning (10230): Verilog HDL assignment warning at ESM_core_IDA.v(38): truncated value with size 32 to match size of target (4) File: C:/Users/nawaz/OneDrive/Desktop/pdf/winter intern/ESM-module/quarturs/ESM_core_IDA.v Line: 38
-Info (12128): Elaborating entity "IRT" for hierarchy "ESM_core:core|ESM_core_IDA:IDA_core|IRT:irt" File: C:/Users/nawaz/OneDrive/Desktop/pdf/winter intern/ESM-module/quarturs/ESM_core_IDA.v Line: 21
+Warning (10230): Verilog HDL assignment warning at ESM_core_IDA.v(15): truncated value with size 32 to match size of target (5) File: C:/Users/nawaz/OneDrive/Desktop/pdf/winter intern/ESM-module/quarturs/ESM_core_IDA.v Line: 15
+Warning (10230): Verilog HDL assignment warning at ESM_core_IDA.v(16): truncated value with size 32 to match size of target (5) File: C:/Users/nawaz/OneDrive/Desktop/pdf/winter intern/ESM-module/quarturs/ESM_core_IDA.v Line: 16
+Info (12128): Elaborating entity "IRT" for hierarchy "ESM_core:core|ESM_core_IDA:IDA_core|IRT:irt" File: C:/Users/nawaz/OneDrive/Desktop/pdf/winter intern/ESM-module/quarturs/ESM_core_IDA.v Line: 19
 Warning (10240): Verilog HDL Always Construct warning at IRT.v(20): inferring latch(es) for variable "i", which holds its previous value in one or more paths through the always construct File: C:/Users/nawaz/OneDrive/Desktop/pdf/winter intern/ESM-module/quarturs/IRT.v Line: 20
 Warning (10230): Verilog HDL assignment warning at IRT.v(47): truncated value with size 32 to match size of target (16) File: C:/Users/nawaz/OneDrive/Desktop/pdf/winter intern/ESM-module/quarturs/IRT.v Line: 47
+Info (12128): Elaborating entity "IDT" for hierarchy "ESM_core:core|ESM_core_IDA:IDA_core|IDT:idt" File: C:/Users/nawaz/OneDrive/Desktop/pdf/winter intern/ESM-module/quarturs/ESM_core_IDA.v Line: 21
+Warning (10240): Verilog HDL Always Construct warning at IDT.v(16): inferring latch(es) for variable "j", which holds its previous value in one or more paths through the always construct File: C:/Users/nawaz/OneDrive/Desktop/pdf/winter intern/ESM-module/quarturs/IDT.v Line: 16
+Warning (10230): Verilog HDL assignment warning at IDT.v(28): truncated value with size 32 to match size of target (4) File: C:/Users/nawaz/OneDrive/Desktop/pdf/winter intern/ESM-module/quarturs/IDT.v Line: 28
 Info (12128): Elaborating entity "ESM_core_IIM" for hierarchy "ESM_core:core|ESM_core_IIM:IIM_core" File: C:/Users/nawaz/OneDrive/Desktop/pdf/winter intern/ESM-module/quarturs/ESM_core.v Line: 16
-Warning (10230): Verilog HDL assignment warning at ESM_core_IIM.v(26): truncated value with size 32 to match size of target (4) File: C:/Users/nawaz/OneDrive/Desktop/pdf/winter intern/ESM-module/quarturs/ESM_core_IIM.v Line: 26
-Warning (10235): Verilog HDL Always Construct warning at ESM_core_IIM.v(26): variable "count" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/nawaz/OneDrive/Desktop/pdf/winter intern/ESM-module/quarturs/ESM_core_IIM.v Line: 26
-Warning (10235): Verilog HDL Always Construct warning at ESM_core_IIM.v(27): variable "count" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/nawaz/OneDrive/Desktop/pdf/winter intern/ESM-module/quarturs/ESM_core_IIM.v Line: 27
-Warning (10230): Verilog HDL assignment warning at ESM_core_IIM.v(27): truncated value with size 32 to match size of target (4) File: C:/Users/nawaz/OneDrive/Desktop/pdf/winter intern/ESM-module/quarturs/ESM_core_IIM.v Line: 27
-Warning (10240): Verilog HDL Always Construct warning at ESM_core_IIM.v(22): inferring latch(es) for variable "count", which holds its previous value in one or more paths through the always construct File: C:/Users/nawaz/OneDrive/Desktop/pdf/winter intern/ESM-module/quarturs/ESM_core_IIM.v Line: 22
-Warning (10230): Verilog HDL assignment warning at ESM_core_IIM.v(41): truncated value with size 32 to match size of target (4) File: C:/Users/nawaz/OneDrive/Desktop/pdf/winter intern/ESM-module/quarturs/ESM_core_IIM.v Line: 41
-Info (10041): Inferred latch for "count[0]" at ESM_core_IIM.v(22) File: C:/Users/nawaz/OneDrive/Desktop/pdf/winter intern/ESM-module/quarturs/ESM_core_IIM.v Line: 22
-Info (10041): Inferred latch for "count[1]" at ESM_core_IIM.v(22) File: C:/Users/nawaz/OneDrive/Desktop/pdf/winter intern/ESM-module/quarturs/ESM_core_IIM.v Line: 22
-Info (10041): Inferred latch for "count[2]" at ESM_core_IIM.v(22) File: C:/Users/nawaz/OneDrive/Desktop/pdf/winter intern/ESM-module/quarturs/ESM_core_IIM.v Line: 22
-Info (10041): Inferred latch for "count[3]" at ESM_core_IIM.v(22) File: C:/Users/nawaz/OneDrive/Desktop/pdf/winter intern/ESM-module/quarturs/ESM_core_IIM.v Line: 22
-Info (10041): Inferred latch for "mapping_table[15][0]" at ESM_core_IIM.v(22) File: C:/Users/nawaz/OneDrive/Desktop/pdf/winter intern/ESM-module/quarturs/ESM_core_IIM.v Line: 22
-Info (10041): Inferred latch for "mapping_table[15][1]" at ESM_core_IIM.v(22) File: C:/Users/nawaz/OneDrive/Desktop/pdf/winter intern/ESM-module/quarturs/ESM_core_IIM.v Line: 22
-Info (10041): Inferred latch for "mapping_table[15][2]" at ESM_core_IIM.v(22) File: C:/Users/nawaz/OneDrive/Desktop/pdf/winter intern/ESM-module/quarturs/ESM_core_IIM.v Line: 22
-Info (10041): Inferred latch for "mapping_table[15][3]" at ESM_core_IIM.v(22) File: C:/Users/nawaz/OneDrive/Desktop/pdf/winter intern/ESM-module/quarturs/ESM_core_IIM.v Line: 22
-Info (10041): Inferred latch for "mapping_table[14][0]" at ESM_core_IIM.v(22) File: C:/Users/nawaz/OneDrive/Desktop/pdf/winter intern/ESM-module/quarturs/ESM_core_IIM.v Line: 22
-Info (10041): Inferred latch for "mapping_table[14][1]" at ESM_core_IIM.v(22) File: C:/Users/nawaz/OneDrive/Desktop/pdf/winter intern/ESM-module/quarturs/ESM_core_IIM.v Line: 22
-Info (10041): Inferred latch for "mapping_table[14][2]" at ESM_core_IIM.v(22) File: C:/Users/nawaz/OneDrive/Desktop/pdf/winter intern/ESM-module/quarturs/ESM_core_IIM.v Line: 22
-Info (10041): Inferred latch for "mapping_table[14][3]" at ESM_core_IIM.v(22) File: C:/Users/nawaz/OneDrive/Desktop/pdf/winter intern/ESM-module/quarturs/ESM_core_IIM.v Line: 22
-Info (10041): Inferred latch for "mapping_table[13][0]" at ESM_core_IIM.v(22) File: C:/Users/nawaz/OneDrive/Desktop/pdf/winter intern/ESM-module/quarturs/ESM_core_IIM.v Line: 22
-Info (10041): Inferred latch for "mapping_table[13][1]" at ESM_core_IIM.v(22) File: C:/Users/nawaz/OneDrive/Desktop/pdf/winter intern/ESM-module/quarturs/ESM_core_IIM.v Line: 22
-Info (10041): Inferred latch for "mapping_table[13][2]" at ESM_core_IIM.v(22) File: C:/Users/nawaz/OneDrive/Desktop/pdf/winter intern/ESM-module/quarturs/ESM_core_IIM.v Line: 22
-Info (10041): Inferred latch for "mapping_table[13][3]" at ESM_core_IIM.v(22) File: C:/Users/nawaz/OneDrive/Desktop/pdf/winter intern/ESM-module/quarturs/ESM_core_IIM.v Line: 22
-Info (10041): Inferred latch for "mapping_table[12][0]" at ESM_core_IIM.v(22) File: C:/Users/nawaz/OneDrive/Desktop/pdf/winter intern/ESM-module/quarturs/ESM_core_IIM.v Line: 22
-Info (10041): Inferred latch for "mapping_table[12][1]" at ESM_core_IIM.v(22) File: C:/Users/nawaz/OneDrive/Desktop/pdf/winter intern/ESM-module/quarturs/ESM_core_IIM.v Line: 22
-Info (10041): Inferred latch for "mapping_table[12][2]" at ESM_core_IIM.v(22) File: C:/Users/nawaz/OneDrive/Desktop/pdf/winter intern/ESM-module/quarturs/ESM_core_IIM.v Line: 22
-Info (10041): Inferred latch for "mapping_table[12][3]" at ESM_core_IIM.v(22) File: C:/Users/nawaz/OneDrive/Desktop/pdf/winter intern/ESM-module/quarturs/ESM_core_IIM.v Line: 22
-Info (10041): Inferred latch for "mapping_table[11][0]" at ESM_core_IIM.v(22) File: C:/Users/nawaz/OneDrive/Desktop/pdf/winter intern/ESM-module/quarturs/ESM_core_IIM.v Line: 22
-Info (10041): Inferred latch for "mapping_table[11][1]" at ESM_core_IIM.v(22) File: C:/Users/nawaz/OneDrive/Desktop/pdf/winter intern/ESM-module/quarturs/ESM_core_IIM.v Line: 22
-Info (10041): Inferred latch for "mapping_table[11][2]" at ESM_core_IIM.v(22) File: C:/Users/nawaz/OneDrive/Desktop/pdf/winter intern/ESM-module/quarturs/ESM_core_IIM.v Line: 22
-Info (10041): Inferred latch for "mapping_table[11][3]" at ESM_core_IIM.v(22) File: C:/Users/nawaz/OneDrive/Desktop/pdf/winter intern/ESM-module/quarturs/ESM_core_IIM.v Line: 22
-Info (10041): Inferred latch for "mapping_table[10][0]" at ESM_core_IIM.v(22) File: C:/Users/nawaz/OneDrive/Desktop/pdf/winter intern/ESM-module/quarturs/ESM_core_IIM.v Line: 22
-Info (10041): Inferred latch for "mapping_table[10][1]" at ESM_core_IIM.v(22) File: C:/Users/nawaz/OneDrive/Desktop/pdf/winter intern/ESM-module/quarturs/ESM_core_IIM.v Line: 22
-Info (10041): Inferred latch for "mapping_table[10][2]" at ESM_core_IIM.v(22) File: C:/Users/nawaz/OneDrive/Desktop/pdf/winter intern/ESM-module/quarturs/ESM_core_IIM.v Line: 22
-Info (10041): Inferred latch for "mapping_table[10][3]" at ESM_core_IIM.v(22) File: C:/Users/nawaz/OneDrive/Desktop/pdf/winter intern/ESM-module/quarturs/ESM_core_IIM.v Line: 22
-Info (10041): Inferred latch for "mapping_table[9][0]" at ESM_core_IIM.v(22) File: C:/Users/nawaz/OneDrive/Desktop/pdf/winter intern/ESM-module/quarturs/ESM_core_IIM.v Line: 22
-Info (10041): Inferred latch for "mapping_table[9][1]" at ESM_core_IIM.v(22) File: C:/Users/nawaz/OneDrive/Desktop/pdf/winter intern/ESM-module/quarturs/ESM_core_IIM.v Line: 22
-Info (10041): Inferred latch for "mapping_table[9][2]" at ESM_core_IIM.v(22) File: C:/Users/nawaz/OneDrive/Desktop/pdf/winter intern/ESM-module/quarturs/ESM_core_IIM.v Line: 22
-Info (10041): Inferred latch for "mapping_table[9][3]" at ESM_core_IIM.v(22) File: C:/Users/nawaz/OneDrive/Desktop/pdf/winter intern/ESM-module/quarturs/ESM_core_IIM.v Line: 22
-Info (10041): Inferred latch for "mapping_table[8][0]" at ESM_core_IIM.v(22) File: C:/Users/nawaz/OneDrive/Desktop/pdf/winter intern/ESM-module/quarturs/ESM_core_IIM.v Line: 22
-Info (10041): Inferred latch for "mapping_table[8][1]" at ESM_core_IIM.v(22) File: C:/Users/nawaz/OneDrive/Desktop/pdf/winter intern/ESM-module/quarturs/ESM_core_IIM.v Line: 22
-Info (10041): Inferred latch for "mapping_table[8][2]" at ESM_core_IIM.v(22) File: C:/Users/nawaz/OneDrive/Desktop/pdf/winter intern/ESM-module/quarturs/ESM_core_IIM.v Line: 22
-Info (10041): Inferred latch for "mapping_table[8][3]" at ESM_core_IIM.v(22) File: C:/Users/nawaz/OneDrive/Desktop/pdf/winter intern/ESM-module/quarturs/ESM_core_IIM.v Line: 22
-Info (10041): Inferred latch for "mapping_table[7][0]" at ESM_core_IIM.v(22) File: C:/Users/nawaz/OneDrive/Desktop/pdf/winter intern/ESM-module/quarturs/ESM_core_IIM.v Line: 22
-Info (10041): Inferred latch for "mapping_table[7][1]" at ESM_core_IIM.v(22) File: C:/Users/nawaz/OneDrive/Desktop/pdf/winter intern/ESM-module/quarturs/ESM_core_IIM.v Line: 22
-Info (10041): Inferred latch for "mapping_table[7][2]" at ESM_core_IIM.v(22) File: C:/Users/nawaz/OneDrive/Desktop/pdf/winter intern/ESM-module/quarturs/ESM_core_IIM.v Line: 22
-Info (10041): Inferred latch for "mapping_table[7][3]" at ESM_core_IIM.v(22) File: C:/Users/nawaz/OneDrive/Desktop/pdf/winter intern/ESM-module/quarturs/ESM_core_IIM.v Line: 22
-Info (10041): Inferred latch for "mapping_table[6][0]" at ESM_core_IIM.v(22) File: C:/Users/nawaz/OneDrive/Desktop/pdf/winter intern/ESM-module/quarturs/ESM_core_IIM.v Line: 22
-Info (10041): Inferred latch for "mapping_table[6][1]" at ESM_core_IIM.v(22) File: C:/Users/nawaz/OneDrive/Desktop/pdf/winter intern/ESM-module/quarturs/ESM_core_IIM.v Line: 22
-Info (10041): Inferred latch for "mapping_table[6][2]" at ESM_core_IIM.v(22) File: C:/Users/nawaz/OneDrive/Desktop/pdf/winter intern/ESM-module/quarturs/ESM_core_IIM.v Line: 22
-Info (10041): Inferred latch for "mapping_table[6][3]" at ESM_core_IIM.v(22) File: C:/Users/nawaz/OneDrive/Desktop/pdf/winter intern/ESM-module/quarturs/ESM_core_IIM.v Line: 22
-Info (10041): Inferred latch for "mapping_table[5][0]" at ESM_core_IIM.v(22) File: C:/Users/nawaz/OneDrive/Desktop/pdf/winter intern/ESM-module/quarturs/ESM_core_IIM.v Line: 22
-Info (10041): Inferred latch for "mapping_table[5][1]" at ESM_core_IIM.v(22) File: C:/Users/nawaz/OneDrive/Desktop/pdf/winter intern/ESM-module/quarturs/ESM_core_IIM.v Line: 22
-Info (10041): Inferred latch for "mapping_table[5][2]" at ESM_core_IIM.v(22) File: C:/Users/nawaz/OneDrive/Desktop/pdf/winter intern/ESM-module/quarturs/ESM_core_IIM.v Line: 22
-Info (10041): Inferred latch for "mapping_table[5][3]" at ESM_core_IIM.v(22) File: C:/Users/nawaz/OneDrive/Desktop/pdf/winter intern/ESM-module/quarturs/ESM_core_IIM.v Line: 22
-Info (10041): Inferred latch for "mapping_table[4][0]" at ESM_core_IIM.v(22) File: C:/Users/nawaz/OneDrive/Desktop/pdf/winter intern/ESM-module/quarturs/ESM_core_IIM.v Line: 22
-Info (10041): Inferred latch for "mapping_table[4][1]" at ESM_core_IIM.v(22) File: C:/Users/nawaz/OneDrive/Desktop/pdf/winter intern/ESM-module/quarturs/ESM_core_IIM.v Line: 22
-Info (10041): Inferred latch for "mapping_table[4][2]" at ESM_core_IIM.v(22) File: C:/Users/nawaz/OneDrive/Desktop/pdf/winter intern/ESM-module/quarturs/ESM_core_IIM.v Line: 22
-Info (10041): Inferred latch for "mapping_table[4][3]" at ESM_core_IIM.v(22) File: C:/Users/nawaz/OneDrive/Desktop/pdf/winter intern/ESM-module/quarturs/ESM_core_IIM.v Line: 22
-Info (10041): Inferred latch for "mapping_table[3][0]" at ESM_core_IIM.v(22) File: C:/Users/nawaz/OneDrive/Desktop/pdf/winter intern/ESM-module/quarturs/ESM_core_IIM.v Line: 22
-Info (10041): Inferred latch for "mapping_table[3][1]" at ESM_core_IIM.v(22) File: C:/Users/nawaz/OneDrive/Desktop/pdf/winter intern/ESM-module/quarturs/ESM_core_IIM.v Line: 22
-Info (10041): Inferred latch for "mapping_table[3][2]" at ESM_core_IIM.v(22) File: C:/Users/nawaz/OneDrive/Desktop/pdf/winter intern/ESM-module/quarturs/ESM_core_IIM.v Line: 22
-Info (10041): Inferred latch for "mapping_table[3][3]" at ESM_core_IIM.v(22) File: C:/Users/nawaz/OneDrive/Desktop/pdf/winter intern/ESM-module/quarturs/ESM_core_IIM.v Line: 22
-Info (10041): Inferred latch for "mapping_table[2][0]" at ESM_core_IIM.v(22) File: C:/Users/nawaz/OneDrive/Desktop/pdf/winter intern/ESM-module/quarturs/ESM_core_IIM.v Line: 22
-Info (10041): Inferred latch for "mapping_table[2][1]" at ESM_core_IIM.v(22) File: C:/Users/nawaz/OneDrive/Desktop/pdf/winter intern/ESM-module/quarturs/ESM_core_IIM.v Line: 22
-Info (10041): Inferred latch for "mapping_table[2][2]" at ESM_core_IIM.v(22) File: C:/Users/nawaz/OneDrive/Desktop/pdf/winter intern/ESM-module/quarturs/ESM_core_IIM.v Line: 22
-Info (10041): Inferred latch for "mapping_table[2][3]" at ESM_core_IIM.v(22) File: C:/Users/nawaz/OneDrive/Desktop/pdf/winter intern/ESM-module/quarturs/ESM_core_IIM.v Line: 22
-Info (10041): Inferred latch for "mapping_table[1][0]" at ESM_core_IIM.v(22) File: C:/Users/nawaz/OneDrive/Desktop/pdf/winter intern/ESM-module/quarturs/ESM_core_IIM.v Line: 22
-Info (10041): Inferred latch for "mapping_table[1][1]" at ESM_core_IIM.v(22) File: C:/Users/nawaz/OneDrive/Desktop/pdf/winter intern/ESM-module/quarturs/ESM_core_IIM.v Line: 22
-Info (10041): Inferred latch for "mapping_table[1][2]" at ESM_core_IIM.v(22) File: C:/Users/nawaz/OneDrive/Desktop/pdf/winter intern/ESM-module/quarturs/ESM_core_IIM.v Line: 22
-Info (10041): Inferred latch for "mapping_table[1][3]" at ESM_core_IIM.v(22) File: C:/Users/nawaz/OneDrive/Desktop/pdf/winter intern/ESM-module/quarturs/ESM_core_IIM.v Line: 22
-Info (10041): Inferred latch for "mapping_table[0][0]" at ESM_core_IIM.v(22) File: C:/Users/nawaz/OneDrive/Desktop/pdf/winter intern/ESM-module/quarturs/ESM_core_IIM.v Line: 22
-Info (10041): Inferred latch for "mapping_table[0][1]" at ESM_core_IIM.v(22) File: C:/Users/nawaz/OneDrive/Desktop/pdf/winter intern/ESM-module/quarturs/ESM_core_IIM.v Line: 22
-Info (10041): Inferred latch for "mapping_table[0][2]" at ESM_core_IIM.v(22) File: C:/Users/nawaz/OneDrive/Desktop/pdf/winter intern/ESM-module/quarturs/ESM_core_IIM.v Line: 22
-Info (10041): Inferred latch for "mapping_table[0][3]" at ESM_core_IIM.v(22) File: C:/Users/nawaz/OneDrive/Desktop/pdf/winter intern/ESM-module/quarturs/ESM_core_IIM.v Line: 22
-Info (12128): Elaborating entity "PRNG" for hierarchy "ESM_core:core|ESM_core_IIM:IIM_core|PRNG:random_num" File: C:/Users/nawaz/OneDrive/Desktop/pdf/winter intern/ESM-module/quarturs/ESM_core_IIM.v Line: 38
+Info (12128): Elaborating entity "candidate_list" for hierarchy "ESM_core:core|ESM_core_IIM:IIM_core|candidate_list:c_list" File: C:/Users/nawaz/OneDrive/Desktop/pdf/winter intern/ESM-module/quarturs/ESM_core_IIM.v Line: 11
+Info (12128): Elaborating entity "mapping_table" for hierarchy "ESM_core:core|ESM_core_IIM:IIM_core|mapping_table:m_table" File: C:/Users/nawaz/OneDrive/Desktop/pdf/winter intern/ESM-module/quarturs/ESM_core_IIM.v Line: 13
+Warning (10230): Verilog HDL assignment warning at mapping_table.v(23): truncated value with size 32 to match size of target (4) File: C:/Users/nawaz/OneDrive/Desktop/pdf/winter intern/ESM-module/quarturs/mapping_table.v Line: 23
+Warning (10230): Verilog HDL assignment warning at mapping_table.v(24): truncated value with size 32 to match size of target (4) File: C:/Users/nawaz/OneDrive/Desktop/pdf/winter intern/ESM-module/quarturs/mapping_table.v Line: 24
+Warning (10230): Verilog HDL assignment warning at mapping_table.v(40): truncated value with size 32 to match size of target (4) File: C:/Users/nawaz/OneDrive/Desktop/pdf/winter intern/ESM-module/quarturs/mapping_table.v Line: 40
+Info (12128): Elaborating entity "PRNG" for hierarchy "ESM_core:core|ESM_core_IIM:IIM_core|mapping_table:m_table|PRNG:random_num" File: C:/Users/nawaz/OneDrive/Desktop/pdf/winter intern/ESM-module/quarturs/mapping_table.v Line: 37
 Info (278001): Inferred 1 megafunctions from design logic
-    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "ESM_core:core|ESM_core_IIM:IIM_core|Mod0" File: C:/Users/nawaz/OneDrive/Desktop/pdf/winter intern/ESM-module/quarturs/ESM_core_IIM.v Line: 41
-Info (12130): Elaborated megafunction instantiation "ESM_core:core|ESM_core_IIM:IIM_core|lpm_divide:Mod0" File: C:/Users/nawaz/OneDrive/Desktop/pdf/winter intern/ESM-module/quarturs/ESM_core_IIM.v Line: 41
-Info (12133): Instantiated megafunction "ESM_core:core|ESM_core_IIM:IIM_core|lpm_divide:Mod0" with the following parameter: File: C:/Users/nawaz/OneDrive/Desktop/pdf/winter intern/ESM-module/quarturs/ESM_core_IIM.v Line: 41
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "ESM_core:core|ESM_core_IIM:IIM_core|mapping_table:m_table|Mod0" File: C:/Users/nawaz/OneDrive/Desktop/pdf/winter intern/ESM-module/quarturs/mapping_table.v Line: 40
+Info (12130): Elaborated megafunction instantiation "ESM_core:core|ESM_core_IIM:IIM_core|mapping_table:m_table|lpm_divide:Mod0" File: C:/Users/nawaz/OneDrive/Desktop/pdf/winter intern/ESM-module/quarturs/mapping_table.v Line: 40
+Info (12133): Instantiated megafunction "ESM_core:core|ESM_core_IIM:IIM_core|mapping_table:m_table|lpm_divide:Mod0" with the following parameter: File: C:/Users/nawaz/OneDrive/Desktop/pdf/winter intern/ESM-module/quarturs/mapping_table.v Line: 40
     Info (12134): Parameter "LPM_WIDTHN" = "32"
     Info (12134): Parameter "LPM_WIDTHD" = "4"
     Info (12134): Parameter "LPM_NREPRESENTATION" = "UNSIGNED"
@@ -735,147 +647,26 @@ Info (12021): Found 1 design units, including 1 entities, in source file db/add_
     Info (12023): Found entity 1: add_sub_7pc File: C:/Users/nawaz/OneDrive/Desktop/pdf/winter intern/ESM-module/quarturs/db/add_sub_7pc.tdf Line: 23
 Info (12021): Found 1 design units, including 1 entities, in source file db/add_sub_8pc.tdf
     Info (12023): Found entity 1: add_sub_8pc File: C:/Users/nawaz/OneDrive/Desktop/pdf/winter intern/ESM-module/quarturs/db/add_sub_8pc.tdf Line: 23
-Warning (13012): Latch ESM_core:core|ESM_core_IIM:IIM_core|mapping_table[6][2] has unsafe behavior File: C:/Users/nawaz/OneDrive/Desktop/pdf/winter intern/ESM-module/quarturs/ESM_core_IIM.v Line: 22
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal ESM_core:core|ESM_core_IIM:IIM_core|candidate_list[15] File: C:/Users/nawaz/OneDrive/Desktop/pdf/winter intern/ESM-module/quarturs/ESM_core_IIM.v Line: 19
-Warning (13012): Latch ESM_core:core|ESM_core_IIM:IIM_core|mapping_table[5][2] has unsafe behavior File: C:/Users/nawaz/OneDrive/Desktop/pdf/winter intern/ESM-module/quarturs/ESM_core_IIM.v Line: 22
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal ESM_core:core|ESM_core_IIM:IIM_core|candidate_list[15] File: C:/Users/nawaz/OneDrive/Desktop/pdf/winter intern/ESM-module/quarturs/ESM_core_IIM.v Line: 19
-Warning (13012): Latch ESM_core:core|ESM_core_IIM:IIM_core|mapping_table[4][2] has unsafe behavior File: C:/Users/nawaz/OneDrive/Desktop/pdf/winter intern/ESM-module/quarturs/ESM_core_IIM.v Line: 22
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal ESM_core:core|ESM_core_IIM:IIM_core|candidate_list[15] File: C:/Users/nawaz/OneDrive/Desktop/pdf/winter intern/ESM-module/quarturs/ESM_core_IIM.v Line: 19
-Warning (13012): Latch ESM_core:core|ESM_core_IIM:IIM_core|mapping_table[7][2] has unsafe behavior File: C:/Users/nawaz/OneDrive/Desktop/pdf/winter intern/ESM-module/quarturs/ESM_core_IIM.v Line: 22
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal ESM_core:core|ESM_core_IIM:IIM_core|candidate_list[15] File: C:/Users/nawaz/OneDrive/Desktop/pdf/winter intern/ESM-module/quarturs/ESM_core_IIM.v Line: 19
-Warning (13012): Latch ESM_core:core|ESM_core_IIM:IIM_core|mapping_table[9][2] has unsafe behavior File: C:/Users/nawaz/OneDrive/Desktop/pdf/winter intern/ESM-module/quarturs/ESM_core_IIM.v Line: 22
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal ESM_core:core|ESM_core_IIM:IIM_core|candidate_list[15] File: C:/Users/nawaz/OneDrive/Desktop/pdf/winter intern/ESM-module/quarturs/ESM_core_IIM.v Line: 19
-Warning (13012): Latch ESM_core:core|ESM_core_IIM:IIM_core|mapping_table[10][2] has unsafe behavior File: C:/Users/nawaz/OneDrive/Desktop/pdf/winter intern/ESM-module/quarturs/ESM_core_IIM.v Line: 22
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal ESM_core:core|ESM_core_IIM:IIM_core|candidate_list[15] File: C:/Users/nawaz/OneDrive/Desktop/pdf/winter intern/ESM-module/quarturs/ESM_core_IIM.v Line: 19
-Warning (13012): Latch ESM_core:core|ESM_core_IIM:IIM_core|mapping_table[8][2] has unsafe behavior File: C:/Users/nawaz/OneDrive/Desktop/pdf/winter intern/ESM-module/quarturs/ESM_core_IIM.v Line: 22
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal ESM_core:core|ESM_core_IIM:IIM_core|candidate_list[15] File: C:/Users/nawaz/OneDrive/Desktop/pdf/winter intern/ESM-module/quarturs/ESM_core_IIM.v Line: 19
-Warning (13012): Latch ESM_core:core|ESM_core_IIM:IIM_core|mapping_table[11][2] has unsafe behavior File: C:/Users/nawaz/OneDrive/Desktop/pdf/winter intern/ESM-module/quarturs/ESM_core_IIM.v Line: 22
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal ESM_core:core|ESM_core_IIM:IIM_core|candidate_list[15] File: C:/Users/nawaz/OneDrive/Desktop/pdf/winter intern/ESM-module/quarturs/ESM_core_IIM.v Line: 19
-Warning (13012): Latch ESM_core:core|ESM_core_IIM:IIM_core|mapping_table[1][2] has unsafe behavior File: C:/Users/nawaz/OneDrive/Desktop/pdf/winter intern/ESM-module/quarturs/ESM_core_IIM.v Line: 22
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal ESM_core:core|ESM_core_IIM:IIM_core|candidate_list[15] File: C:/Users/nawaz/OneDrive/Desktop/pdf/winter intern/ESM-module/quarturs/ESM_core_IIM.v Line: 19
-Warning (13012): Latch ESM_core:core|ESM_core_IIM:IIM_core|mapping_table[2][2] has unsafe behavior File: C:/Users/nawaz/OneDrive/Desktop/pdf/winter intern/ESM-module/quarturs/ESM_core_IIM.v Line: 22
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal ESM_core:core|ESM_core_IIM:IIM_core|candidate_list[15] File: C:/Users/nawaz/OneDrive/Desktop/pdf/winter intern/ESM-module/quarturs/ESM_core_IIM.v Line: 19
-Warning (13012): Latch ESM_core:core|ESM_core_IIM:IIM_core|mapping_table[0][2] has unsafe behavior File: C:/Users/nawaz/OneDrive/Desktop/pdf/winter intern/ESM-module/quarturs/ESM_core_IIM.v Line: 22
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal ESM_core:core|ESM_core_IIM:IIM_core|candidate_list[15] File: C:/Users/nawaz/OneDrive/Desktop/pdf/winter intern/ESM-module/quarturs/ESM_core_IIM.v Line: 19
-Warning (13012): Latch ESM_core:core|ESM_core_IIM:IIM_core|mapping_table[3][2] has unsafe behavior File: C:/Users/nawaz/OneDrive/Desktop/pdf/winter intern/ESM-module/quarturs/ESM_core_IIM.v Line: 22
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal ESM_core:core|ESM_core_IIM:IIM_core|candidate_list[15] File: C:/Users/nawaz/OneDrive/Desktop/pdf/winter intern/ESM-module/quarturs/ESM_core_IIM.v Line: 19
-Warning (13012): Latch ESM_core:core|ESM_core_IIM:IIM_core|mapping_table[14][2] has unsafe behavior File: C:/Users/nawaz/OneDrive/Desktop/pdf/winter intern/ESM-module/quarturs/ESM_core_IIM.v Line: 22
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal ESM_core:core|ESM_core_IIM:IIM_core|candidate_list[15] File: C:/Users/nawaz/OneDrive/Desktop/pdf/winter intern/ESM-module/quarturs/ESM_core_IIM.v Line: 19
-Warning (13012): Latch ESM_core:core|ESM_core_IIM:IIM_core|mapping_table[13][2] has unsafe behavior File: C:/Users/nawaz/OneDrive/Desktop/pdf/winter intern/ESM-module/quarturs/ESM_core_IIM.v Line: 22
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal ESM_core:core|ESM_core_IIM:IIM_core|candidate_list[15] File: C:/Users/nawaz/OneDrive/Desktop/pdf/winter intern/ESM-module/quarturs/ESM_core_IIM.v Line: 19
-Warning (13012): Latch ESM_core:core|ESM_core_IIM:IIM_core|mapping_table[12][2] has unsafe behavior File: C:/Users/nawaz/OneDrive/Desktop/pdf/winter intern/ESM-module/quarturs/ESM_core_IIM.v Line: 22
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal ESM_core:core|ESM_core_IIM:IIM_core|candidate_list[15] File: C:/Users/nawaz/OneDrive/Desktop/pdf/winter intern/ESM-module/quarturs/ESM_core_IIM.v Line: 19
-Warning (13012): Latch ESM_core:core|ESM_core_IIM:IIM_core|mapping_table[15][2] has unsafe behavior File: C:/Users/nawaz/OneDrive/Desktop/pdf/winter intern/ESM-module/quarturs/ESM_core_IIM.v Line: 22
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal ESM_core:core|ESM_core_IIM:IIM_core|candidate_list[15] File: C:/Users/nawaz/OneDrive/Desktop/pdf/winter intern/ESM-module/quarturs/ESM_core_IIM.v Line: 19
-Warning (13012): Latch ESM_core:core|ESM_core_IIM:IIM_core|mapping_table[6][1] has unsafe behavior File: C:/Users/nawaz/OneDrive/Desktop/pdf/winter intern/ESM-module/quarturs/ESM_core_IIM.v Line: 22
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal ESM_core:core|ESM_core_IIM:IIM_core|candidate_list[15] File: C:/Users/nawaz/OneDrive/Desktop/pdf/winter intern/ESM-module/quarturs/ESM_core_IIM.v Line: 19
-Warning (13012): Latch ESM_core:core|ESM_core_IIM:IIM_core|mapping_table[10][1] has unsafe behavior File: C:/Users/nawaz/OneDrive/Desktop/pdf/winter intern/ESM-module/quarturs/ESM_core_IIM.v Line: 22
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal ESM_core:core|ESM_core_IIM:IIM_core|candidate_list[15] File: C:/Users/nawaz/OneDrive/Desktop/pdf/winter intern/ESM-module/quarturs/ESM_core_IIM.v Line: 19
-Warning (13012): Latch ESM_core:core|ESM_core_IIM:IIM_core|mapping_table[2][1] has unsafe behavior File: C:/Users/nawaz/OneDrive/Desktop/pdf/winter intern/ESM-module/quarturs/ESM_core_IIM.v Line: 22
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal ESM_core:core|ESM_core_IIM:IIM_core|candidate_list[15] File: C:/Users/nawaz/OneDrive/Desktop/pdf/winter intern/ESM-module/quarturs/ESM_core_IIM.v Line: 19
-Warning (13012): Latch ESM_core:core|ESM_core_IIM:IIM_core|mapping_table[14][1] has unsafe behavior File: C:/Users/nawaz/OneDrive/Desktop/pdf/winter intern/ESM-module/quarturs/ESM_core_IIM.v Line: 22
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal ESM_core:core|ESM_core_IIM:IIM_core|candidate_list[15] File: C:/Users/nawaz/OneDrive/Desktop/pdf/winter intern/ESM-module/quarturs/ESM_core_IIM.v Line: 19
-Warning (13012): Latch ESM_core:core|ESM_core_IIM:IIM_core|mapping_table[9][1] has unsafe behavior File: C:/Users/nawaz/OneDrive/Desktop/pdf/winter intern/ESM-module/quarturs/ESM_core_IIM.v Line: 22
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal ESM_core:core|ESM_core_IIM:IIM_core|candidate_list[15] File: C:/Users/nawaz/OneDrive/Desktop/pdf/winter intern/ESM-module/quarturs/ESM_core_IIM.v Line: 19
-Warning (13012): Latch ESM_core:core|ESM_core_IIM:IIM_core|mapping_table[5][1] has unsafe behavior File: C:/Users/nawaz/OneDrive/Desktop/pdf/winter intern/ESM-module/quarturs/ESM_core_IIM.v Line: 22
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal ESM_core:core|ESM_core_IIM:IIM_core|candidate_list[15] File: C:/Users/nawaz/OneDrive/Desktop/pdf/winter intern/ESM-module/quarturs/ESM_core_IIM.v Line: 19
-Warning (13012): Latch ESM_core:core|ESM_core_IIM:IIM_core|mapping_table[1][1] has unsafe behavior File: C:/Users/nawaz/OneDrive/Desktop/pdf/winter intern/ESM-module/quarturs/ESM_core_IIM.v Line: 22
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal ESM_core:core|ESM_core_IIM:IIM_core|candidate_list[15] File: C:/Users/nawaz/OneDrive/Desktop/pdf/winter intern/ESM-module/quarturs/ESM_core_IIM.v Line: 19
-Warning (13012): Latch ESM_core:core|ESM_core_IIM:IIM_core|mapping_table[13][1] has unsafe behavior File: C:/Users/nawaz/OneDrive/Desktop/pdf/winter intern/ESM-module/quarturs/ESM_core_IIM.v Line: 22
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal ESM_core:core|ESM_core_IIM:IIM_core|candidate_list[15] File: C:/Users/nawaz/OneDrive/Desktop/pdf/winter intern/ESM-module/quarturs/ESM_core_IIM.v Line: 19
-Warning (13012): Latch ESM_core:core|ESM_core_IIM:IIM_core|mapping_table[4][1] has unsafe behavior File: C:/Users/nawaz/OneDrive/Desktop/pdf/winter intern/ESM-module/quarturs/ESM_core_IIM.v Line: 22
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal ESM_core:core|ESM_core_IIM:IIM_core|candidate_list[15] File: C:/Users/nawaz/OneDrive/Desktop/pdf/winter intern/ESM-module/quarturs/ESM_core_IIM.v Line: 19
-Warning (13012): Latch ESM_core:core|ESM_core_IIM:IIM_core|mapping_table[8][1] has unsafe behavior File: C:/Users/nawaz/OneDrive/Desktop/pdf/winter intern/ESM-module/quarturs/ESM_core_IIM.v Line: 22
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal ESM_core:core|ESM_core_IIM:IIM_core|candidate_list[15] File: C:/Users/nawaz/OneDrive/Desktop/pdf/winter intern/ESM-module/quarturs/ESM_core_IIM.v Line: 19
-Warning (13012): Latch ESM_core:core|ESM_core_IIM:IIM_core|mapping_table[0][1] has unsafe behavior File: C:/Users/nawaz/OneDrive/Desktop/pdf/winter intern/ESM-module/quarturs/ESM_core_IIM.v Line: 22
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal ESM_core:core|ESM_core_IIM:IIM_core|candidate_list[15] File: C:/Users/nawaz/OneDrive/Desktop/pdf/winter intern/ESM-module/quarturs/ESM_core_IIM.v Line: 19
-Warning (13012): Latch ESM_core:core|ESM_core_IIM:IIM_core|mapping_table[12][1] has unsafe behavior File: C:/Users/nawaz/OneDrive/Desktop/pdf/winter intern/ESM-module/quarturs/ESM_core_IIM.v Line: 22
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal ESM_core:core|ESM_core_IIM:IIM_core|candidate_list[15] File: C:/Users/nawaz/OneDrive/Desktop/pdf/winter intern/ESM-module/quarturs/ESM_core_IIM.v Line: 19
-Warning (13012): Latch ESM_core:core|ESM_core_IIM:IIM_core|mapping_table[11][1] has unsafe behavior File: C:/Users/nawaz/OneDrive/Desktop/pdf/winter intern/ESM-module/quarturs/ESM_core_IIM.v Line: 22
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal ESM_core:core|ESM_core_IIM:IIM_core|candidate_list[15] File: C:/Users/nawaz/OneDrive/Desktop/pdf/winter intern/ESM-module/quarturs/ESM_core_IIM.v Line: 19
-Warning (13012): Latch ESM_core:core|ESM_core_IIM:IIM_core|mapping_table[7][1] has unsafe behavior File: C:/Users/nawaz/OneDrive/Desktop/pdf/winter intern/ESM-module/quarturs/ESM_core_IIM.v Line: 22
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal ESM_core:core|ESM_core_IIM:IIM_core|candidate_list[15] File: C:/Users/nawaz/OneDrive/Desktop/pdf/winter intern/ESM-module/quarturs/ESM_core_IIM.v Line: 19
-Warning (13012): Latch ESM_core:core|ESM_core_IIM:IIM_core|mapping_table[3][1] has unsafe behavior File: C:/Users/nawaz/OneDrive/Desktop/pdf/winter intern/ESM-module/quarturs/ESM_core_IIM.v Line: 22
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal ESM_core:core|ESM_core_IIM:IIM_core|candidate_list[15] File: C:/Users/nawaz/OneDrive/Desktop/pdf/winter intern/ESM-module/quarturs/ESM_core_IIM.v Line: 19
-Warning (13012): Latch ESM_core:core|ESM_core_IIM:IIM_core|mapping_table[15][1] has unsafe behavior File: C:/Users/nawaz/OneDrive/Desktop/pdf/winter intern/ESM-module/quarturs/ESM_core_IIM.v Line: 22
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal ESM_core:core|ESM_core_IIM:IIM_core|candidate_list[15] File: C:/Users/nawaz/OneDrive/Desktop/pdf/winter intern/ESM-module/quarturs/ESM_core_IIM.v Line: 19
-Warning (13012): Latch ESM_core:core|ESM_core_IIM:IIM_core|mapping_table[10][0] has unsafe behavior File: C:/Users/nawaz/OneDrive/Desktop/pdf/winter intern/ESM-module/quarturs/ESM_core_IIM.v Line: 22
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal ESM_core:core|ESM_core_IIM:IIM_core|candidate_list[15] File: C:/Users/nawaz/OneDrive/Desktop/pdf/winter intern/ESM-module/quarturs/ESM_core_IIM.v Line: 19
-Warning (13012): Latch ESM_core:core|ESM_core_IIM:IIM_core|mapping_table[9][0] has unsafe behavior File: C:/Users/nawaz/OneDrive/Desktop/pdf/winter intern/ESM-module/quarturs/ESM_core_IIM.v Line: 22
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal ESM_core:core|ESM_core_IIM:IIM_core|candidate_list[15] File: C:/Users/nawaz/OneDrive/Desktop/pdf/winter intern/ESM-module/quarturs/ESM_core_IIM.v Line: 19
-Warning (13012): Latch ESM_core:core|ESM_core_IIM:IIM_core|mapping_table[8][0] has unsafe behavior File: C:/Users/nawaz/OneDrive/Desktop/pdf/winter intern/ESM-module/quarturs/ESM_core_IIM.v Line: 22
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal ESM_core:core|ESM_core_IIM:IIM_core|candidate_list[15] File: C:/Users/nawaz/OneDrive/Desktop/pdf/winter intern/ESM-module/quarturs/ESM_core_IIM.v Line: 19
-Warning (13012): Latch ESM_core:core|ESM_core_IIM:IIM_core|mapping_table[11][0] has unsafe behavior File: C:/Users/nawaz/OneDrive/Desktop/pdf/winter intern/ESM-module/quarturs/ESM_core_IIM.v Line: 22
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal ESM_core:core|ESM_core_IIM:IIM_core|candidate_list[15] File: C:/Users/nawaz/OneDrive/Desktop/pdf/winter intern/ESM-module/quarturs/ESM_core_IIM.v Line: 19
-Warning (13012): Latch ESM_core:core|ESM_core_IIM:IIM_core|mapping_table[5][0] has unsafe behavior File: C:/Users/nawaz/OneDrive/Desktop/pdf/winter intern/ESM-module/quarturs/ESM_core_IIM.v Line: 22
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal ESM_core:core|ESM_core_IIM:IIM_core|candidate_list[15] File: C:/Users/nawaz/OneDrive/Desktop/pdf/winter intern/ESM-module/quarturs/ESM_core_IIM.v Line: 19
-Warning (13012): Latch ESM_core:core|ESM_core_IIM:IIM_core|mapping_table[6][0] has unsafe behavior File: C:/Users/nawaz/OneDrive/Desktop/pdf/winter intern/ESM-module/quarturs/ESM_core_IIM.v Line: 22
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal ESM_core:core|ESM_core_IIM:IIM_core|candidate_list[15] File: C:/Users/nawaz/OneDrive/Desktop/pdf/winter intern/ESM-module/quarturs/ESM_core_IIM.v Line: 19
-Warning (13012): Latch ESM_core:core|ESM_core_IIM:IIM_core|mapping_table[4][0] has unsafe behavior File: C:/Users/nawaz/OneDrive/Desktop/pdf/winter intern/ESM-module/quarturs/ESM_core_IIM.v Line: 22
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal ESM_core:core|ESM_core_IIM:IIM_core|candidate_list[15] File: C:/Users/nawaz/OneDrive/Desktop/pdf/winter intern/ESM-module/quarturs/ESM_core_IIM.v Line: 19
-Warning (13012): Latch ESM_core:core|ESM_core_IIM:IIM_core|mapping_table[7][0] has unsafe behavior File: C:/Users/nawaz/OneDrive/Desktop/pdf/winter intern/ESM-module/quarturs/ESM_core_IIM.v Line: 22
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal ESM_core:core|ESM_core_IIM:IIM_core|candidate_list[15] File: C:/Users/nawaz/OneDrive/Desktop/pdf/winter intern/ESM-module/quarturs/ESM_core_IIM.v Line: 19
-Warning (13012): Latch ESM_core:core|ESM_core_IIM:IIM_core|mapping_table[2][0] has unsafe behavior File: C:/Users/nawaz/OneDrive/Desktop/pdf/winter intern/ESM-module/quarturs/ESM_core_IIM.v Line: 22
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal ESM_core:core|ESM_core_IIM:IIM_core|candidate_list[15] File: C:/Users/nawaz/OneDrive/Desktop/pdf/winter intern/ESM-module/quarturs/ESM_core_IIM.v Line: 19
-Warning (13012): Latch ESM_core:core|ESM_core_IIM:IIM_core|mapping_table[1][0] has unsafe behavior File: C:/Users/nawaz/OneDrive/Desktop/pdf/winter intern/ESM-module/quarturs/ESM_core_IIM.v Line: 22
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal ESM_core:core|ESM_core_IIM:IIM_core|candidate_list[15] File: C:/Users/nawaz/OneDrive/Desktop/pdf/winter intern/ESM-module/quarturs/ESM_core_IIM.v Line: 19
-Warning (13012): Latch ESM_core:core|ESM_core_IIM:IIM_core|mapping_table[0][0] has unsafe behavior File: C:/Users/nawaz/OneDrive/Desktop/pdf/winter intern/ESM-module/quarturs/ESM_core_IIM.v Line: 22
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal ESM_core:core|ESM_core_IIM:IIM_core|candidate_list[15] File: C:/Users/nawaz/OneDrive/Desktop/pdf/winter intern/ESM-module/quarturs/ESM_core_IIM.v Line: 19
-Warning (13012): Latch ESM_core:core|ESM_core_IIM:IIM_core|mapping_table[3][0] has unsafe behavior File: C:/Users/nawaz/OneDrive/Desktop/pdf/winter intern/ESM-module/quarturs/ESM_core_IIM.v Line: 22
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal ESM_core:core|ESM_core_IIM:IIM_core|candidate_list[15] File: C:/Users/nawaz/OneDrive/Desktop/pdf/winter intern/ESM-module/quarturs/ESM_core_IIM.v Line: 19
-Warning (13012): Latch ESM_core:core|ESM_core_IIM:IIM_core|mapping_table[13][0] has unsafe behavior File: C:/Users/nawaz/OneDrive/Desktop/pdf/winter intern/ESM-module/quarturs/ESM_core_IIM.v Line: 22
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal ESM_core:core|ESM_core_IIM:IIM_core|candidate_list[15] File: C:/Users/nawaz/OneDrive/Desktop/pdf/winter intern/ESM-module/quarturs/ESM_core_IIM.v Line: 19
-Warning (13012): Latch ESM_core:core|ESM_core_IIM:IIM_core|mapping_table[14][0] has unsafe behavior File: C:/Users/nawaz/OneDrive/Desktop/pdf/winter intern/ESM-module/quarturs/ESM_core_IIM.v Line: 22
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal ESM_core:core|ESM_core_IIM:IIM_core|candidate_list[15] File: C:/Users/nawaz/OneDrive/Desktop/pdf/winter intern/ESM-module/quarturs/ESM_core_IIM.v Line: 19
-Warning (13012): Latch ESM_core:core|ESM_core_IIM:IIM_core|mapping_table[12][0] has unsafe behavior File: C:/Users/nawaz/OneDrive/Desktop/pdf/winter intern/ESM-module/quarturs/ESM_core_IIM.v Line: 22
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal ESM_core:core|ESM_core_IIM:IIM_core|candidate_list[15] File: C:/Users/nawaz/OneDrive/Desktop/pdf/winter intern/ESM-module/quarturs/ESM_core_IIM.v Line: 19
-Warning (13012): Latch ESM_core:core|ESM_core_IIM:IIM_core|mapping_table[15][0] has unsafe behavior File: C:/Users/nawaz/OneDrive/Desktop/pdf/winter intern/ESM-module/quarturs/ESM_core_IIM.v Line: 22
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal ESM_core:core|ESM_core_IIM:IIM_core|candidate_list[15] File: C:/Users/nawaz/OneDrive/Desktop/pdf/winter intern/ESM-module/quarturs/ESM_core_IIM.v Line: 19
-Warning (13012): Latch ESM_core:core|ESM_core_IIM:IIM_core|mapping_table[5][3] has unsafe behavior File: C:/Users/nawaz/OneDrive/Desktop/pdf/winter intern/ESM-module/quarturs/ESM_core_IIM.v Line: 22
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal ESM_core:core|ESM_core_IIM:IIM_core|count[0] File: C:/Users/nawaz/OneDrive/Desktop/pdf/winter intern/ESM-module/quarturs/ESM_core_IIM.v Line: 22
-Warning (13012): Latch ESM_core:core|ESM_core_IIM:IIM_core|mapping_table[9][3] has unsafe behavior File: C:/Users/nawaz/OneDrive/Desktop/pdf/winter intern/ESM-module/quarturs/ESM_core_IIM.v Line: 22
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal ESM_core:core|ESM_core_IIM:IIM_core|count[0] File: C:/Users/nawaz/OneDrive/Desktop/pdf/winter intern/ESM-module/quarturs/ESM_core_IIM.v Line: 22
-Warning (13012): Latch ESM_core:core|ESM_core_IIM:IIM_core|mapping_table[1][3] has unsafe behavior File: C:/Users/nawaz/OneDrive/Desktop/pdf/winter intern/ESM-module/quarturs/ESM_core_IIM.v Line: 22
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal ESM_core:core|ESM_core_IIM:IIM_core|count[0] File: C:/Users/nawaz/OneDrive/Desktop/pdf/winter intern/ESM-module/quarturs/ESM_core_IIM.v Line: 22
-Warning (13012): Latch ESM_core:core|ESM_core_IIM:IIM_core|mapping_table[13][3] has unsafe behavior File: C:/Users/nawaz/OneDrive/Desktop/pdf/winter intern/ESM-module/quarturs/ESM_core_IIM.v Line: 22
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal ESM_core:core|ESM_core_IIM:IIM_core|count[0] File: C:/Users/nawaz/OneDrive/Desktop/pdf/winter intern/ESM-module/quarturs/ESM_core_IIM.v Line: 22
-Warning (13012): Latch ESM_core:core|ESM_core_IIM:IIM_core|mapping_table[10][3] has unsafe behavior File: C:/Users/nawaz/OneDrive/Desktop/pdf/winter intern/ESM-module/quarturs/ESM_core_IIM.v Line: 22
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal ESM_core:core|ESM_core_IIM:IIM_core|count[0] File: C:/Users/nawaz/OneDrive/Desktop/pdf/winter intern/ESM-module/quarturs/ESM_core_IIM.v Line: 22
-Warning (13012): Latch ESM_core:core|ESM_core_IIM:IIM_core|mapping_table[6][3] has unsafe behavior File: C:/Users/nawaz/OneDrive/Desktop/pdf/winter intern/ESM-module/quarturs/ESM_core_IIM.v Line: 22
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal ESM_core:core|ESM_core_IIM:IIM_core|count[0] File: C:/Users/nawaz/OneDrive/Desktop/pdf/winter intern/ESM-module/quarturs/ESM_core_IIM.v Line: 22
-Warning (13012): Latch ESM_core:core|ESM_core_IIM:IIM_core|mapping_table[2][3] has unsafe behavior File: C:/Users/nawaz/OneDrive/Desktop/pdf/winter intern/ESM-module/quarturs/ESM_core_IIM.v Line: 22
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal ESM_core:core|ESM_core_IIM:IIM_core|count[0] File: C:/Users/nawaz/OneDrive/Desktop/pdf/winter intern/ESM-module/quarturs/ESM_core_IIM.v Line: 22
-Warning (13012): Latch ESM_core:core|ESM_core_IIM:IIM_core|mapping_table[14][3] has unsafe behavior File: C:/Users/nawaz/OneDrive/Desktop/pdf/winter intern/ESM-module/quarturs/ESM_core_IIM.v Line: 22
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal ESM_core:core|ESM_core_IIM:IIM_core|count[0] File: C:/Users/nawaz/OneDrive/Desktop/pdf/winter intern/ESM-module/quarturs/ESM_core_IIM.v Line: 22
-Warning (13012): Latch ESM_core:core|ESM_core_IIM:IIM_core|mapping_table[8][3] has unsafe behavior File: C:/Users/nawaz/OneDrive/Desktop/pdf/winter intern/ESM-module/quarturs/ESM_core_IIM.v Line: 22
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal ESM_core:core|ESM_core_IIM:IIM_core|count[0] File: C:/Users/nawaz/OneDrive/Desktop/pdf/winter intern/ESM-module/quarturs/ESM_core_IIM.v Line: 22
-Warning (13012): Latch ESM_core:core|ESM_core_IIM:IIM_core|mapping_table[4][3] has unsafe behavior File: C:/Users/nawaz/OneDrive/Desktop/pdf/winter intern/ESM-module/quarturs/ESM_core_IIM.v Line: 22
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal ESM_core:core|ESM_core_IIM:IIM_core|count[0] File: C:/Users/nawaz/OneDrive/Desktop/pdf/winter intern/ESM-module/quarturs/ESM_core_IIM.v Line: 22
-Warning (13012): Latch ESM_core:core|ESM_core_IIM:IIM_core|mapping_table[0][3] has unsafe behavior File: C:/Users/nawaz/OneDrive/Desktop/pdf/winter intern/ESM-module/quarturs/ESM_core_IIM.v Line: 22
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal ESM_core:core|ESM_core_IIM:IIM_core|count[0] File: C:/Users/nawaz/OneDrive/Desktop/pdf/winter intern/ESM-module/quarturs/ESM_core_IIM.v Line: 22
-Warning (13012): Latch ESM_core:core|ESM_core_IIM:IIM_core|mapping_table[12][3] has unsafe behavior File: C:/Users/nawaz/OneDrive/Desktop/pdf/winter intern/ESM-module/quarturs/ESM_core_IIM.v Line: 22
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal ESM_core:core|ESM_core_IIM:IIM_core|count[0] File: C:/Users/nawaz/OneDrive/Desktop/pdf/winter intern/ESM-module/quarturs/ESM_core_IIM.v Line: 22
-Warning (13012): Latch ESM_core:core|ESM_core_IIM:IIM_core|mapping_table[7][3] has unsafe behavior File: C:/Users/nawaz/OneDrive/Desktop/pdf/winter intern/ESM-module/quarturs/ESM_core_IIM.v Line: 22
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal ESM_core:core|ESM_core_IIM:IIM_core|count[0] File: C:/Users/nawaz/OneDrive/Desktop/pdf/winter intern/ESM-module/quarturs/ESM_core_IIM.v Line: 22
-Warning (13012): Latch ESM_core:core|ESM_core_IIM:IIM_core|mapping_table[11][3] has unsafe behavior File: C:/Users/nawaz/OneDrive/Desktop/pdf/winter intern/ESM-module/quarturs/ESM_core_IIM.v Line: 22
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal ESM_core:core|ESM_core_IIM:IIM_core|count[0] File: C:/Users/nawaz/OneDrive/Desktop/pdf/winter intern/ESM-module/quarturs/ESM_core_IIM.v Line: 22
-Warning (13012): Latch ESM_core:core|ESM_core_IIM:IIM_core|mapping_table[3][3] has unsafe behavior File: C:/Users/nawaz/OneDrive/Desktop/pdf/winter intern/ESM-module/quarturs/ESM_core_IIM.v Line: 22
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal ESM_core:core|ESM_core_IIM:IIM_core|count[0] File: C:/Users/nawaz/OneDrive/Desktop/pdf/winter intern/ESM-module/quarturs/ESM_core_IIM.v Line: 22
-Warning (13012): Latch ESM_core:core|ESM_core_IIM:IIM_core|mapping_table[15][3] has unsafe behavior File: C:/Users/nawaz/OneDrive/Desktop/pdf/winter intern/ESM-module/quarturs/ESM_core_IIM.v Line: 22
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal ESM_core:core|ESM_core_IIM:IIM_core|count[0] File: C:/Users/nawaz/OneDrive/Desktop/pdf/winter intern/ESM-module/quarturs/ESM_core_IIM.v Line: 22
 Info (13000): Registers with preset signals will power-up high File: C:/Users/nawaz/OneDrive/Desktop/pdf/winter intern/ESM-module/quarturs/PRNG.v Line: 12
 Info (13003): DEV_CLRn pin will set, and not reset, register with preset signal due to NOT Gate Push-Back
 Info (286030): Timing-Driven Synthesis is running
+Info (144001): Generated suppressed messages file C:/Users/nawaz/OneDrive/Desktop/pdf/winter intern/ESM-module/quarturs/output_files/ESM.map.smsg
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 4442 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 4315 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 36 input pins
     Info (21059): Implemented 32 output pins
-    Info (21061): Implemented 4374 logic cells
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 142 warnings
-    Info: Peak virtual memory: 4790 megabytes
-    Info: Processing ended: Sun Dec 22 14:31:43 2024
-    Info: Elapsed time: 00:00:14
-    Info: Total CPU time (on all processors): 00:00:14
+    Info (21061): Implemented 4247 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 11 warnings
+    Info: Peak virtual memory: 4788 megabytes
+    Info: Processing ended: Sun Dec 22 21:46:35 2024
+    Info: Elapsed time: 00:00:12
+    Info: Total CPU time (on all processors): 00:00:12
+
+
++------------------------------------------+
+; Analysis & Synthesis Suppressed Messages ;
++------------------------------------------+
+The suppressed messages can be found in C:/Users/nawaz/OneDrive/Desktop/pdf/winter intern/ESM-module/quarturs/output_files/ESM.map.smsg.
 
 
