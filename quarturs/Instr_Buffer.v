@@ -18,7 +18,8 @@ module Instr_Buffer #(
             buffer[i] = 0;
     end
 
-    always @(posedge clk, posedge rst ) begin
+    always @(posedge clk, posedge rst) begin
+		  i= 0; // to avoid in inferred latch
         if(rst)
             for(i=0; i<bs; i=i+1)
                 buffer[i] <= 0;

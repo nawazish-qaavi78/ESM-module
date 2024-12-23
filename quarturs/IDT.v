@@ -14,6 +14,7 @@ module IDT #(
     reg [bs-1: 0] IDT_table [bs-1:0]; // imp note idt is not like irt, it has current instruction in row and dependencies in column
 
     always @(posedge clk, posedge rst) begin
+	  j=0;
      if(rst) begin
             for(j = 0; j<bs; j=j+1) begin
                 IDT_table[j] = {bs{1'b1}};

@@ -18,7 +18,7 @@ module IRT #(
     reg [0:bs-1] IRT_RD [0:regnum-1];
 
     always @(posedge clk, posedge rst) begin
-        
+        i=0;
         if(rst) begin
             // resetting everything to 1, results in assuming everything is dependent
             for(i=0; i<bs; i=i+1) begin

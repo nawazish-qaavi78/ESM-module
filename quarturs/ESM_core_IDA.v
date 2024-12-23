@@ -12,8 +12,8 @@ module ESM_core_IDA #(
     localparam bs_bits = $clog2(bs);
 
     wire [reg_addr_bits-1:0] rs1 =  Instr_in[19:15];
-    wire [reg_addr_bits-1:0] rs2 =  ALUSrc ? Instr_in[24:20] : 0;
-    wire [reg_addr_bits-1:0] rd  = RegWrite ? Instr_in[11:7] : 0;
+    wire [reg_addr_bits-1:0] rs2 =  ALUSrc ? Instr_in[24:20] : {reg_addr_bits{1'b0}};
+    wire [reg_addr_bits-1:0] rd  = RegWrite ? Instr_in[11:7] : {reg_addr_bits{1'b0}};
 
     wire [bs-1:0] current_idt;
     IRT #(regnum, bs) irt (rs1, rs2, rd, buffer_index, clk, rst, current_idt);

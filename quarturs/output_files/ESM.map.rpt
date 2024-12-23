@@ -1,5 +1,5 @@
 Analysis & Synthesis report for ESM
-Sun Dec 22 21:46:35 2024
+Mon Dec 23 02:00:14 2024
 Quartus Prime Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
 
 
@@ -57,7 +57,7 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +------------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Sun Dec 22 21:46:35 2024       ;
+; Analysis & Synthesis Status        ; Successful - Mon Dec 23 02:00:14 2024       ;
 ; Quartus Prime Version              ; 20.1.1 Build 720 11/11/2020 SJ Lite Edition ;
 ; Revision Name                      ; ESM                                         ;
 ; Top-level Entity Name              ; ESM                                         ;
@@ -575,7 +575,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 +----------------+--------------+
 ; Partition Name ; Elapsed Time ;
 +----------------+--------------+
-; Top            ; 00:00:04     ;
+; Top            ; 00:00:06     ;
 +----------------+--------------+
 
 
@@ -585,7 +585,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
-    Info: Processing started: Sun Dec 22 21:46:23 2024
+    Info: Processing started: Mon Dec 23 01:59:58 2024
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off ESM -c ESM
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
@@ -611,17 +611,12 @@ Info (12021): Found 1 design units, including 1 entities, in source file mapping
     Info (12023): Found entity 1: mapping_table File: C:/Users/nawaz/OneDrive/Desktop/pdf/winter intern/ESM-module/quarturs/mapping_table.v Line: 1
 Info (12127): Elaborating entity "ESM" for the top level hierarchy
 Info (12128): Elaborating entity "Instr_Buffer" for hierarchy "Instr_Buffer:buffer" File: C:/Users/nawaz/OneDrive/Desktop/pdf/winter intern/ESM-module/quarturs/ESM.v Line: 14
-Warning (10240): Verilog HDL Always Construct warning at Instr_Buffer.v(21): inferring latch(es) for variable "i", which holds its previous value in one or more paths through the always construct File: C:/Users/nawaz/OneDrive/Desktop/pdf/winter intern/ESM-module/quarturs/Instr_Buffer.v Line: 21
 Info (12128): Elaborating entity "ESM_core" for hierarchy "ESM_core:core" File: C:/Users/nawaz/OneDrive/Desktop/pdf/winter intern/ESM-module/quarturs/ESM.v Line: 16
 Info (12128): Elaborating entity "ESM_core_IDA" for hierarchy "ESM_core:core|ESM_core_IDA:IDA_core" File: C:/Users/nawaz/OneDrive/Desktop/pdf/winter intern/ESM-module/quarturs/ESM_core.v Line: 14
-Warning (10230): Verilog HDL assignment warning at ESM_core_IDA.v(15): truncated value with size 32 to match size of target (5) File: C:/Users/nawaz/OneDrive/Desktop/pdf/winter intern/ESM-module/quarturs/ESM_core_IDA.v Line: 15
-Warning (10230): Verilog HDL assignment warning at ESM_core_IDA.v(16): truncated value with size 32 to match size of target (5) File: C:/Users/nawaz/OneDrive/Desktop/pdf/winter intern/ESM-module/quarturs/ESM_core_IDA.v Line: 16
 Info (12128): Elaborating entity "IRT" for hierarchy "ESM_core:core|ESM_core_IDA:IDA_core|IRT:irt" File: C:/Users/nawaz/OneDrive/Desktop/pdf/winter intern/ESM-module/quarturs/ESM_core_IDA.v Line: 19
-Warning (10240): Verilog HDL Always Construct warning at IRT.v(20): inferring latch(es) for variable "i", which holds its previous value in one or more paths through the always construct File: C:/Users/nawaz/OneDrive/Desktop/pdf/winter intern/ESM-module/quarturs/IRT.v Line: 20
 Warning (10230): Verilog HDL assignment warning at IRT.v(47): truncated value with size 32 to match size of target (16) File: C:/Users/nawaz/OneDrive/Desktop/pdf/winter intern/ESM-module/quarturs/IRT.v Line: 47
 Info (12128): Elaborating entity "IDT" for hierarchy "ESM_core:core|ESM_core_IDA:IDA_core|IDT:idt" File: C:/Users/nawaz/OneDrive/Desktop/pdf/winter intern/ESM-module/quarturs/ESM_core_IDA.v Line: 21
-Warning (10240): Verilog HDL Always Construct warning at IDT.v(16): inferring latch(es) for variable "j", which holds its previous value in one or more paths through the always construct File: C:/Users/nawaz/OneDrive/Desktop/pdf/winter intern/ESM-module/quarturs/IDT.v Line: 16
-Warning (10230): Verilog HDL assignment warning at IDT.v(28): truncated value with size 32 to match size of target (4) File: C:/Users/nawaz/OneDrive/Desktop/pdf/winter intern/ESM-module/quarturs/IDT.v Line: 28
+Warning (10230): Verilog HDL assignment warning at IDT.v(29): truncated value with size 32 to match size of target (4) File: C:/Users/nawaz/OneDrive/Desktop/pdf/winter intern/ESM-module/quarturs/IDT.v Line: 29
 Info (12128): Elaborating entity "ESM_core_IIM" for hierarchy "ESM_core:core|ESM_core_IIM:IIM_core" File: C:/Users/nawaz/OneDrive/Desktop/pdf/winter intern/ESM-module/quarturs/ESM_core.v Line: 16
 Info (12128): Elaborating entity "candidate_list" for hierarchy "ESM_core:core|ESM_core_IIM:IIM_core|candidate_list:c_list" File: C:/Users/nawaz/OneDrive/Desktop/pdf/winter intern/ESM-module/quarturs/ESM_core_IIM.v Line: 11
 Info (12128): Elaborating entity "mapping_table" for hierarchy "ESM_core:core|ESM_core_IIM:IIM_core|mapping_table:m_table" File: C:/Users/nawaz/OneDrive/Desktop/pdf/winter intern/ESM-module/quarturs/ESM_core_IIM.v Line: 13
@@ -657,11 +652,11 @@ Info (21057): Implemented 4315 device resources after synthesis - the final reso
     Info (21058): Implemented 36 input pins
     Info (21059): Implemented 32 output pins
     Info (21061): Implemented 4247 logic cells
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 11 warnings
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 6 warnings
     Info: Peak virtual memory: 4788 megabytes
-    Info: Processing ended: Sun Dec 22 21:46:35 2024
-    Info: Elapsed time: 00:00:12
-    Info: Total CPU time (on all processors): 00:00:12
+    Info: Processing ended: Mon Dec 23 02:00:14 2024
+    Info: Elapsed time: 00:00:16
+    Info: Total CPU time (on all processors): 00:00:15
 
 
 +------------------------------------------+
