@@ -1,5 +1,5 @@
 Flow report for ESM
-Mon Dec 23 02:00:14 2024
+Mon Dec 30 12:24:13 2024
 Quartus Prime Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
 
 
@@ -41,13 +41,13 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------------------------------------------------------------+
 ; Flow Summary                                                                     ;
 +------------------------------------+---------------------------------------------+
-; Flow Status                        ; Successful - Mon Dec 23 02:00:14 2024       ;
+; Flow Status                        ; Successful - Mon Dec 30 12:24:13 2024       ;
 ; Quartus Prime Version              ; 20.1.1 Build 720 11/11/2020 SJ Lite Edition ;
 ; Revision Name                      ; ESM                                         ;
 ; Top-level Entity Name              ; ESM                                         ;
 ; Family                             ; Cyclone IV E                                ;
-; Total logic elements               ; 4,215                                       ;
-;     Total combinational functions  ; 3,255                                       ;
+; Total logic elements               ; 4,216                                       ;
+;     Total combinational functions  ; 3,256                                       ;
 ;     Dedicated logic registers      ; 1,948                                       ;
 ; Total registers                    ; 1948                                        ;
 ; Total pins                         ; 68                                          ;
@@ -63,7 +63,7 @@ https://fpgasoftware.intel.com/eula.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 12/23/2024 01:59:58 ;
+; Start date & time ; 12/30/2024 12:23:59 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; ESM                 ;
 +-------------------+---------------------+
@@ -74,7 +74,7 @@ https://fpgasoftware.intel.com/eula.
 +-------------------------------------+----------------------------------------+---------------+-------------+-----------------------------------+
 ; Assignment Name                     ; Value                                  ; Default Value ; Entity Name ; Section Id                        ;
 +-------------------------------------+----------------------------------------+---------------+-------------+-----------------------------------+
-; COMPILER_SIGNATURE_ID               ; 2543407633492.173489939811964          ; --            ; --          ; --                                ;
+; COMPILER_SIGNATURE_ID               ; 2543407633492.173554163912332          ; --            ; --          ; --                                ;
 ; EDA_GENERATE_FUNCTIONAL_NETLIST     ; Off                                    ; --            ; --          ; eda_board_design_timing           ;
 ; EDA_GENERATE_FUNCTIONAL_NETLIST     ; Off                                    ; --            ; --          ; eda_board_design_boundary_scan    ;
 ; EDA_GENERATE_FUNCTIONAL_NETLIST     ; Off                                    ; --            ; --          ; eda_board_design_signal_integrity ;
@@ -94,8 +94,8 @@ https://fpgasoftware.intel.com/eula.
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name          ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis ; 00:00:15     ; 1.0                     ; 4788 MB             ; 00:00:14                           ;
-; Total                ; 00:00:15     ; --                      ; --                  ; 00:00:14                           ;
+; Analysis & Synthesis ; 00:00:14     ; 1.0                     ; 4790 MB             ; 00:00:13                           ;
+; Total                ; 00:00:14     ; --                      ; --                  ; 00:00:13                           ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 

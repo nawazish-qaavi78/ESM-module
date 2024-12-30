@@ -23,7 +23,6 @@ module mapping_table #(
                     map_table[count] <= i;
                     count <= count+1;
                 end
-
     end
 
     always @(posedge clk, posedge rst) begin
@@ -37,6 +36,6 @@ module mapping_table #(
     PRNG random_num(clk, 1'b1, rst, rand_num);
 
     wire [bs_bits-1: 0] map_ready_index;
-    assign map_ready_index = rand_num % count;
+    assign map_ready_index = (count!=0) ? (rand_num % count) : 0;
     
 endmodule
