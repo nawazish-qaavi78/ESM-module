@@ -38,6 +38,6 @@ module Instr_Buffer #(
 		end else full = 1'b0;	
 	 end
 	 
-	 assign start = (Instr_in == 0) ? 1 : (full ? 1 : 0);
+	 assign start = (Instr_in == 0) ? 1'b1 : (full ? 1'b1 : 1'b0);
 
 endmodule

@@ -4,7 +4,7 @@ module mapping_table #(
     input clk, rst, start,
     input [bs-1:0] cand_list,
 	 input [31:0] rand_num,
-    output reg [$clog2(bs)-1: 0] buffer_index
+    output reg [$clog2(bs)-1: 0] buffer_index = {$clog2(bs){1'b1}}
 );
 
     localparam bs_bits = $clog2(bs);
@@ -24,8 +24,8 @@ module mapping_table #(
         end else 
             for(i=0; i<bs; i=i+1)
                 if(cand_list[i]) begin
-                    map_table[count] <= i;
-                    count <= count+1;
+                    map_table[count] <= i; // just matching the size, intention is still map_table[count] = i
+                    count <= (count+1);
                 end
     end
 
@@ -35,7 +35,7 @@ module mapping_table #(
 		  else buffer_index = buffer_index + 1;
     end
 
-
-    assign map_ready_index = (count!=0) ? (rand_num % count) : 0;
+	 
+    assign map_ready_index = (count!=0) ? (rand_num % count): 0;
     
 endmodule

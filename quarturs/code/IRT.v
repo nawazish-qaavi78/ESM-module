@@ -14,7 +14,7 @@ module IRT #(
     reg [0:bs-1] IRT_RS [0:regnum-1];
     reg [0:bs-1] IRT_RD [0:regnum-1];
 	 
-	 wire [bs-1:0] clear_self_bit_mask = ~( { {bs{1'b0}} | (1 << buffer_index) } ); // bs{1'b0} is just for making the size of the shit correct
+	 wire [bs-1:0] clear_self_bit_mask = ~({{(bs-1){1'b0}}, 1'b1} << buffer_index); // {{(bs-1){1'b0}}, 1'b1} is to ensure size matching, intention is 1<<buffer_index
     wire [bs-1:0] raw1 = IRT_RD[rs1] & clear_self_bit_mask;
     wire [bs-1:0] raw2 = IRT_RD[rs2] & clear_self_bit_mask;
     wire [bs-1:0] war  = IRT_RS[rd]  & clear_self_bit_mask;

@@ -20,13 +20,13 @@ module tb;
     localparam i10 = 32'b0000000_01000_00111_100_01011_0110011; // xor x11, x7, x8
     localparam i11 = 32'b0000000_01000_00111_111_01100_0110011; // and x12, x7, x8
     localparam i12 = 32'b0000000_01000_00111_110_01101_0110011; // or x13, x7, x8
-    localparam i13 = 32'b000000000010_00000_000_00111_0010011; // li t7, 10
-    localparam i14 = 32'b000000000101_00000_000_01000_0010011; // li t8, 20
-    localparam i15 = 32'b0000000_01000_00111_000_01001_0110011; // add t9, t7, t8
-    localparam i16 = 32'b0100000_00111_01000_000_01010_0110011; // sub t10, t8, t7
-    localparam i17 = 32'b0000000_01000_00111_100_01011_0110011; // xor t11, t7, t8
-    localparam i18 = 32'b0000000_01000_00111_111_01100_0110011; // and t12, t7, t8
-    localparam i19 = 32'b0000000_01000_00111_110_01101_0110011; // or t13, t7, t8
+    // localparam i13 = 32'b000000000010_00000_000_00111_0010011; // li t7, 10 same as i6
+    // localparam i14 = 32'b000000000101_00000_000_01000_0010011; // li t8, 20 same as i7
+    // localparam i15 = 32'b0000000_01000_00111_000_01001_0110011; // add t9, t7, t8 same as i8
+    // localparam i16 = 32'b0100000_00111_01000_000_01010_0110011; // sub t10, t8, t7 same as i9
+    // localparam i17 = 32'b0000000_01000_00111_100_01011_0110011; // xor t11, t7, t8 same as i10
+    // localparam i18 = 32'b0000000_01000_00111_111_01100_0110011; // and t12, t7, t8 same as i11
+    // localparam i19 = 32'b0000000_01000_00111_110_01101_0110011; // or t13, t7, t8 same as i12
     localparam i20 = 32'b0000000_00001_00111_001_01110_0110011; // sll t14, t7, t1
     localparam i21 = 32'b0000000_00001_01000_101_01111_0110011; // srl t15, t8, t1
     localparam i22 = 32'b0000000_00111_00110_000_10000_0110011; // add t16, t6, t7
@@ -43,7 +43,6 @@ module tb;
     end
 
     initial begin
-        #2;
         #instr_delay Instr_in = i1; RegWrite = 1 ; ALUSrc = 1;
         #instr_delay Instr_in = i2; RegWrite = 1 ; ALUSrc = 1;
         #instr_delay Instr_in = i3; RegWrite = 1 ; ALUSrc = 0;
@@ -56,13 +55,13 @@ module tb;
         #instr_delay Instr_in = i10; RegWrite = 1 ; ALUSrc = 0;
         #instr_delay Instr_in = i11; RegWrite = 1 ; ALUSrc = 0;
         #instr_delay Instr_in = i12; RegWrite = 1 ; ALUSrc = 0;
-        #instr_delay Instr_in = i13; RegWrite = 1 ; ALUSrc = 1;
-        #instr_delay Instr_in = i14; RegWrite = 1 ; ALUSrc = 1;
-        #instr_delay Instr_in = i15; RegWrite = 1 ; ALUSrc = 0;
-        #instr_delay Instr_in = i16; RegWrite = 1 ; ALUSrc = 0;
-        #instr_delay Instr_in = i17; RegWrite = 1 ; ALUSrc = 0;
-        #instr_delay Instr_in = i18; RegWrite = 1 ; ALUSrc = 0;
-        #instr_delay Instr_in = i19; RegWrite = 1 ; ALUSrc = 0;
+        #instr_delay Instr_in = i6; RegWrite = 1 ; ALUSrc = 1;
+        #instr_delay Instr_in = i7; RegWrite = 1 ; ALUSrc = 1;
+        #instr_delay Instr_in = i8; RegWrite = 1 ; ALUSrc = 0;
+        #instr_delay Instr_in = i9; RegWrite = 1 ; ALUSrc = 0;
+        #instr_delay Instr_in = i10; RegWrite = 1 ; ALUSrc = 0;
+        #instr_delay Instr_in = i11; RegWrite = 1 ; ALUSrc = 0;
+        #instr_delay Instr_in = i12; RegWrite = 1 ; ALUSrc = 0;
         #instr_delay Instr_in = i20; RegWrite = 1 ; ALUSrc = 1;
         #instr_delay Instr_in = i21; RegWrite = 1 ; ALUSrc = 1;
         #instr_delay Instr_in = i22; RegWrite = 1 ; ALUSrc = 0;
@@ -100,13 +99,6 @@ always @(negedge clk ) begin
         i10: $display("i10 is executed");
         i11: $display("i11 is executed");
         i12: $display("i12 is executed");
-        i13: $display("i13 is executed");
-        i14: $display("i14 is executed");
-        i15: $display("i15 is executed");
-        i16: $display("i16 is executed");
-        i17: $display("i17 is executed");
-        i18: $display("i18 is executed");
-        i19: $display("i19 is executed");
         i20: $display("i20 is executed");
         i21: $display("i21 is executed");
         i22: $display("i22 is executed");
