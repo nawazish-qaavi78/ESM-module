@@ -5,11 +5,10 @@ module ESM_core_IDA #(
 ) (
     input [Instr_word_size-1:0] Instr_in,
     input ALUSrc, RegWrite, clk, rst,
-    input  [bs_bits-1:0] buffer_index,
-    output [bs_bits-1:0] ready_index
+    input  [$clog2(bs)-1:0] buffer_index,
+    output [$clog2(bs)-1:0] ready_index
 );
     localparam reg_addr_bits = $clog2(regnum);
-    localparam bs_bits = $clog2(bs);
 
     wire [reg_addr_bits-1:0] rs1 =  Instr_in[19:15];
     wire [reg_addr_bits-1:0] rs2 =  ALUSrc ? Instr_in[24:20] : {reg_addr_bits{1'b0}};

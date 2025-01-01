@@ -1,5 +1,5 @@
 Analysis & Synthesis report for ESM
-Wed Jan 01 11:51:25 2025
+Wed Jan 01 12:04:33 2025
 Quartus Prime Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
 
 
@@ -10,8 +10,27 @@ Quartus Prime Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
   2. Analysis & Synthesis Summary
   3. Analysis & Synthesis Settings
   4. Parallel Compilation
-  5. Analysis & Synthesis Messages
-  6. Analysis & Synthesis Suppressed Messages
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. General Register Statistics
+  9. Inverted Register Statistics
+ 10. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 11. Parameter Settings for User Entity Instance: Top-level Entity: |ESM
+ 12. Parameter Settings for User Entity Instance: Instr_Buffer:buffer
+ 13. Parameter Settings for User Entity Instance: ESM_core:core
+ 14. Parameter Settings for User Entity Instance: ESM_core:core|ESM_core_IDA:IDA_core
+ 15. Parameter Settings for User Entity Instance: ESM_core:core|ESM_core_IDA:IDA_core|IRT:irt
+ 16. Parameter Settings for User Entity Instance: ESM_core:core|ESM_core_IDA:IDA_core|IDT:idt
+ 17. Parameter Settings for User Entity Instance: ESM_core:core|ESM_core_IIM:IIM_core
+ 18. Parameter Settings for User Entity Instance: ESM_core:core|ESM_core_IIM:IIM_core|candidate_list:c_list
+ 19. Parameter Settings for User Entity Instance: ESM_core:core|ESM_core_IIM:IIM_core|mapping_table:m_table
+ 20. Parameter Settings for Inferred Entity Instance: ESM_core:core|ESM_core_IIM:IIM_core|mapping_table:m_table|lpm_divide:Mod0
+ 21. Port Connectivity Checks: "ESM_core:core|ESM_core_IIM:IIM_core|mapping_table:m_table|PRNG:random_num"
+ 22. Post-Synthesis Netlist Statistics for Top Partition
+ 23. Elapsed Time Per Partition
+ 24. Analysis & Synthesis Messages
+ 25. Analysis & Synthesis Suppressed Messages
 
 
 
@@ -38,20 +57,20 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +------------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status        ; Failed - Wed Jan 01 11:51:25 2025           ;
+; Analysis & Synthesis Status        ; Successful - Wed Jan 01 12:04:33 2025       ;
 ; Quartus Prime Version              ; 20.1.1 Build 720 11/11/2020 SJ Lite Edition ;
 ; Revision Name                      ; ESM                                         ;
 ; Top-level Entity Name              ; ESM                                         ;
 ; Family                             ; Cyclone IV E                                ;
-; Total logic elements               ; N/A until Partition Merge                   ;
-;     Total combinational functions  ; N/A until Partition Merge                   ;
-;     Dedicated logic registers      ; N/A until Partition Merge                   ;
-; Total registers                    ; N/A until Partition Merge                   ;
-; Total pins                         ; N/A until Partition Merge                   ;
-; Total virtual pins                 ; N/A until Partition Merge                   ;
-; Total memory bits                  ; N/A until Partition Merge                   ;
-; Embedded Multiplier 9-bit elements ; N/A until Partition Merge                   ;
-; Total PLLs                         ; N/A until Partition Merge                   ;
+; Total logic elements               ; 4,216                                       ;
+;     Total combinational functions  ; 3,256                                       ;
+;     Dedicated logic registers      ; 1,948                                       ;
+; Total registers                    ; 1948                                        ;
+; Total pins                         ; 68                                          ;
+; Total virtual pins                 ; 0                                           ;
+; Total memory bits                  ; 0                                           ;
+; Embedded Multiplier 9-bit elements ; 0                                           ;
+; Total PLLs                         ; 0                                           ;
 +------------------------------------+---------------------------------------------+
 
 
@@ -149,11 +168,415 @@ https://fpgasoftware.intel.com/eula.
 ; Maximum allowed            ; 4           ;
 ;                            ;             ;
 ; Average used               ; 1.00        ;
-; Maximum used               ; 1           ;
+; Maximum used               ; 4           ;
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
+;     Processor 2            ;   0.1%      ;
+;     Processor 3            ;   0.1%      ;
+;     Processor 4            ;   0.1%      ;
 +----------------------------+-------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                                         ;
++----------------------------------+-----------------+------------------------------+--------------------------------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type                    ; File Name with Absolute Path                                                                     ; Library ;
++----------------------------------+-----------------+------------------------------+--------------------------------------------------------------------------------------------------+---------+
+; code/PRNG.v                      ; yes             ; User Verilog HDL File        ; C:/Users/nawaz/OneDrive/Desktop/pdf/winter intern/ESM-module/quarturs/code/PRNG.v                ;         ;
+; code/mapping_table.v             ; yes             ; User Verilog HDL File        ; C:/Users/nawaz/OneDrive/Desktop/pdf/winter intern/ESM-module/quarturs/code/mapping_table.v       ;         ;
+; code/IRT.v                       ; yes             ; User Verilog HDL File        ; C:/Users/nawaz/OneDrive/Desktop/pdf/winter intern/ESM-module/quarturs/code/IRT.v                 ;         ;
+; code/Instr_Buffer.v              ; yes             ; User Verilog HDL File        ; C:/Users/nawaz/OneDrive/Desktop/pdf/winter intern/ESM-module/quarturs/code/Instr_Buffer.v        ;         ;
+; code/IDT.v                       ; yes             ; User Verilog HDL File        ; C:/Users/nawaz/OneDrive/Desktop/pdf/winter intern/ESM-module/quarturs/code/IDT.v                 ;         ;
+; code/ESM_core_IIM.v              ; yes             ; User Verilog HDL File        ; C:/Users/nawaz/OneDrive/Desktop/pdf/winter intern/ESM-module/quarturs/code/ESM_core_IIM.v        ;         ;
+; code/ESM_core_IDA.v              ; yes             ; User Verilog HDL File        ; C:/Users/nawaz/OneDrive/Desktop/pdf/winter intern/ESM-module/quarturs/code/ESM_core_IDA.v        ;         ;
+; code/ESM_core.v                  ; yes             ; User Verilog HDL File        ; C:/Users/nawaz/OneDrive/Desktop/pdf/winter intern/ESM-module/quarturs/code/ESM_core.v            ;         ;
+; code/ESM.v                       ; yes             ; User Verilog HDL File        ; C:/Users/nawaz/OneDrive/Desktop/pdf/winter intern/ESM-module/quarturs/code/ESM.v                 ;         ;
+; code/candidate_list.v            ; yes             ; User Verilog HDL File        ; C:/Users/nawaz/OneDrive/Desktop/pdf/winter intern/ESM-module/quarturs/code/candidate_list.v      ;         ;
+; lpm_divide.tdf                   ; yes             ; Megafunction                 ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/lpm_divide.tdf                            ;         ;
+; abs_divider.inc                  ; yes             ; Megafunction                 ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/abs_divider.inc                           ;         ;
+; sign_div_unsign.inc              ; yes             ; Megafunction                 ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/sign_div_unsign.inc                       ;         ;
+; aglobal201.inc                   ; yes             ; Megafunction                 ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/aglobal201.inc                            ;         ;
+; db/lpm_divide_3bm.tdf            ; yes             ; Auto-Generated Megafunction  ; C:/Users/nawaz/OneDrive/Desktop/pdf/winter intern/ESM-module/quarturs/db/lpm_divide_3bm.tdf      ;         ;
+; db/sign_div_unsign_olh.tdf       ; yes             ; Auto-Generated Megafunction  ; C:/Users/nawaz/OneDrive/Desktop/pdf/winter intern/ESM-module/quarturs/db/sign_div_unsign_olh.tdf ;         ;
+; db/alt_u_div_47f.tdf             ; yes             ; Auto-Generated Megafunction  ; C:/Users/nawaz/OneDrive/Desktop/pdf/winter intern/ESM-module/quarturs/db/alt_u_div_47f.tdf       ;         ;
+; db/add_sub_7pc.tdf               ; yes             ; Auto-Generated Megafunction  ; C:/Users/nawaz/OneDrive/Desktop/pdf/winter intern/ESM-module/quarturs/db/add_sub_7pc.tdf         ;         ;
+; db/add_sub_8pc.tdf               ; yes             ; Auto-Generated Megafunction  ; C:/Users/nawaz/OneDrive/Desktop/pdf/winter intern/ESM-module/quarturs/db/add_sub_8pc.tdf         ;         ;
++----------------------------------+-----------------+------------------------------+--------------------------------------------------------------------------------------------------+---------+
+
+
++---------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary             ;
++---------------------------------------------+-----------+
+; Resource                                    ; Usage     ;
++---------------------------------------------+-----------+
+; Estimated Total logic elements              ; 4,216     ;
+;                                             ;           ;
+; Total combinational functions               ; 3256      ;
+; Logic element usage by number of LUT inputs ;           ;
+;     -- 4 input functions                    ; 2553      ;
+;     -- 3 input functions                    ; 269       ;
+;     -- <=2 input functions                  ; 434       ;
+;                                             ;           ;
+; Logic elements by mode                      ;           ;
+;     -- normal mode                          ; 3109      ;
+;     -- arithmetic mode                      ; 147       ;
+;                                             ;           ;
+; Total registers                             ; 1948      ;
+;     -- Dedicated logic registers            ; 1948      ;
+;     -- I/O registers                        ; 0         ;
+;                                             ;           ;
+; I/O pins                                    ; 68        ;
+;                                             ;           ;
+; Embedded Multiplier 9-bit elements          ; 0         ;
+;                                             ;           ;
+; Maximum fan-out node                        ; clk~input ;
+; Maximum fan-out                             ; 1948      ;
+; Total fan-out                               ; 18280     ;
+; Average fan-out                             ; 3.42      ;
++---------------------------------------------+-----------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                                                                                                                              ;
++-------------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------+---------------------+--------------+
+; Compilation Hierarchy Node                      ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                                                                            ; Entity Name         ; Library Name ;
++-------------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------+---------------------+--------------+
+; |ESM                                            ; 3256 (0)            ; 1948 (0)                  ; 0           ; 0            ; 0       ; 0         ; 68   ; 0            ; |ESM                                                                                                                                                           ; ESM                 ; work         ;
+;    |ESM_core:core|                              ; 2920 (0)            ; 1404 (0)                  ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ESM|ESM_core:core                                                                                                                                             ; ESM_core            ; work         ;
+;       |ESM_core_IDA:IDA_core|                   ; 2367 (10)           ; 1284 (0)                  ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ESM|ESM_core:core|ESM_core_IDA:IDA_core                                                                                                                       ; ESM_core_IDA        ; work         ;
+;          |IDT:idt|                              ; 330 (330)           ; 244 (244)                 ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ESM|ESM_core:core|ESM_core_IDA:IDA_core|IDT:idt                                                                                                               ; IDT                 ; work         ;
+;          |IRT:irt|                              ; 2027 (2027)         ; 1040 (1040)               ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ESM|ESM_core:core|ESM_core_IDA:IDA_core|IRT:irt                                                                                                               ; IRT                 ; work         ;
+;       |ESM_core_IIM:IIM_core|                   ; 553 (0)             ; 120 (0)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ESM|ESM_core:core|ESM_core_IIM:IIM_core                                                                                                                       ; ESM_core_IIM        ; work         ;
+;          |candidate_list:c_list|                ; 32 (32)             ; 16 (16)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ESM|ESM_core:core|ESM_core_IIM:IIM_core|candidate_list:c_list                                                                                                 ; candidate_list      ; work         ;
+;          |mapping_table:m_table|                ; 521 (161)           ; 104 (72)                  ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ESM|ESM_core:core|ESM_core_IIM:IIM_core|mapping_table:m_table                                                                                                 ; mapping_table       ; work         ;
+;             |PRNG:random_num|                   ; 36 (36)             ; 32 (32)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ESM|ESM_core:core|ESM_core_IIM:IIM_core|mapping_table:m_table|PRNG:random_num                                                                                 ; PRNG                ; work         ;
+;             |lpm_divide:Mod0|                   ; 324 (0)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ESM|ESM_core:core|ESM_core_IIM:IIM_core|mapping_table:m_table|lpm_divide:Mod0                                                                                 ; lpm_divide          ; work         ;
+;                |lpm_divide_3bm:auto_generated|  ; 324 (0)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ESM|ESM_core:core|ESM_core_IIM:IIM_core|mapping_table:m_table|lpm_divide:Mod0|lpm_divide_3bm:auto_generated                                                   ; lpm_divide_3bm      ; work         ;
+;                   |sign_div_unsign_olh:divider| ; 324 (0)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ESM|ESM_core:core|ESM_core_IIM:IIM_core|mapping_table:m_table|lpm_divide:Mod0|lpm_divide_3bm:auto_generated|sign_div_unsign_olh:divider                       ; sign_div_unsign_olh ; work         ;
+;                      |alt_u_div_47f:divider|    ; 324 (324)           ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ESM|ESM_core:core|ESM_core_IIM:IIM_core|mapping_table:m_table|lpm_divide:Mod0|lpm_divide_3bm:auto_generated|sign_div_unsign_olh:divider|alt_u_div_47f:divider ; alt_u_div_47f       ; work         ;
+;    |Instr_Buffer:buffer|                        ; 336 (336)           ; 544 (544)                 ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ESM|Instr_Buffer:buffer                                                                                                                                       ; Instr_Buffer        ; work         ;
++-------------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------+---------------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 1948  ;
+; Number of registers using Synchronous Clear  ; 0     ;
+; Number of registers using Synchronous Load   ; 0     ;
+; Number of registers using Asynchronous Clear ; 1400  ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 1360  ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++-------------------------------------------------------------------------------------------+
+; Inverted Register Statistics                                                              ;
++---------------------------------------------------------------------------------+---------+
+; Inverted Register                                                               ; Fan out ;
++---------------------------------------------------------------------------------+---------+
+; ESM_core:core|ESM_core_IIM:IIM_core|mapping_table:m_table|PRNG:random_num|q[1]  ; 3       ;
+; ESM_core:core|ESM_core_IIM:IIM_core|mapping_table:m_table|PRNG:random_num|q[31] ; 3       ;
+; ESM_core:core|ESM_core_IIM:IIM_core|mapping_table:m_table|PRNG:random_num|q[29] ; 4       ;
+; ESM_core:core|ESM_core_IIM:IIM_core|mapping_table:m_table|PRNG:random_num|q[27] ; 4       ;
+; ESM_core:core|ESM_core_IIM:IIM_core|mapping_table:m_table|PRNG:random_num|q[25] ; 3       ;
+; ESM_core:core|ESM_core_IIM:IIM_core|mapping_table:m_table|PRNG:random_num|q[23] ; 4       ;
+; ESM_core:core|ESM_core_IIM:IIM_core|mapping_table:m_table|PRNG:random_num|q[21] ; 3       ;
+; ESM_core:core|ESM_core_IIM:IIM_core|mapping_table:m_table|PRNG:random_num|q[19] ; 4       ;
+; ESM_core:core|ESM_core_IIM:IIM_core|mapping_table:m_table|PRNG:random_num|q[17] ; 4       ;
+; ESM_core:core|ESM_core_IIM:IIM_core|mapping_table:m_table|PRNG:random_num|q[15] ; 4       ;
+; ESM_core:core|ESM_core_IIM:IIM_core|mapping_table:m_table|PRNG:random_num|q[13] ; 3       ;
+; ESM_core:core|ESM_core_IIM:IIM_core|mapping_table:m_table|PRNG:random_num|q[11] ; 4       ;
+; ESM_core:core|ESM_core_IIM:IIM_core|mapping_table:m_table|PRNG:random_num|q[9]  ; 4       ;
+; ESM_core:core|ESM_core_IIM:IIM_core|mapping_table:m_table|PRNG:random_num|q[7]  ; 3       ;
+; ESM_core:core|ESM_core_IIM:IIM_core|mapping_table:m_table|PRNG:random_num|q[5]  ; 3       ;
+; ESM_core:core|ESM_core_IIM:IIM_core|mapping_table:m_table|PRNG:random_num|q[3]  ; 4       ;
+; ESM_core:core|ESM_core_IDA:IDA_core|IDT:idt|IDT_table[15][15]                   ; 1       ;
+; ESM_core:core|ESM_core_IDA:IDA_core|IDT:idt|IDT_table[15][14]                   ; 1       ;
+; ESM_core:core|ESM_core_IDA:IDA_core|IDT:idt|IDT_table[15][13]                   ; 1       ;
+; ESM_core:core|ESM_core_IDA:IDA_core|IDT:idt|IDT_table[15][12]                   ; 1       ;
+; ESM_core:core|ESM_core_IDA:IDA_core|IDT:idt|IDT_table[15][11]                   ; 1       ;
+; ESM_core:core|ESM_core_IDA:IDA_core|IDT:idt|IDT_table[15][10]                   ; 1       ;
+; ESM_core:core|ESM_core_IDA:IDA_core|IDT:idt|IDT_table[15][9]                    ; 1       ;
+; ESM_core:core|ESM_core_IDA:IDA_core|IDT:idt|IDT_table[15][8]                    ; 1       ;
+; ESM_core:core|ESM_core_IDA:IDA_core|IDT:idt|IDT_table[15][7]                    ; 1       ;
+; ESM_core:core|ESM_core_IDA:IDA_core|IDT:idt|IDT_table[15][6]                    ; 1       ;
+; ESM_core:core|ESM_core_IDA:IDA_core|IDT:idt|IDT_table[15][5]                    ; 1       ;
+; ESM_core:core|ESM_core_IDA:IDA_core|IDT:idt|IDT_table[15][4]                    ; 1       ;
+; ESM_core:core|ESM_core_IDA:IDA_core|IDT:idt|IDT_table[15][3]                    ; 1       ;
+; ESM_core:core|ESM_core_IDA:IDA_core|IDT:idt|IDT_table[15][2]                    ; 1       ;
+; ESM_core:core|ESM_core_IDA:IDA_core|IDT:idt|IDT_table[15][1]                    ; 1       ;
+; ESM_core:core|ESM_core_IDA:IDA_core|IDT:idt|IDT_table[15][0]                    ; 1       ;
+; ESM_core:core|ESM_core_IDA:IDA_core|IDT:idt|IDT_table[13][15]                   ; 1       ;
+; ESM_core:core|ESM_core_IDA:IDA_core|IDT:idt|IDT_table[13][14]                   ; 1       ;
+; ESM_core:core|ESM_core_IDA:IDA_core|IDT:idt|IDT_table[13][13]                   ; 1       ;
+; ESM_core:core|ESM_core_IDA:IDA_core|IDT:idt|IDT_table[13][12]                   ; 1       ;
+; ESM_core:core|ESM_core_IDA:IDA_core|IDT:idt|IDT_table[13][11]                   ; 1       ;
+; ESM_core:core|ESM_core_IDA:IDA_core|IDT:idt|IDT_table[13][10]                   ; 1       ;
+; ESM_core:core|ESM_core_IDA:IDA_core|IDT:idt|IDT_table[13][9]                    ; 1       ;
+; ESM_core:core|ESM_core_IDA:IDA_core|IDT:idt|IDT_table[13][8]                    ; 1       ;
+; ESM_core:core|ESM_core_IDA:IDA_core|IDT:idt|IDT_table[13][7]                    ; 1       ;
+; ESM_core:core|ESM_core_IDA:IDA_core|IDT:idt|IDT_table[13][6]                    ; 1       ;
+; ESM_core:core|ESM_core_IDA:IDA_core|IDT:idt|IDT_table[13][5]                    ; 1       ;
+; ESM_core:core|ESM_core_IDA:IDA_core|IDT:idt|IDT_table[13][4]                    ; 1       ;
+; ESM_core:core|ESM_core_IDA:IDA_core|IDT:idt|IDT_table[13][3]                    ; 1       ;
+; ESM_core:core|ESM_core_IDA:IDA_core|IDT:idt|IDT_table[13][2]                    ; 1       ;
+; ESM_core:core|ESM_core_IDA:IDA_core|IDT:idt|IDT_table[13][1]                    ; 1       ;
+; ESM_core:core|ESM_core_IDA:IDA_core|IDT:idt|IDT_table[13][0]                    ; 1       ;
+; ESM_core:core|ESM_core_IDA:IDA_core|IDT:idt|IDT_table[9][15]                    ; 1       ;
+; ESM_core:core|ESM_core_IDA:IDA_core|IDT:idt|IDT_table[9][14]                    ; 1       ;
+; ESM_core:core|ESM_core_IDA:IDA_core|IDT:idt|IDT_table[9][13]                    ; 1       ;
+; ESM_core:core|ESM_core_IDA:IDA_core|IDT:idt|IDT_table[9][12]                    ; 1       ;
+; ESM_core:core|ESM_core_IDA:IDA_core|IDT:idt|IDT_table[9][11]                    ; 1       ;
+; ESM_core:core|ESM_core_IDA:IDA_core|IDT:idt|IDT_table[9][10]                    ; 1       ;
+; ESM_core:core|ESM_core_IDA:IDA_core|IDT:idt|IDT_table[9][9]                     ; 1       ;
+; ESM_core:core|ESM_core_IDA:IDA_core|IDT:idt|IDT_table[9][8]                     ; 1       ;
+; ESM_core:core|ESM_core_IDA:IDA_core|IDT:idt|IDT_table[9][7]                     ; 1       ;
+; ESM_core:core|ESM_core_IDA:IDA_core|IDT:idt|IDT_table[9][6]                     ; 1       ;
+; ESM_core:core|ESM_core_IDA:IDA_core|IDT:idt|IDT_table[9][5]                     ; 1       ;
+; ESM_core:core|ESM_core_IDA:IDA_core|IDT:idt|IDT_table[9][4]                     ; 1       ;
+; ESM_core:core|ESM_core_IDA:IDA_core|IDT:idt|IDT_table[9][3]                     ; 1       ;
+; ESM_core:core|ESM_core_IDA:IDA_core|IDT:idt|IDT_table[9][2]                     ; 1       ;
+; ESM_core:core|ESM_core_IDA:IDA_core|IDT:idt|IDT_table[9][1]                     ; 1       ;
+; ESM_core:core|ESM_core_IDA:IDA_core|IDT:idt|IDT_table[9][0]                     ; 1       ;
+; ESM_core:core|ESM_core_IDA:IDA_core|IDT:idt|IDT_table[7][15]                    ; 1       ;
+; ESM_core:core|ESM_core_IDA:IDA_core|IDT:idt|IDT_table[7][14]                    ; 1       ;
+; ESM_core:core|ESM_core_IDA:IDA_core|IDT:idt|IDT_table[7][13]                    ; 1       ;
+; ESM_core:core|ESM_core_IDA:IDA_core|IDT:idt|IDT_table[7][12]                    ; 1       ;
+; ESM_core:core|ESM_core_IDA:IDA_core|IDT:idt|IDT_table[7][11]                    ; 1       ;
+; ESM_core:core|ESM_core_IDA:IDA_core|IDT:idt|IDT_table[7][10]                    ; 1       ;
+; ESM_core:core|ESM_core_IDA:IDA_core|IDT:idt|IDT_table[7][9]                     ; 1       ;
+; ESM_core:core|ESM_core_IDA:IDA_core|IDT:idt|IDT_table[7][8]                     ; 1       ;
+; ESM_core:core|ESM_core_IDA:IDA_core|IDT:idt|IDT_table[7][7]                     ; 1       ;
+; ESM_core:core|ESM_core_IDA:IDA_core|IDT:idt|IDT_table[7][6]                     ; 1       ;
+; ESM_core:core|ESM_core_IDA:IDA_core|IDT:idt|IDT_table[7][5]                     ; 1       ;
+; ESM_core:core|ESM_core_IDA:IDA_core|IDT:idt|IDT_table[7][4]                     ; 1       ;
+; ESM_core:core|ESM_core_IDA:IDA_core|IDT:idt|IDT_table[7][3]                     ; 1       ;
+; ESM_core:core|ESM_core_IDA:IDA_core|IDT:idt|IDT_table[7][2]                     ; 1       ;
+; ESM_core:core|ESM_core_IDA:IDA_core|IDT:idt|IDT_table[7][1]                     ; 1       ;
+; ESM_core:core|ESM_core_IDA:IDA_core|IDT:idt|IDT_table[7][0]                     ; 1       ;
+; ESM_core:core|ESM_core_IDA:IDA_core|IDT:idt|IDT_table[3][15]                    ; 1       ;
+; ESM_core:core|ESM_core_IDA:IDA_core|IDT:idt|IDT_table[3][14]                    ; 1       ;
+; ESM_core:core|ESM_core_IDA:IDA_core|IDT:idt|IDT_table[3][13]                    ; 1       ;
+; ESM_core:core|ESM_core_IDA:IDA_core|IDT:idt|IDT_table[3][12]                    ; 1       ;
+; ESM_core:core|ESM_core_IDA:IDA_core|IDT:idt|IDT_table[3][11]                    ; 1       ;
+; ESM_core:core|ESM_core_IDA:IDA_core|IDT:idt|IDT_table[3][10]                    ; 1       ;
+; ESM_core:core|ESM_core_IDA:IDA_core|IDT:idt|IDT_table[3][9]                     ; 1       ;
+; ESM_core:core|ESM_core_IDA:IDA_core|IDT:idt|IDT_table[3][8]                     ; 1       ;
+; ESM_core:core|ESM_core_IDA:IDA_core|IDT:idt|IDT_table[3][7]                     ; 1       ;
+; ESM_core:core|ESM_core_IDA:IDA_core|IDT:idt|IDT_table[3][6]                     ; 1       ;
+; ESM_core:core|ESM_core_IDA:IDA_core|IDT:idt|IDT_table[3][5]                     ; 1       ;
+; ESM_core:core|ESM_core_IDA:IDA_core|IDT:idt|IDT_table[3][4]                     ; 1       ;
+; ESM_core:core|ESM_core_IDA:IDA_core|IDT:idt|IDT_table[3][3]                     ; 1       ;
+; ESM_core:core|ESM_core_IDA:IDA_core|IDT:idt|IDT_table[3][2]                     ; 1       ;
+; ESM_core:core|ESM_core_IDA:IDA_core|IDT:idt|IDT_table[3][1]                     ; 1       ;
+; ESM_core:core|ESM_core_IDA:IDA_core|IDT:idt|IDT_table[3][0]                     ; 1       ;
+; ESM_core:core|ESM_core_IDA:IDA_core|IDT:idt|IDT_table[1][15]                    ; 1       ;
+; ESM_core:core|ESM_core_IDA:IDA_core|IDT:idt|IDT_table[1][14]                    ; 1       ;
+; ESM_core:core|ESM_core_IDA:IDA_core|IDT:idt|IDT_table[1][13]                    ; 1       ;
+; ESM_core:core|ESM_core_IDA:IDA_core|IDT:idt|IDT_table[1][12]                    ; 1       ;
+; Total number of inverted registers = 288*                                       ;         ;
++---------------------------------------------------------------------------------+---------+
+* Table truncated at 100 items. To change the number of inverted registers reported, set the "Number of Inverted Registers Reported" option under Assignments->Settings->Analysis and Synthesis Settings->More Settings
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                                                ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                                      ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------------------------------------------------+
+; 16:1               ; 32 bits   ; 320 LEs       ; 320 LEs              ; 0 LEs                  ; Yes        ; |ESM|Instr_Buffer:buffer|Instr_out[28]                                          ;
+; 16:1               ; 4 bits    ; 40 LEs        ; 40 LEs               ; 0 LEs                  ; Yes        ; |ESM|ESM_core:core|ESM_core_IIM:IIM_core|mapping_table:m_table|buffer_index[3]  ;
+; 17:1               ; 4 bits    ; 44 LEs        ; 40 LEs               ; 4 LEs                  ; Yes        ; |ESM|ESM_core:core|ESM_core_IIM:IIM_core|mapping_table:m_table|map_table[0][2]  ;
+; 17:1               ; 4 bits    ; 44 LEs        ; 40 LEs               ; 4 LEs                  ; Yes        ; |ESM|ESM_core:core|ESM_core_IIM:IIM_core|mapping_table:m_table|map_table[1][3]  ;
+; 17:1               ; 4 bits    ; 44 LEs        ; 40 LEs               ; 4 LEs                  ; Yes        ; |ESM|ESM_core:core|ESM_core_IIM:IIM_core|mapping_table:m_table|map_table[2][3]  ;
+; 17:1               ; 4 bits    ; 44 LEs        ; 40 LEs               ; 4 LEs                  ; Yes        ; |ESM|ESM_core:core|ESM_core_IIM:IIM_core|mapping_table:m_table|map_table[3][2]  ;
+; 17:1               ; 4 bits    ; 44 LEs        ; 40 LEs               ; 4 LEs                  ; Yes        ; |ESM|ESM_core:core|ESM_core_IIM:IIM_core|mapping_table:m_table|map_table[4][1]  ;
+; 17:1               ; 4 bits    ; 44 LEs        ; 40 LEs               ; 4 LEs                  ; Yes        ; |ESM|ESM_core:core|ESM_core_IIM:IIM_core|mapping_table:m_table|map_table[5][0]  ;
+; 17:1               ; 4 bits    ; 44 LEs        ; 40 LEs               ; 4 LEs                  ; Yes        ; |ESM|ESM_core:core|ESM_core_IIM:IIM_core|mapping_table:m_table|map_table[6][3]  ;
+; 17:1               ; 4 bits    ; 44 LEs        ; 40 LEs               ; 4 LEs                  ; Yes        ; |ESM|ESM_core:core|ESM_core_IIM:IIM_core|mapping_table:m_table|map_table[7][0]  ;
+; 17:1               ; 4 bits    ; 44 LEs        ; 40 LEs               ; 4 LEs                  ; Yes        ; |ESM|ESM_core:core|ESM_core_IIM:IIM_core|mapping_table:m_table|map_table[8][0]  ;
+; 17:1               ; 4 bits    ; 44 LEs        ; 40 LEs               ; 4 LEs                  ; Yes        ; |ESM|ESM_core:core|ESM_core_IIM:IIM_core|mapping_table:m_table|map_table[9][1]  ;
+; 17:1               ; 4 bits    ; 44 LEs        ; 40 LEs               ; 4 LEs                  ; Yes        ; |ESM|ESM_core:core|ESM_core_IIM:IIM_core|mapping_table:m_table|map_table[10][1] ;
+; 17:1               ; 4 bits    ; 44 LEs        ; 40 LEs               ; 4 LEs                  ; Yes        ; |ESM|ESM_core:core|ESM_core_IIM:IIM_core|mapping_table:m_table|map_table[11][1] ;
+; 17:1               ; 4 bits    ; 44 LEs        ; 40 LEs               ; 4 LEs                  ; Yes        ; |ESM|ESM_core:core|ESM_core_IIM:IIM_core|mapping_table:m_table|map_table[12][1] ;
+; 17:1               ; 4 bits    ; 44 LEs        ; 40 LEs               ; 4 LEs                  ; Yes        ; |ESM|ESM_core:core|ESM_core_IIM:IIM_core|mapping_table:m_table|map_table[13][1] ;
+; 17:1               ; 4 bits    ; 44 LEs        ; 40 LEs               ; 4 LEs                  ; Yes        ; |ESM|ESM_core:core|ESM_core_IIM:IIM_core|mapping_table:m_table|map_table[14][2] ;
+; 17:1               ; 4 bits    ; 44 LEs        ; 40 LEs               ; 4 LEs                  ; Yes        ; |ESM|ESM_core:core|ESM_core_IIM:IIM_core|mapping_table:m_table|map_table[15][3] ;
+; 32:1               ; 16 bits   ; 336 LEs       ; 336 LEs              ; 0 LEs                  ; No         ; |ESM|ESM_core:core|ESM_core_IDA:IDA_core|IRT:irt|Mux12                          ;
+; 32:1               ; 16 bits   ; 336 LEs       ; 336 LEs              ; 0 LEs                  ; No         ; |ESM|ESM_core:core|ESM_core_IDA:IDA_core|IRT:irt|Mux28                          ;
+; 32:1               ; 32 bits   ; 672 LEs       ; 672 LEs              ; 0 LEs                  ; No         ; |ESM|ESM_core:core|ESM_core_IDA:IDA_core|IRT:irt|Mux48                          ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------------------------------------------------+
+
+
++---------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Top-level Entity: |ESM ;
++-----------------+-------+-------------------------------------------+
+; Parameter Name  ; Value ; Type                                      ;
++-----------------+-------+-------------------------------------------+
+; Instr_word_size ; 32    ; Signed Integer                            ;
+; regnum          ; 32    ; Signed Integer                            ;
+; bs              ; 16    ; Signed Integer                            ;
++-----------------+-------+-------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Instr_Buffer:buffer ;
++-----------------+-------+----------------------------------------+
+; Parameter Name  ; Value ; Type                                   ;
++-----------------+-------+----------------------------------------+
+; Instr_word_size ; 32    ; Signed Integer                         ;
+; bs              ; 16    ; Signed Integer                         ;
++-----------------+-------+----------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: ESM_core:core ;
++-----------------+-------+----------------------------------+
+; Parameter Name  ; Value ; Type                             ;
++-----------------+-------+----------------------------------+
+; Instr_word_size ; 32    ; Signed Integer                   ;
+; regnum          ; 32    ; Signed Integer                   ;
+; bs              ; 16    ; Signed Integer                   ;
++-----------------+-------+----------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: ESM_core:core|ESM_core_IDA:IDA_core ;
++-----------------+-------+--------------------------------------------------------+
+; Parameter Name  ; Value ; Type                                                   ;
++-----------------+-------+--------------------------------------------------------+
+; Instr_word_size ; 32    ; Signed Integer                                         ;
+; regnum          ; 32    ; Signed Integer                                         ;
+; bs              ; 16    ; Signed Integer                                         ;
++-----------------+-------+--------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: ESM_core:core|ESM_core_IDA:IDA_core|IRT:irt ;
++----------------+-------+-----------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                            ;
++----------------+-------+-----------------------------------------------------------------+
+; regnum         ; 32    ; Signed Integer                                                  ;
+; bs             ; 16    ; Signed Integer                                                  ;
++----------------+-------+-----------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: ESM_core:core|ESM_core_IDA:IDA_core|IDT:idt ;
++----------------+-------+-----------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                            ;
++----------------+-------+-----------------------------------------------------------------+
+; bs             ; 16    ; Signed Integer                                                  ;
++----------------+-------+-----------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: ESM_core:core|ESM_core_IIM:IIM_core ;
++----------------+-------+---------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                    ;
++----------------+-------+---------------------------------------------------------+
+; bs             ; 16    ; Signed Integer                                          ;
++----------------+-------+---------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: ESM_core:core|ESM_core_IIM:IIM_core|candidate_list:c_list ;
++----------------+-------+-------------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                          ;
++----------------+-------+-------------------------------------------------------------------------------+
+; bs             ; 16    ; Signed Integer                                                                ;
++----------------+-------+-------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: ESM_core:core|ESM_core_IIM:IIM_core|mapping_table:m_table ;
++----------------+-------+-------------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                          ;
++----------------+-------+-------------------------------------------------------------------------------+
+; bs             ; 16    ; Signed Integer                                                                ;
++----------------+-------+-------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: ESM_core:core|ESM_core_IIM:IIM_core|mapping_table:m_table|lpm_divide:Mod0 ;
++------------------------+----------------+----------------------------------------------------------------------------------+
+; Parameter Name         ; Value          ; Type                                                                             ;
++------------------------+----------------+----------------------------------------------------------------------------------+
+; LPM_WIDTHN             ; 32             ; Untyped                                                                          ;
+; LPM_WIDTHD             ; 4              ; Untyped                                                                          ;
+; LPM_NREPRESENTATION    ; UNSIGNED       ; Untyped                                                                          ;
+; LPM_DREPRESENTATION    ; UNSIGNED       ; Untyped                                                                          ;
+; LPM_PIPELINE           ; 0              ; Untyped                                                                          ;
+; LPM_REMAINDERPOSITIVE  ; TRUE           ; Untyped                                                                          ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                                                                          ;
+; CBXI_PARAMETER         ; lpm_divide_3bm ; Untyped                                                                          ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                                                                          ;
+; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                                                                          ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY                                                                       ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY                                                                     ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE                                                                     ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE                                                                   ;
++------------------------+----------------+----------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "ESM_core:core|ESM_core_IIM:IIM_core|mapping_table:m_table|PRNG:random_num" ;
++------+-------+----------+-----------------------------------------------------------------------------+
+; Port ; Type  ; Severity ; Details                                                                     ;
++------+-------+----------+-----------------------------------------------------------------------------+
+; ce   ; Input ; Info     ; Stuck at VCC                                                                ;
++------+-------+----------+-----------------------------------------------------------------------------+
+
+
++-----------------------------------------------------+
+; Post-Synthesis Netlist Statistics for Top Partition ;
++-----------------------+-----------------------------+
+; Type                  ; Count                       ;
++-----------------------+-----------------------------+
+; boundary_port         ; 68                          ;
+; cycloneiii_ff         ; 1948                        ;
+;     CLR               ; 72                          ;
+;     ENA               ; 32                          ;
+;     ENA CLR           ; 1328                        ;
+;     plain             ; 516                         ;
+; cycloneiii_lcell_comb ; 3256                        ;
+;     arith             ; 147                         ;
+;         3 data inputs ; 147                         ;
+;     normal            ; 3109                        ;
+;         0 data inputs ; 30                          ;
+;         1 data inputs ; 303                         ;
+;         2 data inputs ; 101                         ;
+;         3 data inputs ; 122                         ;
+;         4 data inputs ; 2553                        ;
+;                       ;                             ;
+; Max LUT depth         ; 77.70                       ;
+; Average LUT depth     ; 11.31                       ;
++-----------------------+-----------------------------+
+
+
++-------------------------------+
+; Elapsed Time Per Partition    ;
++----------------+--------------+
+; Partition Name ; Elapsed Time ;
++----------------+--------------+
+; Top            ; 00:00:05     ;
++----------------+--------------+
 
 
 +-------------------------------+
@@ -162,14 +585,14 @@ https://fpgasoftware.intel.com/eula.
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
-    Info: Processing started: Wed Jan 01 11:51:18 2025
+    Info: Processing started: Wed Jan 01 12:04:20 2025
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off ESM -c ESM
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
 Info (12021): Found 1 design units, including 1 entities, in source file code/prng.v
     Info (12023): Found entity 1: PRNG File: C:/Users/nawaz/OneDrive/Desktop/pdf/winter intern/ESM-module/quarturs/code/PRNG.v Line: 1
-Error (10170): Verilog HDL syntax error at mapping_table.v(3) near text: "localparam";  expecting an identifier ("localparam" is a reserved keyword ). Check for and fix any syntax errors that appear immediately before or at the specified keyword. The Intel FPGA Knowledge Database contains many articles with specific details on how to resolve this error. Visit the Knowledge Database at https://www.altera.com/support/support-resources/knowledge-base/search.html and search for this specific error message number. File: C:/Users/nawaz/OneDrive/Desktop/pdf/winter intern/ESM-module/quarturs/code/mapping_table.v Line: 3
-Info (12021): Found 0 design units, including 0 entities, in source file code/mapping_table.v
+Info (12021): Found 1 design units, including 1 entities, in source file code/mapping_table.v
+    Info (12023): Found entity 1: mapping_table File: C:/Users/nawaz/OneDrive/Desktop/pdf/winter intern/ESM-module/quarturs/code/mapping_table.v Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file code/irt.v
     Info (12023): Found entity 1: IRT File: C:/Users/nawaz/OneDrive/Desktop/pdf/winter intern/ESM-module/quarturs/code/IRT.v Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file code/instr_buffer.v
@@ -186,12 +609,54 @@ Info (12021): Found 1 design units, including 1 entities, in source file code/es
     Info (12023): Found entity 1: ESM File: C:/Users/nawaz/OneDrive/Desktop/pdf/winter intern/ESM-module/quarturs/code/ESM.v Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file code/candidate_list.v
     Info (12023): Found entity 1: candidate_list File: C:/Users/nawaz/OneDrive/Desktop/pdf/winter intern/ESM-module/quarturs/code/candidate_list.v Line: 1
+Info (12127): Elaborating entity "ESM" for the top level hierarchy
+Info (12128): Elaborating entity "Instr_Buffer" for hierarchy "Instr_Buffer:buffer" File: C:/Users/nawaz/OneDrive/Desktop/pdf/winter intern/ESM-module/quarturs/code/ESM.v Line: 14
+Info (12128): Elaborating entity "ESM_core" for hierarchy "ESM_core:core" File: C:/Users/nawaz/OneDrive/Desktop/pdf/winter intern/ESM-module/quarturs/code/ESM.v Line: 16
+Info (12128): Elaborating entity "ESM_core_IDA" for hierarchy "ESM_core:core|ESM_core_IDA:IDA_core" File: C:/Users/nawaz/OneDrive/Desktop/pdf/winter intern/ESM-module/quarturs/code/ESM_core.v Line: 14
+Info (12128): Elaborating entity "IRT" for hierarchy "ESM_core:core|ESM_core_IDA:IDA_core|IRT:irt" File: C:/Users/nawaz/OneDrive/Desktop/pdf/winter intern/ESM-module/quarturs/code/ESM_core_IDA.v Line: 18
+Warning (10230): Verilog HDL assignment warning at IRT.v(17): truncated value with size 32 to match size of target (16) File: C:/Users/nawaz/OneDrive/Desktop/pdf/winter intern/ESM-module/quarturs/code/IRT.v Line: 17
+Info (12128): Elaborating entity "IDT" for hierarchy "ESM_core:core|ESM_core_IDA:IDA_core|IDT:idt" File: C:/Users/nawaz/OneDrive/Desktop/pdf/winter intern/ESM-module/quarturs/code/ESM_core_IDA.v Line: 20
+Warning (10230): Verilog HDL assignment warning at IDT.v(27): truncated value with size 32 to match size of target (4) File: C:/Users/nawaz/OneDrive/Desktop/pdf/winter intern/ESM-module/quarturs/code/IDT.v Line: 27
+Info (12128): Elaborating entity "ESM_core_IIM" for hierarchy "ESM_core:core|ESM_core_IIM:IIM_core" File: C:/Users/nawaz/OneDrive/Desktop/pdf/winter intern/ESM-module/quarturs/code/ESM_core.v Line: 16
+Info (12128): Elaborating entity "candidate_list" for hierarchy "ESM_core:core|ESM_core_IIM:IIM_core|candidate_list:c_list" File: C:/Users/nawaz/OneDrive/Desktop/pdf/winter intern/ESM-module/quarturs/code/ESM_core_IIM.v Line: 10
+Info (12128): Elaborating entity "mapping_table" for hierarchy "ESM_core:core|ESM_core_IIM:IIM_core|mapping_table:m_table" File: C:/Users/nawaz/OneDrive/Desktop/pdf/winter intern/ESM-module/quarturs/code/ESM_core_IIM.v Line: 12
+Warning (10230): Verilog HDL assignment warning at mapping_table.v(27): truncated value with size 32 to match size of target (4) File: C:/Users/nawaz/OneDrive/Desktop/pdf/winter intern/ESM-module/quarturs/code/mapping_table.v Line: 27
+Warning (10230): Verilog HDL assignment warning at mapping_table.v(28): truncated value with size 32 to match size of target (4) File: C:/Users/nawaz/OneDrive/Desktop/pdf/winter intern/ESM-module/quarturs/code/mapping_table.v Line: 28
+Warning (10230): Verilog HDL assignment warning at mapping_table.v(41): truncated value with size 32 to match size of target (4) File: C:/Users/nawaz/OneDrive/Desktop/pdf/winter intern/ESM-module/quarturs/code/mapping_table.v Line: 41
+Info (12128): Elaborating entity "PRNG" for hierarchy "ESM_core:core|ESM_core_IIM:IIM_core|mapping_table:m_table|PRNG:random_num" File: C:/Users/nawaz/OneDrive/Desktop/pdf/winter intern/ESM-module/quarturs/code/mapping_table.v Line: 38
+Info (278001): Inferred 1 megafunctions from design logic
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "ESM_core:core|ESM_core_IIM:IIM_core|mapping_table:m_table|Mod0" File: C:/Users/nawaz/OneDrive/Desktop/pdf/winter intern/ESM-module/quarturs/code/mapping_table.v Line: 41
+Info (12130): Elaborated megafunction instantiation "ESM_core:core|ESM_core_IIM:IIM_core|mapping_table:m_table|lpm_divide:Mod0" File: C:/Users/nawaz/OneDrive/Desktop/pdf/winter intern/ESM-module/quarturs/code/mapping_table.v Line: 41
+Info (12133): Instantiated megafunction "ESM_core:core|ESM_core_IIM:IIM_core|mapping_table:m_table|lpm_divide:Mod0" with the following parameter: File: C:/Users/nawaz/OneDrive/Desktop/pdf/winter intern/ESM-module/quarturs/code/mapping_table.v Line: 41
+    Info (12134): Parameter "LPM_WIDTHN" = "32"
+    Info (12134): Parameter "LPM_WIDTHD" = "4"
+    Info (12134): Parameter "LPM_NREPRESENTATION" = "UNSIGNED"
+    Info (12134): Parameter "LPM_DREPRESENTATION" = "UNSIGNED"
+Info (12021): Found 1 design units, including 1 entities, in source file db/lpm_divide_3bm.tdf
+    Info (12023): Found entity 1: lpm_divide_3bm File: C:/Users/nawaz/OneDrive/Desktop/pdf/winter intern/ESM-module/quarturs/db/lpm_divide_3bm.tdf Line: 25
+Info (12021): Found 1 design units, including 1 entities, in source file db/sign_div_unsign_olh.tdf
+    Info (12023): Found entity 1: sign_div_unsign_olh File: C:/Users/nawaz/OneDrive/Desktop/pdf/winter intern/ESM-module/quarturs/db/sign_div_unsign_olh.tdf Line: 25
+Info (12021): Found 1 design units, including 1 entities, in source file db/alt_u_div_47f.tdf
+    Info (12023): Found entity 1: alt_u_div_47f File: C:/Users/nawaz/OneDrive/Desktop/pdf/winter intern/ESM-module/quarturs/db/alt_u_div_47f.tdf Line: 27
+Info (12021): Found 1 design units, including 1 entities, in source file db/add_sub_7pc.tdf
+    Info (12023): Found entity 1: add_sub_7pc File: C:/Users/nawaz/OneDrive/Desktop/pdf/winter intern/ESM-module/quarturs/db/add_sub_7pc.tdf Line: 23
+Info (12021): Found 1 design units, including 1 entities, in source file db/add_sub_8pc.tdf
+    Info (12023): Found entity 1: add_sub_8pc File: C:/Users/nawaz/OneDrive/Desktop/pdf/winter intern/ESM-module/quarturs/db/add_sub_8pc.tdf Line: 23
+Info (13000): Registers with preset signals will power-up high File: C:/Users/nawaz/OneDrive/Desktop/pdf/winter intern/ESM-module/quarturs/code/PRNG.v Line: 12
+Info (13003): DEV_CLRn pin will set, and not reset, register with preset signal due to NOT Gate Push-Back
+Info (286030): Timing-Driven Synthesis is running
 Info (144001): Generated suppressed messages file C:/Users/nawaz/OneDrive/Desktop/pdf/winter intern/ESM-module/quarturs/output_files/ESM.map.smsg
-Error: Quartus Prime Analysis & Synthesis was unsuccessful. 1 error, 1 warning
-    Error: Peak virtual memory: 4705 megabytes
-    Error: Processing ended: Wed Jan 01 11:51:25 2025
-    Error: Elapsed time: 00:00:07
-    Error: Total CPU time (on all processors): 00:00:05
+Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
+    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
+Info (21057): Implemented 4316 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 36 input pins
+    Info (21059): Implemented 32 output pins
+    Info (21061): Implemented 4248 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 6 warnings
+    Info: Peak virtual memory: 4782 megabytes
+    Info: Processing ended: Wed Jan 01 12:04:33 2025
+    Info: Elapsed time: 00:00:13
+    Info: Total CPU time (on all processors): 00:00:11
 
 
 +------------------------------------------+

@@ -2,12 +2,10 @@ module IDT #(
     parameter bs = 16
 ) (
     input clk, rst,
-    input [bs_bits-1:0] buffer_index,
+    input [$clog2(bs)-1:0] buffer_index,
     input [bs-1:0] current_idt,
-    output reg [bs_bits-1:0] ready_index
+    output reg [$clog2(bs)-1:0] ready_index
 );
-
-    localparam bs_bits = $clog2(bs);
 	 
 	 integer i,j;
 

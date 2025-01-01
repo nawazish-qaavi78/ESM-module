@@ -1,1 +1,1 @@
-Warning (10268): Verilog HDL information at Instr_Buffer.v(21): always construct contains both blocking and non-blocking assignments File: C:/Users/nawaz/OneDrive/Desktop/pdf/winter intern/ESM-module/quarturs/code/Instr_Buffer.v Line: 21
+Warning (10268): Verilog HDL information at Instr_Buffer.v(19): always construct contains both blocking and non-blocking assignments File: C:/Users/nawaz/OneDrive/Desktop/pdf/winter intern/ESM-module/quarturs/code/Instr_Buffer.v Line: 19
