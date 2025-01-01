@@ -16,11 +16,3 @@ vlog -vlog01compat -work work +incdir+C:/Users/nawaz/OneDrive/Desktop/pdf/winter
 vlog -vlog01compat -work work +incdir+C:/Users/nawaz/OneDrive/Desktop/pdf/winter\ intern/ESM-module/quarturs/code {C:/Users/nawaz/OneDrive/Desktop/pdf/winter intern/ESM-module/quarturs/code/ESM.v}
 vlog -vlog01compat -work work +incdir+C:/Users/nawaz/OneDrive/Desktop/pdf/winter\ intern/ESM-module/quarturs/code {C:/Users/nawaz/OneDrive/Desktop/pdf/winter intern/ESM-module/quarturs/code/candidate_list.v}
 
-vlog -vlog01compat -work work +incdir+C:/Users/nawaz/OneDrive/Desktop/pdf/winter\ intern/ESM-module/quarturs/.test {C:/Users/nawaz/OneDrive/Desktop/pdf/winter intern/ESM-module/quarturs/.test/tb.v}
-
-vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cycloneive_ver -L rtl_work -L work -voptargs="+acc"  tb
-
-add wave *
-view structure
-view signals
-run -all

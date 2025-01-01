@@ -1,8 +1,9 @@
 module mapping_table #(
     parameter bs = 16
 ) (
-    input clk, rst,
+    input clk, rst, start,
     input [bs-1:0] cand_list,
+	 input [31:0] rand_num,
     output reg [$clog2(bs)-1: 0] buffer_index
 );
 
@@ -14,7 +15,6 @@ module mapping_table #(
     reg [bs_bits-1: 0] count = 0;
 	 
 	 wire [bs_bits-1: 0] map_ready_index;
-	 wire [31:0] rand_num;
 
     always @(posedge clk, posedge rst) begin
         if(rst) begin
@@ -31,13 +31,11 @@ module mapping_table #(
 
     always @(posedge clk, posedge rst) begin
         if(rst) buffer_index = 0;
-        else buffer_index = map_table[map_ready_index];
+        else if(map_ready_index && start) buffer_index = map_table[map_ready_index];
+		  else buffer_index = buffer_index + 1;
     end
 
- 
-    PRNG random_num(clk, 1'b1, rst, rand_num);
 
-    
     assign map_ready_index = (count!=0) ? (rand_num % count) : 0;
     
 endmodule

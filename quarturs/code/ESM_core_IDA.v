@@ -6,7 +6,7 @@ module ESM_core_IDA #(
     input [Instr_word_size-1:0] Instr_in,
     input ALUSrc, RegWrite, clk, rst,
     input  [$clog2(bs)-1:0] buffer_index,
-    output [$clog2(bs)-1:0] ready_index
+    output [bs-1:0] ready_index
 );
     localparam reg_addr_bits = $clog2(regnum);
 

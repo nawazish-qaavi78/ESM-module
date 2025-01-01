@@ -67,23 +67,7 @@ module tb;
         #instr_delay Instr_in = i21; RegWrite = 1 ; ALUSrc = 1;
         #instr_delay Instr_in = i22; RegWrite = 1 ; ALUSrc = 0;
         #instr_delay Instr_in = i23; RegWrite = 1 ; ALUSrc = 0;
-        #instr_delay Instr_in = 0; RegWrite = 0 ; ALUSrc = 0;
-        #instr_delay Instr_in = 0; RegWrite = 0 ; ALUSrc = 0;
-        #instr_delay Instr_in = 0; RegWrite = 0 ; ALUSrc = 0;
-        #instr_delay Instr_in = 0; RegWrite = 0 ; ALUSrc = 0;
-        #instr_delay Instr_in = 0; RegWrite = 0 ; ALUSrc = 0;
-        #instr_delay Instr_in = 0; RegWrite = 0 ; ALUSrc = 0;
-        #instr_delay Instr_in = 0; RegWrite = 0 ; ALUSrc = 0;
-        #instr_delay Instr_in = 0; RegWrite = 0 ; ALUSrc = 0;
-        #instr_delay Instr_in = 0; RegWrite = 0 ; ALUSrc = 0;
-        #instr_delay Instr_in = 0; RegWrite = 0 ; ALUSrc = 0;
-        #instr_delay Instr_in = 0; RegWrite = 0 ; ALUSrc = 0;
-        #instr_delay Instr_in = 0; RegWrite = 0 ; ALUSrc = 0;
-        #instr_delay Instr_in = 0; RegWrite = 0 ; ALUSrc = 0;
-        #instr_delay Instr_in = 0; RegWrite = 0 ; ALUSrc = 0;
-        #instr_delay Instr_in = 0; RegWrite = 0 ; ALUSrc = 0;
-        #instr_delay Instr_in = 0; RegWrite = 0 ; ALUSrc = 0;
-        #400 $stop;
+        #(16*instr_delay) $stop;
     end
     
 always @(negedge clk ) begin
@@ -111,7 +95,6 @@ always @(negedge clk ) begin
         i21: $display("i21 is executed");
         i22: $display("i22 is executed");
         i23: $display("i23 is executed");
-        0: $display("No function");
     endcase
 end
 

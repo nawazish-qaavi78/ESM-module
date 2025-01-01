@@ -5,10 +5,12 @@ module Instr_Buffer #(
     input clk, rst,
     input [$clog2(bs)-1:0] buffer_index,
     input [Instr_word_size-1:0] Instr_in,
-    output reg [Instr_word_size-1:0] Instr_out
+    output reg [Instr_word_size-1:0] Instr_out,
+	 output start
 );
-	 integer i;
-
+	 integer i,j;
+	 
+	 reg full;
     reg [Instr_word_size-1:0] buffer [0:bs-1];
 
     initial begin
@@ -26,5 +28,16 @@ module Instr_Buffer #(
             buffer[buffer_index] <= Instr_in;
         end
     end
+	 
+	 always@(*) begin
+		j = 0; // avoiding infered latches
+		if(!rst) begin
+			full = 1;
+			for(j=0; j<bs; j=j+1) 
+				if(!buffer[j]) full = 0;
+		end else full = 1'b0;	
+	 end
+	 
+	 assign start = (Instr_in == 0) ? 1 : (full ? 1 : 0);
 
 endmodule

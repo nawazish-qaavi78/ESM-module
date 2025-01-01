@@ -4,7 +4,7 @@ module IDT #(
     input clk, rst,
     input [$clog2(bs)-1:0] buffer_index,
     input [bs-1:0] current_idt,
-    output reg [$clog2(bs)-1:0] ready_index
+    output reg [bs-1:0] ready_index
 );
 	 
 	 integer i,j;
@@ -21,10 +21,10 @@ module IDT #(
         IDT_table[buffer_index] = current_idt;
     end
 
-    always @(posedge clk) begin
-        ready_index = 0;
+    always @(*) begin
         for(i=0; i<bs; i=i+1) begin
-            if(IDT_table[i] == 0) ready_index = i;
+            if(IDT_table[i] == 0) ready_index[i] = 1;
+				else ready_index[i] = 0;
         end
     end
 

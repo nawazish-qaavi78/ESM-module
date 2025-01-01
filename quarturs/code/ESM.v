@@ -10,9 +10,10 @@ module ESM #(
     localparam bs_bits = $clog2(bs);
 
     wire [bs_bits-1:0] buffer_index;
+	 wire start;
 
-    Instr_Buffer #(Instr_word_size, bs) buffer (clk, rst, buffer_index, Instr_in, Instr_out);
+    Instr_Buffer #(Instr_word_size, bs) buffer (clk, rst, buffer_index, Instr_in, Instr_out, start);
 
-    ESM_core #(Instr_word_size, regnum, bs) core (Instr_in, ALUSrc, RegWrite, clk, rst, buffer_index);
+    ESM_core #(Instr_word_size, regnum, bs) core (Instr_in, ALUSrc, RegWrite, clk, rst, start, buffer_index);
 
 endmodule

@@ -4,7 +4,7 @@ module ESM_core #(
     parameter bs = 16
 ) (
     input [Instr_word_size-1:0] Instr_in,
-    input ALUSrc, RegWrite, clk, rst,
+    input ALUSrc, RegWrite, clk, rst, start,
     output [$clog2(bs)-1:0] buffer_index 
 );  
 
@@ -13,6 +13,6 @@ module ESM_core #(
     wire [bs_bits-1:0] ready_index;
     ESM_core_IDA #(Instr_word_size, regnum, bs) IDA_core(Instr_in, ALUSrc, RegWrite, clk, rst, buffer_index, ready_index);
 
-    ESM_core_IIM #(bs) IIM_core(ready_index, clk, rst, buffer_index);
+    ESM_core_IIM #(bs) IIM_core(ready_index, clk, rst, start, buffer_index);
     
 endmodule
