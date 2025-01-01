@@ -14,10 +14,11 @@ module mapping_table #(
     reg [bs_bits-1: 0] count = 0;
 
     always @(posedge clk, posedge rst) begin
-        if(rst) 
+        if(rst) begin
+				count <= 0
             for(i=0; i<bs; i=i+1)
-                map_table[i] = 0;
-        else 
+                map_table[i] <= 0;
+        end else 
             for(i=0; i<bs; i=i+1)
                 if(cand_list[i]) begin
                     map_table[count] <= i;

@@ -1,0 +1,36 @@
+m255
+K4
+z2
+!s11f vlog 2020.1 2020.02, Feb 28 2020
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dC:/Users/nawaz/OneDrive/Desktop/pdf/winter intern/ESM-module/quarturs/simulation/modelsim
+vPRNG
+!s110 1735712375
+!i10b 1
+!s100 N:[3gg`5j[0Vm[l6b`5hi1
+!s11b Dg1SIo80bB@j0V0VzS_@n1
+If:F8?JB8dV8GcioD3[;D21
+VDg1SIo80bB@j0V0VzS_@n1
+R0
+w1734856449
+8C:/Users/nawaz/OneDrive/Desktop/pdf/winter intern/ESM-module/quarturs/code/PRNG.v
+FC:/Users/nawaz/OneDrive/Desktop/pdf/winter intern/ESM-module/quarturs/code/PRNG.v
+!i122 0
+L0 1 14
+OV;L;2020.1;71
+r1
+!s85 0
+31
+!s108 1735712374.000000
+!s107 C:/Users/nawaz/OneDrive/Desktop/pdf/winter intern/ESM-module/quarturs/code/PRNG.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/nawaz/OneDrive/Desktop/pdf/winter intern/ESM-module/quarturs/code|C:/Users/nawaz/OneDrive/Desktop/pdf/winter intern/ESM-module/quarturs/code/PRNG.v|
+!i113 1
+o-vlog01compat -work work
+!s92 -vlog01compat -work work {+incdir+C:/Users/nawaz/OneDrive/Desktop/pdf/winter intern/ESM-module/quarturs/code}
+tCvgOpt 0
+n@p@r@n@g

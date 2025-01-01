@@ -1,0 +1,41 @@
+# Reading pref.tcl
+# ERROR: No extended dataflow license exists
+# do ESM_run_msim_rtl_verilog.do
+# if {[file exists rtl_work]} {
+# 	vdel -lib rtl_work -all
+# }
+# vlib rtl_work
+# vmap work rtl_work
+# Model Technology ModelSim - Intel FPGA Edition vmap 2020.1 Lib Mapping Utility 2020.02 Feb 28 2020
+# vmap work rtl_work 
+# Copying C:/intelFPGA_lite/20.1/modelsim_ase/win32aloem/../modelsim.ini to modelsim.ini
+# Modifying modelsim.ini
+# 
+# vlog -vlog01compat -work work +incdir+C:/Users/nawaz/OneDrive/Desktop/pdf/winter\ intern/ESM-module/quarturs/code {C:/Users/nawaz/OneDrive/Desktop/pdf/winter intern/ESM-module/quarturs/code/PRNG.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 11:49:34 on Jan 01,2025
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/nawaz/OneDrive/Desktop/pdf/winter intern/ESM-module/quarturs/code" C:/Users/nawaz/OneDrive/Desktop/pdf/winter intern/ESM-module/quarturs/code/PRNG.v 
+# -- Compiling module PRNG
+# 
+# Top level modules:
+# 	PRNG
+# End time: 11:49:35 on Jan 01,2025, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+C:/Users/nawaz/OneDrive/Desktop/pdf/winter\ intern/ESM-module/quarturs/code {C:/Users/nawaz/OneDrive/Desktop/pdf/winter intern/ESM-module/quarturs/code/mapping_table.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 11:49:35 on Jan 01,2025
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/nawaz/OneDrive/Desktop/pdf/winter intern/ESM-module/quarturs/code" C:/Users/nawaz/OneDrive/Desktop/pdf/winter intern/ESM-module/quarturs/code/mapping_table.v 
+# -- Compiling module mapping_table
+# ** Error: C:/Users/nawaz/OneDrive/Desktop/pdf/winter intern/ESM-module/quarturs/code/mapping_table.v(6): (vlog-2730) Undefined variable: 'bs_bits'.
+# ** Error (suppressible): C:/Users/nawaz/OneDrive/Desktop/pdf/winter intern/ESM-module/quarturs/code/mapping_table.v(7): (vlog-2388) 'buffer_index' already declared in this scope (mapping_table) at C:/Users/nawaz/OneDrive/Desktop/pdf/winter intern/ESM-module/quarturs/code/mapping_table.v(6).
+# ** Error: C:/Users/nawaz/OneDrive/Desktop/pdf/winter intern/ESM-module/quarturs/code/mapping_table.v(9): (vlog-13282) 'bs_bits' already declared in this scope.
+# ** Error: C:/Users/nawaz/OneDrive/Desktop/pdf/winter intern/ESM-module/quarturs/code/mapping_table.v(30): (vlog-2730) Undefined variable: 'map_ready_index'.
+# ** Error (suppressible): C:/Users/nawaz/OneDrive/Desktop/pdf/winter intern/ESM-module/quarturs/code/mapping_table.v(38): (vlog-2388) 'map_ready_index' already declared in this scope (mapping_table) at C:/Users/nawaz/OneDrive/Desktop/pdf/winter intern/ESM-module/quarturs/code/mapping_table.v(30).
+# ** Error: C:/Users/nawaz/OneDrive/Desktop/pdf/winter intern/ESM-module/quarturs/code/mapping_table.v(6): (vlog-13294) Identifier must be declared with a port mode: buffer_index.
+# End time: 11:49:35 on Jan 01,2025, Elapsed time: 0:00:00
+# Errors: 6, Warnings: 0
+# ** Error: C:/intelFPGA_lite/20.1/modelsim_ase/win32aloem/vlog failed.
+# Error in macro ./ESM_run_msim_rtl_verilog.do line 9
+# C:/intelFPGA_lite/20.1/modelsim_ase/win32aloem/vlog failed.
+#     while executing
+# "vlog -vlog01compat -work work +incdir+C:/Users/nawaz/OneDrive/Desktop/pdf/winter\ intern/ESM-module/quarturs/code {C:/Users/nawaz/OneDrive/Desktop/pdf..."
