@@ -1,5 +1,5 @@
 Flow report for ESM
-Sat Jan 04 13:51:35 2025
+Mon Feb 03 16:47:04 2025
 Quartus Prime Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
 
 
@@ -41,18 +41,18 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------------------------------------------------------------+
 ; Flow Summary                                                                     ;
 +------------------------------------+---------------------------------------------+
-; Flow Status                        ; Successful - Sat Jan 04 13:51:35 2025       ;
+; Flow Status                        ; Successful - Mon Feb 03 16:47:04 2025       ;
 ; Quartus Prime Version              ; 20.1.1 Build 720 11/11/2020 SJ Lite Edition ;
 ; Revision Name                      ; ESM                                         ;
 ; Top-level Entity Name              ; ESM                                         ;
 ; Family                             ; Cyclone IV E                                ;
-; Total logic elements               ; 4,377                                       ;
-;     Total combinational functions  ; 3,417                                       ;
-;     Dedicated logic registers      ; 1,960                                       ;
-; Total registers                    ; 1960                                        ;
+; Total logic elements               ; 3,428                                       ;
+;     Total combinational functions  ; 2,964                                       ;
+;     Dedicated logic registers      ; 1,433                                       ;
+; Total registers                    ; 1433                                        ;
 ; Total pins                         ; 68                                          ;
 ; Total virtual pins                 ; 0                                           ;
-; Total memory bits                  ; 0                                           ;
+; Total memory bits                  ; 512                                         ;
 ; Embedded Multiplier 9-bit elements ; 0                                           ;
 ; Total PLLs                         ; 0                                           ;
 +------------------------------------+---------------------------------------------+
@@ -63,7 +63,7 @@ https://fpgasoftware.intel.com/eula.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 01/04/2025 13:51:12 ;
+; Start date & time ; 02/03/2025 16:46:43 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; ESM                 ;
 +-------------------+---------------------+
@@ -74,7 +74,7 @@ https://fpgasoftware.intel.com/eula.
 +--------------------------------------+----------------------------------------+---------------+-------------+-----------------------------------+
 ; Assignment Name                      ; Value                                  ; Default Value ; Entity Name ; Section Id                        ;
 +--------------------------------------+----------------------------------------+---------------+-------------+-----------------------------------+
-; COMPILER_SIGNATURE_ID                ; 2543407633492.173597887233004          ; --            ; --          ; --                                ;
+; COMPILER_SIGNATURE_ID                ; 1095962413259.173858140315764          ; --            ; --          ; --                                ;
 ; EDA_DESIGN_INSTANCE_NAME             ; NA                                     ; --            ; --          ; tb                                ;
 ; EDA_GENERATE_FUNCTIONAL_NETLIST      ; Off                                    ; --            ; --          ; eda_board_design_timing           ;
 ; EDA_GENERATE_FUNCTIONAL_NETLIST      ; Off                                    ; --            ; --          ; eda_board_design_boundary_scan    ;
@@ -100,8 +100,8 @@ https://fpgasoftware.intel.com/eula.
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name          ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis ; 00:00:23     ; 1.0                     ; 4782 MB             ; 00:00:09                           ;
-; Total                ; 00:00:23     ; --                      ; --                  ; 00:00:09                           ;
+; Analysis & Synthesis ; 00:00:22     ; 1.0                     ; 4789 MB             ; 00:00:22                           ;
+; Total                ; 00:00:22     ; --                      ; --                  ; 00:00:22                           ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 

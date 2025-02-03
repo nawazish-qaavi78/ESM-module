@@ -8,36 +8,21 @@ module Instr_Buffer #(
     output reg [Instr_word_size-1:0] Instr_out,
 	 output start // tells when we can start sending the buffer index value based on mapping table, until then buffer_index will just increment
 );
-	 integer i,j;
 	 
-	 reg full; // imagine hte 1st instr in, it would considered independent, hence executed immediately... so we need to wait until buffer is full or instructions are completed
+	 reg [0:bs-1] valid_entries = {bs{1'b0}}; // tells us which values in the buffer are actually correct
     reg [Instr_word_size-1:0] buffer [0:bs-1];
 
-    initial begin
-        for(i=0; i<bs; i=i+1) 
-            buffer[i] = 0;
-    end
-
     always @(posedge clk, posedge rst) begin
-		  i= 0; // to avoid in inferred latch
-        if(rst)
-            for(i=0; i<bs; i=i+1)
-                buffer[i] <= 0;
-        else begin
+        if(rst) begin
+            valid_entries <= {bs{1'b0}};
+				Instr_out <= {Instr_word_size{1'b0}};
+		  end else begin
             Instr_out <= buffer[buffer_index];
             buffer[buffer_index] <= Instr_in;
+				valid_entries[buffer_index] <= (Instr_in)? 1'b1 : 1'b0; // in case the instructions are over then instr_in will be 0, hence directly i can say it is invalid entry
         end
     end
 	 
-	 always@(*) begin
-		j = 0; // avoiding infered latches
-		if(!rst) begin
-			full = 1;
-			for(j=0; j<bs; j=j+1) 
-				if(!buffer[j]) full = 0;
-		end else full = 1'b0;	
-	 end
-	 
-	 assign start = (Instr_in == 0) ? 1'b1 : (full ? 1'b1 : 1'b0);
+	 assign start = (Instr_in == 0) ? 1'b1 : (&valid_entries);
 
 endmodule

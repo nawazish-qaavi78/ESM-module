@@ -1,5 +1,5 @@
 Analysis & Synthesis report for ESM
-Sat Jan 04 13:51:35 2025
+Mon Feb 03 16:47:04 2025
 Quartus Prime Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
 
 
@@ -13,24 +13,28 @@ Quartus Prime Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
   5. Analysis & Synthesis Source Files Read
   6. Analysis & Synthesis Resource Usage Summary
   7. Analysis & Synthesis Resource Utilization by Entity
-  8. General Register Statistics
-  9. Inverted Register Statistics
- 10. Multiplexer Restructuring Statistics (Restructuring Performed)
- 11. Parameter Settings for User Entity Instance: Top-level Entity: |ESM
- 12. Parameter Settings for User Entity Instance: Instr_Buffer:buffer
- 13. Parameter Settings for User Entity Instance: ESM_core:core
- 14. Parameter Settings for User Entity Instance: ESM_core:core|ESM_core_IDA:IDA_core
- 15. Parameter Settings for User Entity Instance: ESM_core:core|ESM_core_IDA:IDA_core|IRT:irt
- 16. Parameter Settings for User Entity Instance: ESM_core:core|ESM_core_IDA:IDA_core|IDT:idt
- 17. Parameter Settings for User Entity Instance: ESM_core:core|ESM_core_IIM:IIM_core
- 18. Parameter Settings for User Entity Instance: ESM_core:core|ESM_core_IIM:IIM_core|candidate_list:c_list
- 19. Parameter Settings for User Entity Instance: ESM_core:core|ESM_core_IIM:IIM_core|mapping_table:m_table
- 20. Parameter Settings for Inferred Entity Instance: ESM_core:core|ESM_core_IIM:IIM_core|mapping_table:m_table|lpm_divide:Mod0
- 21. Port Connectivity Checks: "ESM_core:core|ESM_core_IIM:IIM_core|PRNG:random_num"
- 22. Post-Synthesis Netlist Statistics for Top Partition
- 23. Elapsed Time Per Partition
- 24. Analysis & Synthesis Messages
- 25. Analysis & Synthesis Suppressed Messages
+  8. Analysis & Synthesis RAM Summary
+  9. General Register Statistics
+ 10. Inverted Register Statistics
+ 11. Registers Packed Into Inferred Megafunctions
+ 12. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 13. Source assignments for Instr_Buffer:buffer|altsyncram:buffer_rtl_0|altsyncram_1c81:auto_generated
+ 14. Parameter Settings for User Entity Instance: Top-level Entity: |ESM
+ 15. Parameter Settings for User Entity Instance: Instr_Buffer:buffer
+ 16. Parameter Settings for User Entity Instance: ESM_core:core
+ 17. Parameter Settings for User Entity Instance: ESM_core:core|ESM_core_IDA:IDA_core
+ 18. Parameter Settings for User Entity Instance: ESM_core:core|ESM_core_IDA:IDA_core|IRT:irt
+ 19. Parameter Settings for User Entity Instance: ESM_core:core|ESM_core_IDA:IDA_core|IDT:idt
+ 20. Parameter Settings for User Entity Instance: ESM_core:core|ESM_core_IIM:IIM_core
+ 21. Parameter Settings for User Entity Instance: ESM_core:core|ESM_core_IIM:IIM_core|candidate_list:c_list
+ 22. Parameter Settings for User Entity Instance: ESM_core:core|ESM_core_IIM:IIM_core|mapping_table:m_table
+ 23. Parameter Settings for Inferred Entity Instance: Instr_Buffer:buffer|altsyncram:buffer_rtl_0
+ 24. Parameter Settings for Inferred Entity Instance: ESM_core:core|ESM_core_IIM:IIM_core|mapping_table:m_table|lpm_divide:Mod0
+ 25. altsyncram Parameter Settings by Entity Instance
+ 26. Port Connectivity Checks: "ESM_core:core|ESM_core_IIM:IIM_core|PRNG:random_num"
+ 27. Post-Synthesis Netlist Statistics for Top Partition
+ 28. Elapsed Time Per Partition
+ 29. Analysis & Synthesis Messages
 
 
 
@@ -57,18 +61,18 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +------------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Sat Jan 04 13:51:35 2025       ;
+; Analysis & Synthesis Status        ; Successful - Mon Feb 03 16:47:04 2025       ;
 ; Quartus Prime Version              ; 20.1.1 Build 720 11/11/2020 SJ Lite Edition ;
 ; Revision Name                      ; ESM                                         ;
 ; Top-level Entity Name              ; ESM                                         ;
 ; Family                             ; Cyclone IV E                                ;
-; Total logic elements               ; 4,377                                       ;
-;     Total combinational functions  ; 3,417                                       ;
-;     Dedicated logic registers      ; 1,960                                       ;
-; Total registers                    ; 1960                                        ;
+; Total logic elements               ; 3,428                                       ;
+;     Total combinational functions  ; 2,964                                       ;
+;     Dedicated logic registers      ; 1,433                                       ;
+; Total registers                    ; 1433                                        ;
 ; Total pins                         ; 68                                          ;
 ; Total virtual pins                 ; 0                                           ;
-; Total memory bits                  ; 0                                           ;
+; Total memory bits                  ; 512                                         ;
 ; Embedded Multiplier 9-bit elements ; 0                                           ;
 ; Total PLLs                         ; 0                                           ;
 +------------------------------------+---------------------------------------------+
@@ -173,8 +177,8 @@ https://fpgasoftware.intel.com/eula.
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
 ;     Processor 2            ;   0.1%      ;
-;     Processor 3            ;   0.1%      ;
-;     Processor 4            ;   0.1%      ;
+;     Processor 3            ;   0.0%      ;
+;     Processor 4            ;   0.0%      ;
 +----------------------------+-------------+
 
 
@@ -193,10 +197,19 @@ https://fpgasoftware.intel.com/eula.
 ; code/ESM_core.v                  ; yes             ; User Verilog HDL File        ; C:/Users/nawaz/OneDrive/Desktop/pdf/winter intern/ESM-module/quarturs/code/ESM_core.v            ;         ;
 ; code/ESM.v                       ; yes             ; User Verilog HDL File        ; C:/Users/nawaz/OneDrive/Desktop/pdf/winter intern/ESM-module/quarturs/code/ESM.v                 ;         ;
 ; code/candidate_list.v            ; yes             ; User Verilog HDL File        ; C:/Users/nawaz/OneDrive/Desktop/pdf/winter intern/ESM-module/quarturs/code/candidate_list.v      ;         ;
+; altsyncram.tdf                   ; yes             ; Megafunction                 ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/altsyncram.tdf                            ;         ;
+; stratix_ram_block.inc            ; yes             ; Megafunction                 ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/stratix_ram_block.inc                     ;         ;
+; lpm_mux.inc                      ; yes             ; Megafunction                 ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/lpm_mux.inc                               ;         ;
+; lpm_decode.inc                   ; yes             ; Megafunction                 ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/lpm_decode.inc                            ;         ;
+; aglobal201.inc                   ; yes             ; Megafunction                 ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/aglobal201.inc                            ;         ;
+; a_rdenreg.inc                    ; yes             ; Megafunction                 ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/a_rdenreg.inc                             ;         ;
+; altrom.inc                       ; yes             ; Megafunction                 ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/altrom.inc                                ;         ;
+; altram.inc                       ; yes             ; Megafunction                 ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/altram.inc                                ;         ;
+; altdpram.inc                     ; yes             ; Megafunction                 ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/altdpram.inc                              ;         ;
+; db/altsyncram_1c81.tdf           ; yes             ; Auto-Generated Megafunction  ; C:/Users/nawaz/OneDrive/Desktop/pdf/winter intern/ESM-module/quarturs/db/altsyncram_1c81.tdf     ;         ;
 ; lpm_divide.tdf                   ; yes             ; Megafunction                 ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/lpm_divide.tdf                            ;         ;
 ; abs_divider.inc                  ; yes             ; Megafunction                 ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/abs_divider.inc                           ;         ;
 ; sign_div_unsign.inc              ; yes             ; Megafunction                 ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/sign_div_unsign.inc                       ;         ;
-; aglobal201.inc                   ; yes             ; Megafunction                 ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/aglobal201.inc                            ;         ;
 ; db/lpm_divide_3bm.tdf            ; yes             ; Auto-Generated Megafunction  ; C:/Users/nawaz/OneDrive/Desktop/pdf/winter intern/ESM-module/quarturs/db/lpm_divide_3bm.tdf      ;         ;
 ; db/sign_div_unsign_olh.tdf       ; yes             ; Auto-Generated Megafunction  ; C:/Users/nawaz/OneDrive/Desktop/pdf/winter intern/ESM-module/quarturs/db/sign_div_unsign_olh.tdf ;         ;
 ; db/alt_u_div_47f.tdf             ; yes             ; Auto-Generated Megafunction  ; C:/Users/nawaz/OneDrive/Desktop/pdf/winter intern/ESM-module/quarturs/db/alt_u_div_47f.tdf       ;         ;
@@ -210,30 +223,31 @@ https://fpgasoftware.intel.com/eula.
 +---------------------------------------------+-----------+
 ; Resource                                    ; Usage     ;
 +---------------------------------------------+-----------+
-; Estimated Total logic elements              ; 4,377     ;
+; Estimated Total logic elements              ; 3,428     ;
 ;                                             ;           ;
-; Total combinational functions               ; 3417      ;
+; Total combinational functions               ; 2964      ;
 ; Logic element usage by number of LUT inputs ;           ;
-;     -- 4 input functions                    ; 2712      ;
-;     -- 3 input functions                    ; 276       ;
-;     -- <=2 input functions                  ; 429       ;
+;     -- 4 input functions                    ; 2227      ;
+;     -- 3 input functions                    ; 275       ;
+;     -- <=2 input functions                  ; 462       ;
 ;                                             ;           ;
 ; Logic elements by mode                      ;           ;
-;     -- normal mode                          ; 3270      ;
+;     -- normal mode                          ; 2817      ;
 ;     -- arithmetic mode                      ; 147       ;
 ;                                             ;           ;
-; Total registers                             ; 1960      ;
-;     -- Dedicated logic registers            ; 1960      ;
+; Total registers                             ; 1433      ;
+;     -- Dedicated logic registers            ; 1433      ;
 ;     -- I/O registers                        ; 0         ;
 ;                                             ;           ;
 ; I/O pins                                    ; 68        ;
+; Total memory bits                           ; 512       ;
 ;                                             ;           ;
 ; Embedded Multiplier 9-bit elements          ; 0         ;
 ;                                             ;           ;
 ; Maximum fan-out node                        ; clk~input ;
-; Maximum fan-out                             ; 1960      ;
-; Total fan-out                               ; 18963     ;
-; Average fan-out                             ; 3.44      ;
+; Maximum fan-out                             ; 1465      ;
+; Total fan-out                               ; 15236     ;
+; Average fan-out                             ; 3.34      ;
 +---------------------------------------------+-----------+
 
 
@@ -242,7 +256,7 @@ https://fpgasoftware.intel.com/eula.
 +-------------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------+---------------------+--------------+
 ; Compilation Hierarchy Node                      ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                                                                            ; Entity Name         ; Library Name ;
 +-------------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------+---------------------+--------------+
-; |ESM                                            ; 3417 (0)            ; 1960 (0)                  ; 0           ; 0            ; 0       ; 0         ; 68   ; 0            ; |ESM                                                                                                                                                           ; ESM                 ; work         ;
+; |ESM                                            ; 2964 (0)            ; 1433 (0)                  ; 512         ; 0            ; 0       ; 0         ; 68   ; 0            ; |ESM                                                                                                                                                           ; ESM                 ; work         ;
 ;    |ESM_core:core|                              ; 2900 (0)            ; 1416 (0)                  ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ESM|ESM_core:core                                                                                                                                             ; ESM_core            ; work         ;
 ;       |ESM_core_IDA:IDA_core|                   ; 2372 (10)           ; 1296 (0)                  ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ESM|ESM_core:core|ESM_core_IDA:IDA_core                                                                                                                       ; ESM_core_IDA        ; work         ;
 ;          |IDT:idt|                              ; 336 (336)           ; 256 (256)                 ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ESM|ESM_core:core|ESM_core_IDA:IDA_core|IDT:idt                                                                                                               ; IDT                 ; work         ;
@@ -255,9 +269,20 @@ https://fpgasoftware.intel.com/eula.
 ;                |lpm_divide_3bm:auto_generated|  ; 324 (0)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ESM|ESM_core:core|ESM_core_IIM:IIM_core|mapping_table:m_table|lpm_divide:Mod0|lpm_divide_3bm:auto_generated                                                   ; lpm_divide_3bm      ; work         ;
 ;                   |sign_div_unsign_olh:divider| ; 324 (0)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ESM|ESM_core:core|ESM_core_IIM:IIM_core|mapping_table:m_table|lpm_divide:Mod0|lpm_divide_3bm:auto_generated|sign_div_unsign_olh:divider                       ; sign_div_unsign_olh ; work         ;
 ;                      |alt_u_div_47f:divider|    ; 324 (324)           ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ESM|ESM_core:core|ESM_core_IIM:IIM_core|mapping_table:m_table|lpm_divide:Mod0|lpm_divide_3bm:auto_generated|sign_div_unsign_olh:divider|alt_u_div_47f:divider ; alt_u_div_47f       ; work         ;
-;    |Instr_Buffer:buffer|                        ; 517 (517)           ; 544 (544)                 ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ESM|Instr_Buffer:buffer                                                                                                                                       ; Instr_Buffer        ; work         ;
+;    |Instr_Buffer:buffer|                        ; 64 (64)             ; 17 (17)                   ; 512         ; 0            ; 0       ; 0         ; 0    ; 0            ; |ESM|Instr_Buffer:buffer                                                                                                                                       ; Instr_Buffer        ; work         ;
+;       |altsyncram:buffer_rtl_0|                 ; 0 (0)               ; 0 (0)                     ; 512         ; 0            ; 0       ; 0         ; 0    ; 0            ; |ESM|Instr_Buffer:buffer|altsyncram:buffer_rtl_0                                                                                                               ; altsyncram          ; work         ;
+;          |altsyncram_1c81:auto_generated|       ; 0 (0)               ; 0 (0)                     ; 512         ; 0            ; 0       ; 0         ; 0    ; 0            ; |ESM|Instr_Buffer:buffer|altsyncram:buffer_rtl_0|altsyncram_1c81:auto_generated                                                                                ; altsyncram_1c81     ; work         ;
 +-------------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------+---------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis RAM Summary                                                                                                                                                     ;
++---------------------------------------------------------------------------------------+------+-------------+--------------+--------------+--------------+--------------+------+------+
+; Name                                                                                  ; Type ; Mode        ; Port A Depth ; Port A Width ; Port B Depth ; Port B Width ; Size ; MIF  ;
++---------------------------------------------------------------------------------------+------+-------------+--------------+--------------+--------------+--------------+------+------+
+; Instr_Buffer:buffer|altsyncram:buffer_rtl_0|altsyncram_1c81:auto_generated|ALTSYNCRAM ; AUTO ; Single Port ; 16           ; 32           ; --           ; --           ; 512  ; None ;
++---------------------------------------------------------------------------------------+------+-------------+--------------+--------------+--------------+--------------+------+------+
 
 
 +------------------------------------------------------+
@@ -265,12 +290,12 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 1960  ;
+; Total registers                              ; 1433  ;
 ; Number of registers using Synchronous Clear  ; 0     ;
 ; Number of registers using Synchronous Load   ; 0     ;
-; Number of registers using Asynchronous Clear ; 1412  ;
+; Number of registers using Asynchronous Clear ; 921   ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 1376  ;
+; Number of registers using Clock Enable       ; 848   ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
 
@@ -296,6 +321,38 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; ESM_core:core|ESM_core_IIM:IIM_core|PRNG:random_num|q[7]      ; 3       ;
 ; ESM_core:core|ESM_core_IIM:IIM_core|PRNG:random_num|q[5]      ; 3       ;
 ; ESM_core:core|ESM_core_IIM:IIM_core|PRNG:random_num|q[3]      ; 4       ;
+; ESM_core:core|ESM_core_IDA:IDA_core|IDT:idt|IDT_table[15][15] ; 1       ;
+; ESM_core:core|ESM_core_IDA:IDA_core|IDT:idt|IDT_table[15][14] ; 1       ;
+; ESM_core:core|ESM_core_IDA:IDA_core|IDT:idt|IDT_table[15][13] ; 1       ;
+; ESM_core:core|ESM_core_IDA:IDA_core|IDT:idt|IDT_table[15][12] ; 1       ;
+; ESM_core:core|ESM_core_IDA:IDA_core|IDT:idt|IDT_table[15][11] ; 1       ;
+; ESM_core:core|ESM_core_IDA:IDA_core|IDT:idt|IDT_table[15][10] ; 1       ;
+; ESM_core:core|ESM_core_IDA:IDA_core|IDT:idt|IDT_table[15][9]  ; 1       ;
+; ESM_core:core|ESM_core_IDA:IDA_core|IDT:idt|IDT_table[15][8]  ; 1       ;
+; ESM_core:core|ESM_core_IDA:IDA_core|IDT:idt|IDT_table[15][7]  ; 1       ;
+; ESM_core:core|ESM_core_IDA:IDA_core|IDT:idt|IDT_table[15][6]  ; 1       ;
+; ESM_core:core|ESM_core_IDA:IDA_core|IDT:idt|IDT_table[15][5]  ; 1       ;
+; ESM_core:core|ESM_core_IDA:IDA_core|IDT:idt|IDT_table[15][4]  ; 1       ;
+; ESM_core:core|ESM_core_IDA:IDA_core|IDT:idt|IDT_table[15][3]  ; 1       ;
+; ESM_core:core|ESM_core_IDA:IDA_core|IDT:idt|IDT_table[15][2]  ; 1       ;
+; ESM_core:core|ESM_core_IDA:IDA_core|IDT:idt|IDT_table[15][1]  ; 1       ;
+; ESM_core:core|ESM_core_IDA:IDA_core|IDT:idt|IDT_table[15][0]  ; 1       ;
+; ESM_core:core|ESM_core_IDA:IDA_core|IDT:idt|IDT_table[13][15] ; 1       ;
+; ESM_core:core|ESM_core_IDA:IDA_core|IDT:idt|IDT_table[13][14] ; 1       ;
+; ESM_core:core|ESM_core_IDA:IDA_core|IDT:idt|IDT_table[13][13] ; 1       ;
+; ESM_core:core|ESM_core_IDA:IDA_core|IDT:idt|IDT_table[13][12] ; 1       ;
+; ESM_core:core|ESM_core_IDA:IDA_core|IDT:idt|IDT_table[13][11] ; 1       ;
+; ESM_core:core|ESM_core_IDA:IDA_core|IDT:idt|IDT_table[13][10] ; 1       ;
+; ESM_core:core|ESM_core_IDA:IDA_core|IDT:idt|IDT_table[13][9]  ; 1       ;
+; ESM_core:core|ESM_core_IDA:IDA_core|IDT:idt|IDT_table[13][8]  ; 1       ;
+; ESM_core:core|ESM_core_IDA:IDA_core|IDT:idt|IDT_table[13][7]  ; 1       ;
+; ESM_core:core|ESM_core_IDA:IDA_core|IDT:idt|IDT_table[13][6]  ; 1       ;
+; ESM_core:core|ESM_core_IDA:IDA_core|IDT:idt|IDT_table[13][5]  ; 1       ;
+; ESM_core:core|ESM_core_IDA:IDA_core|IDT:idt|IDT_table[13][4]  ; 1       ;
+; ESM_core:core|ESM_core_IDA:IDA_core|IDT:idt|IDT_table[13][3]  ; 1       ;
+; ESM_core:core|ESM_core_IDA:IDA_core|IDT:idt|IDT_table[13][2]  ; 1       ;
+; ESM_core:core|ESM_core_IDA:IDA_core|IDT:idt|IDT_table[13][1]  ; 1       ;
+; ESM_core:core|ESM_core_IDA:IDA_core|IDT:idt|IDT_table[13][0]  ; 1       ;
 ; ESM_core:core|ESM_core_IDA:IDA_core|IDT:idt|IDT_table[11][15] ; 1       ;
 ; ESM_core:core|ESM_core_IDA:IDA_core|IDT:idt|IDT_table[11][14] ; 1       ;
 ; ESM_core:core|ESM_core_IDA:IDA_core|IDT:idt|IDT_table[11][13] ; 1       ;
@@ -312,22 +369,6 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; ESM_core:core|ESM_core_IDA:IDA_core|IDT:idt|IDT_table[11][2]  ; 1       ;
 ; ESM_core:core|ESM_core_IDA:IDA_core|IDT:idt|IDT_table[11][1]  ; 1       ;
 ; ESM_core:core|ESM_core_IDA:IDA_core|IDT:idt|IDT_table[11][0]  ; 1       ;
-; ESM_core:core|ESM_core_IDA:IDA_core|IDT:idt|IDT_table[10][15] ; 1       ;
-; ESM_core:core|ESM_core_IDA:IDA_core|IDT:idt|IDT_table[10][14] ; 1       ;
-; ESM_core:core|ESM_core_IDA:IDA_core|IDT:idt|IDT_table[10][13] ; 1       ;
-; ESM_core:core|ESM_core_IDA:IDA_core|IDT:idt|IDT_table[10][12] ; 1       ;
-; ESM_core:core|ESM_core_IDA:IDA_core|IDT:idt|IDT_table[10][11] ; 1       ;
-; ESM_core:core|ESM_core_IDA:IDA_core|IDT:idt|IDT_table[10][10] ; 1       ;
-; ESM_core:core|ESM_core_IDA:IDA_core|IDT:idt|IDT_table[10][9]  ; 1       ;
-; ESM_core:core|ESM_core_IDA:IDA_core|IDT:idt|IDT_table[10][8]  ; 1       ;
-; ESM_core:core|ESM_core_IDA:IDA_core|IDT:idt|IDT_table[10][7]  ; 1       ;
-; ESM_core:core|ESM_core_IDA:IDA_core|IDT:idt|IDT_table[10][6]  ; 1       ;
-; ESM_core:core|ESM_core_IDA:IDA_core|IDT:idt|IDT_table[10][5]  ; 1       ;
-; ESM_core:core|ESM_core_IDA:IDA_core|IDT:idt|IDT_table[10][4]  ; 1       ;
-; ESM_core:core|ESM_core_IDA:IDA_core|IDT:idt|IDT_table[10][3]  ; 1       ;
-; ESM_core:core|ESM_core_IDA:IDA_core|IDT:idt|IDT_table[10][2]  ; 1       ;
-; ESM_core:core|ESM_core_IDA:IDA_core|IDT:idt|IDT_table[10][1]  ; 1       ;
-; ESM_core:core|ESM_core_IDA:IDA_core|IDT:idt|IDT_table[10][0]  ; 1       ;
 ; ESM_core:core|ESM_core_IDA:IDA_core|IDT:idt|IDT_table[9][15]  ; 1       ;
 ; ESM_core:core|ESM_core_IDA:IDA_core|IDT:idt|IDT_table[9][14]  ; 1       ;
 ; ESM_core:core|ESM_core_IDA:IDA_core|IDT:idt|IDT_table[9][13]  ; 1       ;
@@ -344,22 +385,6 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; ESM_core:core|ESM_core_IDA:IDA_core|IDT:idt|IDT_table[9][2]   ; 1       ;
 ; ESM_core:core|ESM_core_IDA:IDA_core|IDT:idt|IDT_table[9][1]   ; 1       ;
 ; ESM_core:core|ESM_core_IDA:IDA_core|IDT:idt|IDT_table[9][0]   ; 1       ;
-; ESM_core:core|ESM_core_IDA:IDA_core|IDT:idt|IDT_table[8][15]  ; 1       ;
-; ESM_core:core|ESM_core_IDA:IDA_core|IDT:idt|IDT_table[8][14]  ; 1       ;
-; ESM_core:core|ESM_core_IDA:IDA_core|IDT:idt|IDT_table[8][13]  ; 1       ;
-; ESM_core:core|ESM_core_IDA:IDA_core|IDT:idt|IDT_table[8][12]  ; 1       ;
-; ESM_core:core|ESM_core_IDA:IDA_core|IDT:idt|IDT_table[8][11]  ; 1       ;
-; ESM_core:core|ESM_core_IDA:IDA_core|IDT:idt|IDT_table[8][10]  ; 1       ;
-; ESM_core:core|ESM_core_IDA:IDA_core|IDT:idt|IDT_table[8][9]   ; 1       ;
-; ESM_core:core|ESM_core_IDA:IDA_core|IDT:idt|IDT_table[8][8]   ; 1       ;
-; ESM_core:core|ESM_core_IDA:IDA_core|IDT:idt|IDT_table[8][7]   ; 1       ;
-; ESM_core:core|ESM_core_IDA:IDA_core|IDT:idt|IDT_table[8][6]   ; 1       ;
-; ESM_core:core|ESM_core_IDA:IDA_core|IDT:idt|IDT_table[8][5]   ; 1       ;
-; ESM_core:core|ESM_core_IDA:IDA_core|IDT:idt|IDT_table[8][4]   ; 1       ;
-; ESM_core:core|ESM_core_IDA:IDA_core|IDT:idt|IDT_table[8][3]   ; 1       ;
-; ESM_core:core|ESM_core_IDA:IDA_core|IDT:idt|IDT_table[8][2]   ; 1       ;
-; ESM_core:core|ESM_core_IDA:IDA_core|IDT:idt|IDT_table[8][1]   ; 1       ;
-; ESM_core:core|ESM_core_IDA:IDA_core|IDT:idt|IDT_table[8][0]   ; 1       ;
 ; ESM_core:core|ESM_core_IDA:IDA_core|IDT:idt|IDT_table[7][15]  ; 1       ;
 ; ESM_core:core|ESM_core_IDA:IDA_core|IDT:idt|IDT_table[7][14]  ; 1       ;
 ; ESM_core:core|ESM_core_IDA:IDA_core|IDT:idt|IDT_table[7][13]  ; 1       ;
@@ -376,13 +401,22 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; ESM_core:core|ESM_core_IDA:IDA_core|IDT:idt|IDT_table[7][2]   ; 1       ;
 ; ESM_core:core|ESM_core_IDA:IDA_core|IDT:idt|IDT_table[7][1]   ; 1       ;
 ; ESM_core:core|ESM_core_IDA:IDA_core|IDT:idt|IDT_table[7][0]   ; 1       ;
-; ESM_core:core|ESM_core_IDA:IDA_core|IDT:idt|IDT_table[6][15]  ; 1       ;
-; ESM_core:core|ESM_core_IDA:IDA_core|IDT:idt|IDT_table[6][14]  ; 1       ;
-; ESM_core:core|ESM_core_IDA:IDA_core|IDT:idt|IDT_table[6][13]  ; 1       ;
-; ESM_core:core|ESM_core_IDA:IDA_core|IDT:idt|IDT_table[6][12]  ; 1       ;
+; ESM_core:core|ESM_core_IDA:IDA_core|IDT:idt|IDT_table[5][15]  ; 1       ;
+; ESM_core:core|ESM_core_IDA:IDA_core|IDT:idt|IDT_table[5][14]  ; 1       ;
+; ESM_core:core|ESM_core_IDA:IDA_core|IDT:idt|IDT_table[5][13]  ; 1       ;
+; ESM_core:core|ESM_core_IDA:IDA_core|IDT:idt|IDT_table[5][12]  ; 1       ;
 ; Total number of inverted registers = 304*                     ;         ;
 +---------------------------------------------------------------+---------+
 * Table truncated at 100 items. To change the number of inverted registers reported, set the "Number of Inverted Registers Reported" option under Assignments->Settings->Analysis and Synthesis Settings->More Settings
+
+
++--------------------------------------------------------------------------------+
+; Registers Packed Into Inferred Megafunctions                                   ;
++--------------------------------------+----------------------------------+------+
+; Register Name                        ; Megafunction                     ; Type ;
++--------------------------------------+----------------------------------+------+
+; Instr_Buffer:buffer|Instr_out[0..31] ; Instr_Buffer:buffer|buffer_rtl_0 ; RAM  ;
++--------------------------------------+----------------------------------+------+
 
 
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -390,28 +424,36 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------------------------------------------------+
 ; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                                      ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------------------------------------------------+
-; 16:1               ; 32 bits   ; 320 LEs       ; 320 LEs              ; 0 LEs                  ; Yes        ; |ESM|Instr_Buffer:buffer|Instr_out[16]                                          ;
 ; 17:1               ; 4 bits    ; 44 LEs        ; 44 LEs               ; 0 LEs                  ; Yes        ; |ESM|ESM_core:core|ESM_core_IIM:IIM_core|mapping_table:m_table|buffer_index[0]  ;
-; 17:1               ; 4 bits    ; 44 LEs        ; 40 LEs               ; 4 LEs                  ; Yes        ; |ESM|ESM_core:core|ESM_core_IIM:IIM_core|mapping_table:m_table|map_table[0][0]  ;
+; 17:1               ; 4 bits    ; 44 LEs        ; 40 LEs               ; 4 LEs                  ; Yes        ; |ESM|ESM_core:core|ESM_core_IIM:IIM_core|mapping_table:m_table|map_table[0][3]  ;
 ; 17:1               ; 4 bits    ; 44 LEs        ; 40 LEs               ; 4 LEs                  ; Yes        ; |ESM|ESM_core:core|ESM_core_IIM:IIM_core|mapping_table:m_table|map_table[1][0]  ;
-; 17:1               ; 4 bits    ; 44 LEs        ; 40 LEs               ; 4 LEs                  ; Yes        ; |ESM|ESM_core:core|ESM_core_IIM:IIM_core|mapping_table:m_table|map_table[2][0]  ;
-; 17:1               ; 4 bits    ; 44 LEs        ; 40 LEs               ; 4 LEs                  ; Yes        ; |ESM|ESM_core:core|ESM_core_IIM:IIM_core|mapping_table:m_table|map_table[3][3]  ;
-; 17:1               ; 4 bits    ; 44 LEs        ; 40 LEs               ; 4 LEs                  ; Yes        ; |ESM|ESM_core:core|ESM_core_IIM:IIM_core|mapping_table:m_table|map_table[4][3]  ;
-; 17:1               ; 4 bits    ; 44 LEs        ; 40 LEs               ; 4 LEs                  ; Yes        ; |ESM|ESM_core:core|ESM_core_IIM:IIM_core|mapping_table:m_table|map_table[5][3]  ;
-; 17:1               ; 4 bits    ; 44 LEs        ; 40 LEs               ; 4 LEs                  ; Yes        ; |ESM|ESM_core:core|ESM_core_IIM:IIM_core|mapping_table:m_table|map_table[6][3]  ;
-; 17:1               ; 4 bits    ; 44 LEs        ; 40 LEs               ; 4 LEs                  ; Yes        ; |ESM|ESM_core:core|ESM_core_IIM:IIM_core|mapping_table:m_table|map_table[7][3]  ;
+; 17:1               ; 4 bits    ; 44 LEs        ; 40 LEs               ; 4 LEs                  ; Yes        ; |ESM|ESM_core:core|ESM_core_IIM:IIM_core|mapping_table:m_table|map_table[2][3]  ;
+; 17:1               ; 4 bits    ; 44 LEs        ; 40 LEs               ; 4 LEs                  ; Yes        ; |ESM|ESM_core:core|ESM_core_IIM:IIM_core|mapping_table:m_table|map_table[3][0]  ;
+; 17:1               ; 4 bits    ; 44 LEs        ; 40 LEs               ; 4 LEs                  ; Yes        ; |ESM|ESM_core:core|ESM_core_IIM:IIM_core|mapping_table:m_table|map_table[4][0]  ;
+; 17:1               ; 4 bits    ; 44 LEs        ; 40 LEs               ; 4 LEs                  ; Yes        ; |ESM|ESM_core:core|ESM_core_IIM:IIM_core|mapping_table:m_table|map_table[5][2]  ;
+; 17:1               ; 4 bits    ; 44 LEs        ; 40 LEs               ; 4 LEs                  ; Yes        ; |ESM|ESM_core:core|ESM_core_IIM:IIM_core|mapping_table:m_table|map_table[6][1]  ;
+; 17:1               ; 4 bits    ; 44 LEs        ; 40 LEs               ; 4 LEs                  ; Yes        ; |ESM|ESM_core:core|ESM_core_IIM:IIM_core|mapping_table:m_table|map_table[7][0]  ;
 ; 17:1               ; 4 bits    ; 44 LEs        ; 40 LEs               ; 4 LEs                  ; Yes        ; |ESM|ESM_core:core|ESM_core_IIM:IIM_core|mapping_table:m_table|map_table[8][3]  ;
-; 17:1               ; 4 bits    ; 44 LEs        ; 40 LEs               ; 4 LEs                  ; Yes        ; |ESM|ESM_core:core|ESM_core_IIM:IIM_core|mapping_table:m_table|map_table[9][3]  ;
-; 17:1               ; 4 bits    ; 44 LEs        ; 40 LEs               ; 4 LEs                  ; Yes        ; |ESM|ESM_core:core|ESM_core_IIM:IIM_core|mapping_table:m_table|map_table[10][3] ;
-; 17:1               ; 4 bits    ; 44 LEs        ; 40 LEs               ; 4 LEs                  ; Yes        ; |ESM|ESM_core:core|ESM_core_IIM:IIM_core|mapping_table:m_table|map_table[11][2] ;
+; 17:1               ; 4 bits    ; 44 LEs        ; 40 LEs               ; 4 LEs                  ; Yes        ; |ESM|ESM_core:core|ESM_core_IIM:IIM_core|mapping_table:m_table|map_table[9][1]  ;
+; 17:1               ; 4 bits    ; 44 LEs        ; 40 LEs               ; 4 LEs                  ; Yes        ; |ESM|ESM_core:core|ESM_core_IIM:IIM_core|mapping_table:m_table|map_table[10][1] ;
+; 17:1               ; 4 bits    ; 44 LEs        ; 40 LEs               ; 4 LEs                  ; Yes        ; |ESM|ESM_core:core|ESM_core_IIM:IIM_core|mapping_table:m_table|map_table[11][1] ;
 ; 17:1               ; 4 bits    ; 44 LEs        ; 40 LEs               ; 4 LEs                  ; Yes        ; |ESM|ESM_core:core|ESM_core_IIM:IIM_core|mapping_table:m_table|map_table[12][1] ;
 ; 17:1               ; 4 bits    ; 44 LEs        ; 40 LEs               ; 4 LEs                  ; Yes        ; |ESM|ESM_core:core|ESM_core_IIM:IIM_core|mapping_table:m_table|map_table[13][2] ;
 ; 17:1               ; 4 bits    ; 44 LEs        ; 40 LEs               ; 4 LEs                  ; Yes        ; |ESM|ESM_core:core|ESM_core_IIM:IIM_core|mapping_table:m_table|map_table[14][0] ;
 ; 17:1               ; 4 bits    ; 44 LEs        ; 40 LEs               ; 4 LEs                  ; Yes        ; |ESM|ESM_core:core|ESM_core_IIM:IIM_core|mapping_table:m_table|map_table[15][0] ;
-; 32:1               ; 16 bits   ; 336 LEs       ; 336 LEs              ; 0 LEs                  ; No         ; |ESM|ESM_core:core|ESM_core_IDA:IDA_core|IRT:irt|Mux3                           ;
-; 32:1               ; 16 bits   ; 336 LEs       ; 336 LEs              ; 0 LEs                  ; No         ; |ESM|ESM_core:core|ESM_core_IDA:IDA_core|IRT:irt|Mux29                          ;
-; 32:1               ; 32 bits   ; 672 LEs       ; 672 LEs              ; 0 LEs                  ; No         ; |ESM|ESM_core:core|ESM_core_IDA:IDA_core|IRT:irt|Mux35                          ;
+; 32:1               ; 16 bits   ; 336 LEs       ; 336 LEs              ; 0 LEs                  ; No         ; |ESM|ESM_core:core|ESM_core_IDA:IDA_core|IRT:irt|Mux12                          ;
+; 32:1               ; 16 bits   ; 336 LEs       ; 336 LEs              ; 0 LEs                  ; No         ; |ESM|ESM_core:core|ESM_core_IDA:IDA_core|IRT:irt|Mux25                          ;
+; 32:1               ; 32 bits   ; 672 LEs       ; 672 LEs              ; 0 LEs                  ; No         ; |ESM|ESM_core:core|ESM_core_IDA:IDA_core|IRT:irt|Mux45                          ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------------------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------+
+; Source assignments for Instr_Buffer:buffer|altsyncram:buffer_rtl_0|altsyncram_1c81:auto_generated ;
++---------------------------------+--------------------+------+-------------------------------------+
+; Assignment                      ; Value              ; From ; To                                  ;
++---------------------------------+--------------------+------+-------------------------------------+
+; OPTIMIZE_POWER_DURING_SYNTHESIS ; NORMAL_COMPILATION ; -    ; -                                   ;
++---------------------------------+--------------------+------+-------------------------------------+
 
 
 +---------------------------------------------------------------------+
@@ -512,6 +554,67 @@ Note: In order to hide this table in the UI and the text report file, please set
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
++----------------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: Instr_Buffer:buffer|altsyncram:buffer_rtl_0 ;
++------------------------------------+----------------------+----------------------------------+
+; Parameter Name                     ; Value                ; Type                             ;
++------------------------------------+----------------------+----------------------------------+
+; BYTE_SIZE_BLOCK                    ; 8                    ; Untyped                          ;
+; AUTO_CARRY_CHAINS                  ; ON                   ; AUTO_CARRY                       ;
+; IGNORE_CARRY_BUFFERS               ; OFF                  ; IGNORE_CARRY                     ;
+; AUTO_CASCADE_CHAINS                ; ON                   ; AUTO_CASCADE                     ;
+; IGNORE_CASCADE_BUFFERS             ; OFF                  ; IGNORE_CASCADE                   ;
+; WIDTH_BYTEENA                      ; 1                    ; Untyped                          ;
+; OPERATION_MODE                     ; SINGLE_PORT          ; Untyped                          ;
+; WIDTH_A                            ; 32                   ; Untyped                          ;
+; WIDTHAD_A                          ; 4                    ; Untyped                          ;
+; NUMWORDS_A                         ; 16                   ; Untyped                          ;
+; OUTDATA_REG_A                      ; UNREGISTERED         ; Untyped                          ;
+; ADDRESS_ACLR_A                     ; NONE                 ; Untyped                          ;
+; OUTDATA_ACLR_A                     ; NONE                 ; Untyped                          ;
+; WRCONTROL_ACLR_A                   ; NONE                 ; Untyped                          ;
+; INDATA_ACLR_A                      ; NONE                 ; Untyped                          ;
+; BYTEENA_ACLR_A                     ; NONE                 ; Untyped                          ;
+; WIDTH_B                            ; 1                    ; Untyped                          ;
+; WIDTHAD_B                          ; 1                    ; Untyped                          ;
+; NUMWORDS_B                         ; 1                    ; Untyped                          ;
+; INDATA_REG_B                       ; CLOCK1               ; Untyped                          ;
+; WRCONTROL_WRADDRESS_REG_B          ; CLOCK1               ; Untyped                          ;
+; RDCONTROL_REG_B                    ; CLOCK1               ; Untyped                          ;
+; ADDRESS_REG_B                      ; CLOCK1               ; Untyped                          ;
+; OUTDATA_REG_B                      ; UNREGISTERED         ; Untyped                          ;
+; BYTEENA_REG_B                      ; CLOCK1               ; Untyped                          ;
+; INDATA_ACLR_B                      ; NONE                 ; Untyped                          ;
+; WRCONTROL_ACLR_B                   ; NONE                 ; Untyped                          ;
+; ADDRESS_ACLR_B                     ; NONE                 ; Untyped                          ;
+; OUTDATA_ACLR_B                     ; NONE                 ; Untyped                          ;
+; RDCONTROL_ACLR_B                   ; NONE                 ; Untyped                          ;
+; BYTEENA_ACLR_B                     ; NONE                 ; Untyped                          ;
+; WIDTH_BYTEENA_A                    ; 1                    ; Untyped                          ;
+; WIDTH_BYTEENA_B                    ; 1                    ; Untyped                          ;
+; RAM_BLOCK_TYPE                     ; AUTO                 ; Untyped                          ;
+; BYTE_SIZE                          ; 8                    ; Untyped                          ;
+; READ_DURING_WRITE_MODE_MIXED_PORTS ; DONT_CARE            ; Untyped                          ;
+; READ_DURING_WRITE_MODE_PORT_A      ; OLD_DATA             ; Untyped                          ;
+; READ_DURING_WRITE_MODE_PORT_B      ; NEW_DATA_NO_NBE_READ ; Untyped                          ;
+; INIT_FILE                          ; UNUSED               ; Untyped                          ;
+; INIT_FILE_LAYOUT                   ; PORT_A               ; Untyped                          ;
+; MAXIMUM_DEPTH                      ; 0                    ; Untyped                          ;
+; CLOCK_ENABLE_INPUT_A               ; NORMAL               ; Untyped                          ;
+; CLOCK_ENABLE_INPUT_B               ; NORMAL               ; Untyped                          ;
+; CLOCK_ENABLE_OUTPUT_A              ; NORMAL               ; Untyped                          ;
+; CLOCK_ENABLE_OUTPUT_B              ; NORMAL               ; Untyped                          ;
+; CLOCK_ENABLE_CORE_A                ; USE_INPUT_CLKEN      ; Untyped                          ;
+; CLOCK_ENABLE_CORE_B                ; USE_INPUT_CLKEN      ; Untyped                          ;
+; ENABLE_ECC                         ; FALSE                ; Untyped                          ;
+; ECC_PIPELINE_STAGE_ENABLED         ; FALSE                ; Untyped                          ;
+; WIDTH_ECCSTATUS                    ; 3                    ; Untyped                          ;
+; DEVICE_FAMILY                      ; Cyclone IV E         ; Untyped                          ;
+; CBXI_PARAMETER                     ; altsyncram_1c81      ; Untyped                          ;
++------------------------------------+----------------------+----------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
 +----------------------------------------------------------------------------------------------------------------------------+
 ; Parameter Settings for Inferred Entity Instance: ESM_core:core|ESM_core_IIM:IIM_core|mapping_table:m_table|lpm_divide:Mod0 ;
 +------------------------+----------------+----------------------------------------------------------------------------------+
@@ -535,6 +638,26 @@ Note: In order to hide this table in the UI and the text report file, please set
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
++-----------------------------------------------------------------------------------------+
+; altsyncram Parameter Settings by Entity Instance                                        ;
++-------------------------------------------+---------------------------------------------+
+; Name                                      ; Value                                       ;
++-------------------------------------------+---------------------------------------------+
+; Number of entity instances                ; 1                                           ;
+; Entity Instance                           ; Instr_Buffer:buffer|altsyncram:buffer_rtl_0 ;
+;     -- OPERATION_MODE                     ; SINGLE_PORT                                 ;
+;     -- WIDTH_A                            ; 32                                          ;
+;     -- NUMWORDS_A                         ; 16                                          ;
+;     -- OUTDATA_REG_A                      ; UNREGISTERED                                ;
+;     -- WIDTH_B                            ; 1                                           ;
+;     -- NUMWORDS_B                         ; 1                                           ;
+;     -- ADDRESS_REG_B                      ; CLOCK1                                      ;
+;     -- OUTDATA_REG_B                      ; UNREGISTERED                                ;
+;     -- RAM_BLOCK_TYPE                     ; AUTO                                        ;
+;     -- READ_DURING_WRITE_MODE_MIXED_PORTS ; DONT_CARE                                   ;
++-------------------------------------------+---------------------------------------------+
+
+
 +---------------------------------------------------------------------------------+
 ; Port Connectivity Checks: "ESM_core:core|ESM_core_IIM:IIM_core|PRNG:random_num" ;
 +------+-------+----------+-------------------------------------------------------+
@@ -550,23 +673,23 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
 ; boundary_port         ; 68                          ;
-; cycloneiii_ff         ; 1960                        ;
-;     CLR               ; 68                          ;
-;     ENA               ; 32                          ;
-;     ENA CLR           ; 1344                        ;
-;     plain             ; 516                         ;
-; cycloneiii_lcell_comb ; 3417                        ;
+; cycloneiii_ff         ; 1433                        ;
+;     CLR               ; 73                          ;
+;     ENA CLR           ; 848                         ;
+;     plain             ; 512                         ;
+; cycloneiii_lcell_comb ; 2964                        ;
 ;     arith             ; 147                         ;
 ;         3 data inputs ; 147                         ;
-;     normal            ; 3270                        ;
+;     normal            ; 2817                        ;
 ;         0 data inputs ; 30                          ;
 ;         1 data inputs ; 319                         ;
-;         2 data inputs ; 80                          ;
-;         3 data inputs ; 129                         ;
-;         4 data inputs ; 2712                        ;
+;         2 data inputs ; 113                         ;
+;         3 data inputs ; 128                         ;
+;         4 data inputs ; 2227                        ;
+; cycloneiii_ram_block  ; 32                          ;
 ;                       ;                             ;
 ; Max LUT depth         ; 78.70                       ;
-; Average LUT depth     ; 11.56                       ;
+; Average LUT depth     ; 12.69                       ;
 +-----------------------+-----------------------------+
 
 
@@ -585,7 +708,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
-    Info: Processing started: Sat Jan 04 13:51:11 2025
+    Info: Processing started: Mon Feb 03 16:46:41 2025
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off ESM -c ESM
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
@@ -618,15 +741,41 @@ Info (12128): Elaborating entity "IDT" for hierarchy "ESM_core:core|ESM_core_IDA
 Info (12128): Elaborating entity "ESM_core_IIM" for hierarchy "ESM_core:core|ESM_core_IIM:IIM_core" File: C:/Users/nawaz/OneDrive/Desktop/pdf/winter intern/ESM-module/quarturs/code/ESM_core.v Line: 16
 Info (12128): Elaborating entity "candidate_list" for hierarchy "ESM_core:core|ESM_core_IIM:IIM_core|candidate_list:c_list" File: C:/Users/nawaz/OneDrive/Desktop/pdf/winter intern/ESM-module/quarturs/code/ESM_core_IIM.v Line: 12
 Info (12128): Elaborating entity "mapping_table" for hierarchy "ESM_core:core|ESM_core_IIM:IIM_core|mapping_table:m_table" File: C:/Users/nawaz/OneDrive/Desktop/pdf/winter intern/ESM-module/quarturs/code/ESM_core_IIM.v Line: 14
-Warning (10230): Verilog HDL assignment warning at mapping_table.v(26): truncated value with size 32 to match size of target (4) File: C:/Users/nawaz/OneDrive/Desktop/pdf/winter intern/ESM-module/quarturs/code/mapping_table.v Line: 26
-Warning (10230): Verilog HDL assignment warning at mapping_table.v(27): truncated value with size 32 to match size of target (4) File: C:/Users/nawaz/OneDrive/Desktop/pdf/winter intern/ESM-module/quarturs/code/mapping_table.v Line: 27
-Warning (10230): Verilog HDL assignment warning at mapping_table.v(34): truncated value with size 32 to match size of target (4) File: C:/Users/nawaz/OneDrive/Desktop/pdf/winter intern/ESM-module/quarturs/code/mapping_table.v Line: 34
-Warning (10230): Verilog HDL assignment warning at mapping_table.v(38): truncated value with size 32 to match size of target (4) File: C:/Users/nawaz/OneDrive/Desktop/pdf/winter intern/ESM-module/quarturs/code/mapping_table.v Line: 38
+Warning (10230): Verilog HDL assignment warning at mapping_table.v(28): truncated value with size 32 to match size of target (4) File: C:/Users/nawaz/OneDrive/Desktop/pdf/winter intern/ESM-module/quarturs/code/mapping_table.v Line: 28
+Warning (10230): Verilog HDL assignment warning at mapping_table.v(29): truncated value with size 32 to match size of target (4) File: C:/Users/nawaz/OneDrive/Desktop/pdf/winter intern/ESM-module/quarturs/code/mapping_table.v Line: 29
+Warning (10230): Verilog HDL assignment warning at mapping_table.v(36): truncated value with size 32 to match size of target (4) File: C:/Users/nawaz/OneDrive/Desktop/pdf/winter intern/ESM-module/quarturs/code/mapping_table.v Line: 36
+Warning (10230): Verilog HDL assignment warning at mapping_table.v(40): truncated value with size 32 to match size of target (4) File: C:/Users/nawaz/OneDrive/Desktop/pdf/winter intern/ESM-module/quarturs/code/mapping_table.v Line: 40
 Info (12128): Elaborating entity "PRNG" for hierarchy "ESM_core:core|ESM_core_IIM:IIM_core|PRNG:random_num" File: C:/Users/nawaz/OneDrive/Desktop/pdf/winter intern/ESM-module/quarturs/code/ESM_core_IIM.v Line: 16
+Info (19000): Inferred 1 megafunctions from design logic
+    Info (276029): Inferred altsyncram megafunction from the following design logic: "Instr_Buffer:buffer|buffer_rtl_0" 
+        Info (286033): Parameter OPERATION_MODE set to SINGLE_PORT
+        Info (286033): Parameter WIDTH_A set to 32
+        Info (286033): Parameter WIDTHAD_A set to 4
+        Info (286033): Parameter NUMWORDS_A set to 16
+        Info (286033): Parameter OUTDATA_REG_A set to UNREGISTERED
+        Info (286033): Parameter ADDRESS_ACLR_A set to NONE
+        Info (286033): Parameter OUTDATA_ACLR_A set to NONE
+        Info (286033): Parameter READ_DURING_WRITE_MODE_PORT_A set to OLD_DATA
+        Info (286033): Parameter INDATA_ACLR_A set to NONE
+        Info (286033): Parameter WRCONTROL_ACLR_A set to NONE
 Info (278001): Inferred 1 megafunctions from design logic
-    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "ESM_core:core|ESM_core_IIM:IIM_core|mapping_table:m_table|Mod0" File: C:/Users/nawaz/OneDrive/Desktop/pdf/winter intern/ESM-module/quarturs/code/mapping_table.v Line: 38
-Info (12130): Elaborated megafunction instantiation "ESM_core:core|ESM_core_IIM:IIM_core|mapping_table:m_table|lpm_divide:Mod0" File: C:/Users/nawaz/OneDrive/Desktop/pdf/winter intern/ESM-module/quarturs/code/mapping_table.v Line: 38
-Info (12133): Instantiated megafunction "ESM_core:core|ESM_core_IIM:IIM_core|mapping_table:m_table|lpm_divide:Mod0" with the following parameter: File: C:/Users/nawaz/OneDrive/Desktop/pdf/winter intern/ESM-module/quarturs/code/mapping_table.v Line: 38
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "ESM_core:core|ESM_core_IIM:IIM_core|mapping_table:m_table|Mod0" File: C:/Users/nawaz/OneDrive/Desktop/pdf/winter intern/ESM-module/quarturs/code/mapping_table.v Line: 40
+Info (12130): Elaborated megafunction instantiation "Instr_Buffer:buffer|altsyncram:buffer_rtl_0"
+Info (12133): Instantiated megafunction "Instr_Buffer:buffer|altsyncram:buffer_rtl_0" with the following parameter:
+    Info (12134): Parameter "OPERATION_MODE" = "SINGLE_PORT"
+    Info (12134): Parameter "WIDTH_A" = "32"
+    Info (12134): Parameter "WIDTHAD_A" = "4"
+    Info (12134): Parameter "NUMWORDS_A" = "16"
+    Info (12134): Parameter "OUTDATA_REG_A" = "UNREGISTERED"
+    Info (12134): Parameter "ADDRESS_ACLR_A" = "NONE"
+    Info (12134): Parameter "OUTDATA_ACLR_A" = "NONE"
+    Info (12134): Parameter "READ_DURING_WRITE_MODE_PORT_A" = "OLD_DATA"
+    Info (12134): Parameter "INDATA_ACLR_A" = "NONE"
+    Info (12134): Parameter "WRCONTROL_ACLR_A" = "NONE"
+Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_1c81.tdf
+    Info (12023): Found entity 1: altsyncram_1c81 File: C:/Users/nawaz/OneDrive/Desktop/pdf/winter intern/ESM-module/quarturs/db/altsyncram_1c81.tdf Line: 28
+Info (12130): Elaborated megafunction instantiation "ESM_core:core|ESM_core_IIM:IIM_core|mapping_table:m_table|lpm_divide:Mod0" File: C:/Users/nawaz/OneDrive/Desktop/pdf/winter intern/ESM-module/quarturs/code/mapping_table.v Line: 40
+Info (12133): Instantiated megafunction "ESM_core:core|ESM_core_IIM:IIM_core|mapping_table:m_table|lpm_divide:Mod0" with the following parameter: File: C:/Users/nawaz/OneDrive/Desktop/pdf/winter intern/ESM-module/quarturs/code/mapping_table.v Line: 40
     Info (12134): Parameter "LPM_WIDTHN" = "32"
     Info (12134): Parameter "LPM_WIDTHD" = "4"
     Info (12134): Parameter "LPM_NREPRESENTATION" = "UNSIGNED"
@@ -644,23 +793,17 @@ Info (12021): Found 1 design units, including 1 entities, in source file db/add_
 Info (13000): Registers with preset signals will power-up high File: C:/Users/nawaz/OneDrive/Desktop/pdf/winter intern/ESM-module/quarturs/code/PRNG.v Line: 12
 Info (13003): DEV_CLRn pin will set, and not reset, register with preset signal due to NOT Gate Push-Back
 Info (286030): Timing-Driven Synthesis is running
-Info (144001): Generated suppressed messages file C:/Users/nawaz/OneDrive/Desktop/pdf/winter intern/ESM-module/quarturs/output_files/ESM.map.smsg
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 4477 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 3561 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 36 input pins
     Info (21059): Implemented 32 output pins
-    Info (21061): Implemented 4409 logic cells
+    Info (21061): Implemented 3461 logic cells
+    Info (21064): Implemented 32 RAM segments
 Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 5 warnings
-    Info: Peak virtual memory: 4782 megabytes
-    Info: Processing ended: Sat Jan 04 13:51:35 2025
-    Info: Elapsed time: 00:00:24
-    Info: Total CPU time (on all processors): 00:00:09
-
-
-+------------------------------------------+
-; Analysis & Synthesis Suppressed Messages ;
-+------------------------------------------+
-The suppressed messages can be found in C:/Users/nawaz/OneDrive/Desktop/pdf/winter intern/ESM-module/quarturs/output_files/ESM.map.smsg.
+    Info: Peak virtual memory: 4789 megabytes
+    Info: Processing ended: Mon Feb 03 16:47:04 2025
+    Info: Elapsed time: 00:00:23
+    Info: Total CPU time (on all processors): 00:00:22
 
 
