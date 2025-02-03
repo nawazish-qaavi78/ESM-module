@@ -23,6 +23,7 @@ module Instr_Buffer #(
         end
     end
 	 
-	 assign start = (Instr_in == 0) ? 1'b1 : (&valid_entries);
-
+	 assign start = (Instr_in == 0) ? 1'b1 : (&valid_entries); // what this is doing is 
+	 // Instr_in == 0 that is it will all the input instructions are over, used in case where no of instr < buffer size
+	 // &valid_entries mean that when buffer is full
 endmodule
