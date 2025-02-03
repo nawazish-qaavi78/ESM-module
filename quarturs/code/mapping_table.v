@@ -1,3 +1,4 @@
+// the purpose of the mapping_table is to serially arrange the ready indices, ie., indices of the candidate list
 module mapping_table #(
     parameter bs = 16
 ) (
@@ -32,11 +33,11 @@ module mapping_table #(
 
     always @(posedge clk, posedge rst) begin
         if(rst) buffer_index = 0;
-        else if(map_ready_index && start) buffer_index = map_table[map_ready_index];
-		  else buffer_index = buffer_index + 1;
+        else if(count && start) buffer_index = map_table[map_ready_index]; // when buffer is full, and shuffling can start
+		  else buffer_index = buffer_index + 1; // this is for the time when buffer is still not full
     end
 
 	 
-    assign map_ready_index = (count!=0) ? (rand_num % count): 0;
+    assign map_ready_index = (count!=0) ? (rand_num[bs_bits-1:0] % count): 0;
     
 endmodule

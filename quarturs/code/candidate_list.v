@@ -1,3 +1,4 @@
+//the purpose of candidate list is storing flagging the indices which are ready
 module candidate_list #(
     parameter bs =16
 ) (

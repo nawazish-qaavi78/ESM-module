@@ -8,7 +8,7 @@ module IRT #(
     output reg [bs-1:0] idt
 );
 	 
-	 reg[$clog2(regnum+1):0] i;
+	 reg[$clog2(regnum+1)-1:0] i;
 
     // IRT has instruction in columns while registers as rows
     reg [0:bs-1] IRT_RS [0:regnum-1];
