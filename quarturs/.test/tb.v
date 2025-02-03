@@ -20,13 +20,6 @@ module tb;
     localparam i10 = 32'b0000000_01000_00111_100_01011_0110011; // xor x11, x7, x8
     localparam i11 = 32'b0000000_01000_00111_111_01100_0110011; // and x12, x7, x8
     localparam i12 = 32'b0000000_01000_00111_110_01101_0110011; // or x13, x7, x8
-    // localparam i13 = 32'b000000000010_00000_000_00111_0010011; // li t7, 10 same as i6
-    // localparam i14 = 32'b000000000101_00000_000_01000_0010011; // li t8, 20 same as i7
-    // localparam i15 = 32'b0000000_01000_00111_000_01001_0110011; // add t9, t7, t8 same as i8
-    // localparam i16 = 32'b0100000_00111_01000_000_01010_0110011; // sub t10, t8, t7 same as i9
-    // localparam i17 = 32'b0000000_01000_00111_100_01011_0110011; // xor t11, t7, t8 same as i10
-    // localparam i18 = 32'b0000000_01000_00111_111_01100_0110011; // and t12, t7, t8 same as i11
-    // localparam i19 = 32'b0000000_01000_00111_110_01101_0110011; // or t13, t7, t8 same as i12
     localparam i20 = 32'b0000000_00001_00111_001_01110_0110011; // sll t14, t7, t1
     localparam i21 = 32'b0000000_00001_01000_101_01111_0110011; // srl t15, t8, t1
     localparam i22 = 32'b0000000_00111_00110_000_10000_0110011; // add t16, t6, t7
@@ -55,6 +48,19 @@ module tb;
         #instr_delay Instr_in = i10; RegWrite = 1 ; ALUSrc = 0;
         #instr_delay Instr_in = i11; RegWrite = 1 ; ALUSrc = 0;
         #instr_delay Instr_in = i12; RegWrite = 1 ; ALUSrc = 0;
+        
+        #instr_delay Instr_in = i20; RegWrite = 1 ; ALUSrc = 1;
+        #instr_delay Instr_in = i21; RegWrite = 1 ; ALUSrc = 1;
+        #instr_delay Instr_in = i22; RegWrite = 1 ; ALUSrc = 0;
+        #instr_delay Instr_in = i23; RegWrite = 1 ; ALUSrc = 0;
+        
+        #instr_delay Instr_in = 0; RegWrite = 0 ; ALUSrc = 0;
+        #instr_delay Instr_in = 0; RegWrite = 0 ; ALUSrc = 0;
+        #instr_delay Instr_in = 0; RegWrite = 0 ; ALUSrc = 0;
+        #instr_delay Instr_in = 0; RegWrite = 0 ; ALUSrc = 0;
+        #instr_delay Instr_in = 0; RegWrite = 0 ; ALUSrc = 0;
+        #instr_delay Instr_in = 0; RegWrite = 0 ; ALUSrc = 0;
+
         #instr_delay Instr_in = i6; RegWrite = 1 ; ALUSrc = 1;
         #instr_delay Instr_in = i7; RegWrite = 1 ; ALUSrc = 1;
         #instr_delay Instr_in = i8; RegWrite = 1 ; ALUSrc = 0;
@@ -62,16 +68,7 @@ module tb;
         #instr_delay Instr_in = i10; RegWrite = 1 ; ALUSrc = 0;
         #instr_delay Instr_in = i11; RegWrite = 1 ; ALUSrc = 0;
         #instr_delay Instr_in = i12; RegWrite = 1 ; ALUSrc = 0;
-        #instr_delay Instr_in = i20; RegWrite = 1 ; ALUSrc = 1;
-        #instr_delay Instr_in = i21; RegWrite = 1 ; ALUSrc = 1;
-        #instr_delay Instr_in = i22; RegWrite = 1 ; ALUSrc = 0;
-        #instr_delay Instr_in = i23; RegWrite = 1 ; ALUSrc = 0;
-        #instr_delay Instr_in = 0; RegWrite = 0 ; ALUSrc = 0;
-        #instr_delay Instr_in = 0; RegWrite = 0 ; ALUSrc = 0;
-        #instr_delay Instr_in = 0; RegWrite = 0 ; ALUSrc = 0;
-        #instr_delay Instr_in = 0; RegWrite = 0 ; ALUSrc = 0;
-        #instr_delay Instr_in = 0; RegWrite = 0 ; ALUSrc = 0;
-        #instr_delay Instr_in = 0; RegWrite = 0 ; ALUSrc = 0;
+        
         #instr_delay Instr_in = 0; RegWrite = 0 ; ALUSrc = 0;
         #instr_delay Instr_in = 0; RegWrite = 0 ; ALUSrc = 0;
         #instr_delay Instr_in = 0; RegWrite = 0 ; ALUSrc = 0;

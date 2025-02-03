@@ -29,6 +29,10 @@ module mapping_table #(
                     map_table[count] <= i; 
                     count <= count+1;
                 end
+					if(count && start) buffer_index = map_table[map_ready_index]; // when buffer is full, and shuffling can start
+					else buffer_index = buffer_index + 1; // this is for the time when buffer is still not full
+		  end
+            
     end
 
     always @(posedge clk, posedge rst) begin

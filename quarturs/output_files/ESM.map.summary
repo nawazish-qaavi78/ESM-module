@@ -1,10 +1,10 @@
-Analysis & Synthesis Status : Successful - Mon Feb 03 22:39:03 2025
+Analysis & Synthesis Status : Successful - Tue Feb 04 00:24:26 2025
 Quartus Prime Version : 20.1.1 Build 720 11/11/2020 SJ Lite Edition
 Revision Name : ESM
 Top-level Entity Name : ESM
 Family : Cyclone IV E
-Total logic elements : 3,094
-    Total combinational functions : 2,118
+Total logic elements : 3,480
+    Total combinational functions : 2,504
     Dedicated logic registers : 1,433
 Total registers : 1433
 Total pins : 68
