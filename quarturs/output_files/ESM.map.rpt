@@ -1,5 +1,5 @@
 Analysis & Synthesis report for ESM
-Thu Jan 02 00:29:16 2025
+Sat Jan 04 13:51:35 2025
 Quartus Prime Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
 
 
@@ -57,7 +57,7 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +------------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Thu Jan 02 00:29:16 2025       ;
+; Analysis & Synthesis Status        ; Successful - Sat Jan 04 13:51:35 2025       ;
 ; Quartus Prime Version              ; 20.1.1 Build 720 11/11/2020 SJ Lite Edition ;
 ; Revision Name                      ; ESM                                         ;
 ; Top-level Entity Name              ; ESM                                         ;
@@ -174,7 +174,7 @@ https://fpgasoftware.intel.com/eula.
 ;     Processor 1            ; 100.0%      ;
 ;     Processor 2            ;   0.1%      ;
 ;     Processor 3            ;   0.1%      ;
-;     Processor 4            ;   0.0%      ;
+;     Processor 4            ;   0.1%      ;
 +----------------------------+-------------+
 
 
@@ -214,8 +214,8 @@ https://fpgasoftware.intel.com/eula.
 ;                                             ;           ;
 ; Total combinational functions               ; 3417      ;
 ; Logic element usage by number of LUT inputs ;           ;
-;     -- 4 input functions                    ; 2713      ;
-;     -- 3 input functions                    ; 275       ;
+;     -- 4 input functions                    ; 2712      ;
+;     -- 3 input functions                    ; 276       ;
 ;     -- <=2 input functions                  ; 429       ;
 ;                                             ;           ;
 ; Logic elements by mode                      ;           ;
@@ -232,7 +232,7 @@ https://fpgasoftware.intel.com/eula.
 ;                                             ;           ;
 ; Maximum fan-out node                        ; clk~input ;
 ; Maximum fan-out                             ; 1960      ;
-; Total fan-out                               ; 18968     ;
+; Total fan-out                               ; 18963     ;
 ; Average fan-out                             ; 3.44      ;
 +---------------------------------------------+-----------+
 
@@ -268,7 +268,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; Total registers                              ; 1960  ;
 ; Number of registers using Synchronous Clear  ; 0     ;
 ; Number of registers using Synchronous Load   ; 0     ;
-; Number of registers using Asynchronous Clear ; 1416  ;
+; Number of registers using Asynchronous Clear ; 1412  ;
 ; Number of registers using Asynchronous Load  ; 0     ;
 ; Number of registers using Clock Enable       ; 1376  ;
 ; Number of registers using Preset             ; 0     ;
@@ -551,10 +551,10 @@ Note: In order to hide this table in the UI and the text report file, please set
 +-----------------------+-----------------------------+
 ; boundary_port         ; 68                          ;
 ; cycloneiii_ff         ; 1960                        ;
-;     CLR               ; 72                          ;
+;     CLR               ; 68                          ;
 ;     ENA               ; 32                          ;
 ;     ENA CLR           ; 1344                        ;
-;     plain             ; 512                         ;
+;     plain             ; 516                         ;
 ; cycloneiii_lcell_comb ; 3417                        ;
 ;     arith             ; 147                         ;
 ;         3 data inputs ; 147                         ;
@@ -562,8 +562,8 @@ Note: In order to hide this table in the UI and the text report file, please set
 ;         0 data inputs ; 30                          ;
 ;         1 data inputs ; 319                         ;
 ;         2 data inputs ; 80                          ;
-;         3 data inputs ; 128                         ;
-;         4 data inputs ; 2713                        ;
+;         3 data inputs ; 129                         ;
+;         4 data inputs ; 2712                        ;
 ;                       ;                             ;
 ; Max LUT depth         ; 78.70                       ;
 ; Average LUT depth     ; 11.56                       ;
@@ -575,7 +575,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 +----------------+--------------+
 ; Partition Name ; Elapsed Time ;
 +----------------+--------------+
-; Top            ; 00:00:04     ;
+; Top            ; 00:00:05     ;
 +----------------+--------------+
 
 
@@ -585,7 +585,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
-    Info: Processing started: Thu Jan 02 00:28:56 2025
+    Info: Processing started: Sat Jan 04 13:51:11 2025
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off ESM -c ESM
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
@@ -618,15 +618,15 @@ Info (12128): Elaborating entity "IDT" for hierarchy "ESM_core:core|ESM_core_IDA
 Info (12128): Elaborating entity "ESM_core_IIM" for hierarchy "ESM_core:core|ESM_core_IIM:IIM_core" File: C:/Users/nawaz/OneDrive/Desktop/pdf/winter intern/ESM-module/quarturs/code/ESM_core.v Line: 16
 Info (12128): Elaborating entity "candidate_list" for hierarchy "ESM_core:core|ESM_core_IIM:IIM_core|candidate_list:c_list" File: C:/Users/nawaz/OneDrive/Desktop/pdf/winter intern/ESM-module/quarturs/code/ESM_core_IIM.v Line: 12
 Info (12128): Elaborating entity "mapping_table" for hierarchy "ESM_core:core|ESM_core_IIM:IIM_core|mapping_table:m_table" File: C:/Users/nawaz/OneDrive/Desktop/pdf/winter intern/ESM-module/quarturs/code/ESM_core_IIM.v Line: 14
+Warning (10230): Verilog HDL assignment warning at mapping_table.v(26): truncated value with size 32 to match size of target (4) File: C:/Users/nawaz/OneDrive/Desktop/pdf/winter intern/ESM-module/quarturs/code/mapping_table.v Line: 26
 Warning (10230): Verilog HDL assignment warning at mapping_table.v(27): truncated value with size 32 to match size of target (4) File: C:/Users/nawaz/OneDrive/Desktop/pdf/winter intern/ESM-module/quarturs/code/mapping_table.v Line: 27
-Warning (10230): Verilog HDL assignment warning at mapping_table.v(28): truncated value with size 32 to match size of target (4) File: C:/Users/nawaz/OneDrive/Desktop/pdf/winter intern/ESM-module/quarturs/code/mapping_table.v Line: 28
-Warning (10230): Verilog HDL assignment warning at mapping_table.v(35): truncated value with size 32 to match size of target (4) File: C:/Users/nawaz/OneDrive/Desktop/pdf/winter intern/ESM-module/quarturs/code/mapping_table.v Line: 35
-Warning (10230): Verilog HDL assignment warning at mapping_table.v(39): truncated value with size 32 to match size of target (4) File: C:/Users/nawaz/OneDrive/Desktop/pdf/winter intern/ESM-module/quarturs/code/mapping_table.v Line: 39
+Warning (10230): Verilog HDL assignment warning at mapping_table.v(34): truncated value with size 32 to match size of target (4) File: C:/Users/nawaz/OneDrive/Desktop/pdf/winter intern/ESM-module/quarturs/code/mapping_table.v Line: 34
+Warning (10230): Verilog HDL assignment warning at mapping_table.v(38): truncated value with size 32 to match size of target (4) File: C:/Users/nawaz/OneDrive/Desktop/pdf/winter intern/ESM-module/quarturs/code/mapping_table.v Line: 38
 Info (12128): Elaborating entity "PRNG" for hierarchy "ESM_core:core|ESM_core_IIM:IIM_core|PRNG:random_num" File: C:/Users/nawaz/OneDrive/Desktop/pdf/winter intern/ESM-module/quarturs/code/ESM_core_IIM.v Line: 16
 Info (278001): Inferred 1 megafunctions from design logic
-    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "ESM_core:core|ESM_core_IIM:IIM_core|mapping_table:m_table|Mod0" File: C:/Users/nawaz/OneDrive/Desktop/pdf/winter intern/ESM-module/quarturs/code/mapping_table.v Line: 39
-Info (12130): Elaborated megafunction instantiation "ESM_core:core|ESM_core_IIM:IIM_core|mapping_table:m_table|lpm_divide:Mod0" File: C:/Users/nawaz/OneDrive/Desktop/pdf/winter intern/ESM-module/quarturs/code/mapping_table.v Line: 39
-Info (12133): Instantiated megafunction "ESM_core:core|ESM_core_IIM:IIM_core|mapping_table:m_table|lpm_divide:Mod0" with the following parameter: File: C:/Users/nawaz/OneDrive/Desktop/pdf/winter intern/ESM-module/quarturs/code/mapping_table.v Line: 39
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "ESM_core:core|ESM_core_IIM:IIM_core|mapping_table:m_table|Mod0" File: C:/Users/nawaz/OneDrive/Desktop/pdf/winter intern/ESM-module/quarturs/code/mapping_table.v Line: 38
+Info (12130): Elaborated megafunction instantiation "ESM_core:core|ESM_core_IIM:IIM_core|mapping_table:m_table|lpm_divide:Mod0" File: C:/Users/nawaz/OneDrive/Desktop/pdf/winter intern/ESM-module/quarturs/code/mapping_table.v Line: 38
+Info (12133): Instantiated megafunction "ESM_core:core|ESM_core_IIM:IIM_core|mapping_table:m_table|lpm_divide:Mod0" with the following parameter: File: C:/Users/nawaz/OneDrive/Desktop/pdf/winter intern/ESM-module/quarturs/code/mapping_table.v Line: 38
     Info (12134): Parameter "LPM_WIDTHN" = "32"
     Info (12134): Parameter "LPM_WIDTHD" = "4"
     Info (12134): Parameter "LPM_NREPRESENTATION" = "UNSIGNED"
@@ -652,10 +652,10 @@ Info (21057): Implemented 4477 device resources after synthesis - the final reso
     Info (21059): Implemented 32 output pins
     Info (21061): Implemented 4409 logic cells
 Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 5 warnings
-    Info: Peak virtual memory: 4794 megabytes
-    Info: Processing ended: Thu Jan 02 00:29:16 2025
-    Info: Elapsed time: 00:00:20
-    Info: Total CPU time (on all processors): 00:00:10
+    Info: Peak virtual memory: 4782 megabytes
+    Info: Processing ended: Sat Jan 04 13:51:35 2025
+    Info: Elapsed time: 00:00:24
+    Info: Total CPU time (on all processors): 00:00:09
 
 
 +------------------------------------------+

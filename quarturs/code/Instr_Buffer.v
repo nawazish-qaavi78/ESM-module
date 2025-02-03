@@ -6,11 +6,11 @@ module Instr_Buffer #(
     input [$clog2(bs)-1:0] buffer_index,
     input [Instr_word_size-1:0] Instr_in,
     output reg [Instr_word_size-1:0] Instr_out,
-	 output start
+	 output start // tells when we can start sending the buffer index value based on mapping table, until then buffer_index will just increment
 );
 	 integer i,j;
 	 
-	 reg full;
+	 reg full; // imagine hte 1st instr in, it would considered independent, hence executed immediately... so we need to wait until buffer is full or instructions are completed
     reg [Instr_word_size-1:0] buffer [0:bs-1];
 
     initial begin

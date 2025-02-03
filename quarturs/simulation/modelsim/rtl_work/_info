@@ -10,7 +10,7 @@ z2
 cModel Technology
 Z0 dC:/Users/nawaz/OneDrive/Desktop/pdf/winter intern/ESM-module/quarturs/simulation/modelsim
 vcandidate_list
-Z1 !s110 1735758306
+Z1 !s110 1735758973
 !i10b 1
 !s100 ]ajK]>KQh0d2;1LOHK7OP3
 Z2 !s11b Dg1SIo80bB@j0V0VzS_@n1
@@ -26,7 +26,7 @@ Z5 OV;L;2020.1;71
 r1
 !s85 0
 31
-Z6 !s108 1735758306.000000
+Z6 !s108 1735758973.000000
 !s107 C:/Users/nawaz/OneDrive/Desktop/pdf/winter intern/ESM-module/quarturs/code/candidate_list.v|
 !s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/nawaz/OneDrive/Desktop/pdf/winter intern/ESM-module/quarturs/code|C:/Users/nawaz/OneDrive/Desktop/pdf/winter intern/ESM-module/quarturs/code/candidate_list.v|
 !i113 1
@@ -50,7 +50,7 @@ R5
 r1
 !s85 0
 31
-R6
+Z10 !s108 1735758972.000000
 !s107 C:/Users/nawaz/OneDrive/Desktop/pdf/winter intern/ESM-module/quarturs/code/ESM.v|
 !s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/nawaz/OneDrive/Desktop/pdf/winter intern/ESM-module/quarturs/code|C:/Users/nawaz/OneDrive/Desktop/pdf/winter intern/ESM-module/quarturs/code/ESM.v|
 !i113 1
@@ -59,7 +59,7 @@ R8
 R9
 n@e@s@m
 vESM_core
-R1
+Z11 !s110 1735758972
 !i10b 1
 !s100 gHCOZo0B;dnO3Y8LnbVjA0
 R2
@@ -70,12 +70,12 @@ w1735749825
 8C:/Users/nawaz/OneDrive/Desktop/pdf/winter intern/ESM-module/quarturs/code/ESM_core.v
 FC:/Users/nawaz/OneDrive/Desktop/pdf/winter intern/ESM-module/quarturs/code/ESM_core.v
 !i122 7
-Z10 L0 1 18
+Z12 L0 1 18
 R5
 r1
 !s85 0
 31
-R6
+R10
 !s107 C:/Users/nawaz/OneDrive/Desktop/pdf/winter intern/ESM-module/quarturs/code/ESM_core.v|
 !s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/nawaz/OneDrive/Desktop/pdf/winter intern/ESM-module/quarturs/code|C:/Users/nawaz/OneDrive/Desktop/pdf/winter intern/ESM-module/quarturs/code/ESM_core.v|
 !i113 1
@@ -84,7 +84,7 @@ R8
 R9
 n@e@s@m_core
 vESM_core_IDA
-R1
+R11
 !i10b 1
 !s100 <oaQV8f:=SCAM9:_=Sz?B2
 R2
@@ -100,7 +100,7 @@ R5
 r1
 !s85 0
 31
-R6
+R10
 !s107 C:/Users/nawaz/OneDrive/Desktop/pdf/winter intern/ESM-module/quarturs/code/ESM_core_IDA.v|
 !s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/nawaz/OneDrive/Desktop/pdf/winter intern/ESM-module/quarturs/code|C:/Users/nawaz/OneDrive/Desktop/pdf/winter intern/ESM-module/quarturs/code/ESM_core_IDA.v|
 !i113 1
@@ -109,7 +109,7 @@ R8
 R9
 n@e@s@m_core_@i@d@a
 vESM_core_IIM
-R1
+R11
 !i10b 1
 !s100 ]cC_In4>7VDOEiKKFFTP?3
 R2
@@ -120,12 +120,12 @@ w1735748089
 8C:/Users/nawaz/OneDrive/Desktop/pdf/winter intern/ESM-module/quarturs/code/ESM_core_IIM.v
 FC:/Users/nawaz/OneDrive/Desktop/pdf/winter intern/ESM-module/quarturs/code/ESM_core_IIM.v
 !i122 5
-R10
+R12
 R5
 r1
 !s85 0
 31
-R6
+R10
 !s107 C:/Users/nawaz/OneDrive/Desktop/pdf/winter intern/ESM-module/quarturs/code/ESM_core_IIM.v|
 !s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/nawaz/OneDrive/Desktop/pdf/winter intern/ESM-module/quarturs/code|C:/Users/nawaz/OneDrive/Desktop/pdf/winter intern/ESM-module/quarturs/code/ESM_core_IIM.v|
 !i113 1
@@ -134,7 +134,7 @@ R8
 R9
 n@e@s@m_core_@i@i@m
 vIDT
-R1
+R11
 !i10b 1
 !s100 :ICXaT1k^nNiCQeVB88AO2
 R2
@@ -150,7 +150,7 @@ R5
 r1
 !s85 0
 31
-R6
+R10
 !s107 C:/Users/nawaz/OneDrive/Desktop/pdf/winter intern/ESM-module/quarturs/code/IDT.v|
 !s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/nawaz/OneDrive/Desktop/pdf/winter intern/ESM-module/quarturs/code|C:/Users/nawaz/OneDrive/Desktop/pdf/winter intern/ESM-module/quarturs/code/IDT.v|
 !i113 1
@@ -159,7 +159,7 @@ R8
 R9
 n@i@d@t
 vInstr_Buffer
-R1
+R11
 !i10b 1
 !s100 _Z`5HbDf=kjc?V]fIoMmO2
 R2
@@ -175,7 +175,7 @@ R5
 r1
 !s85 0
 31
-R6
+R10
 !s107 C:/Users/nawaz/OneDrive/Desktop/pdf/winter intern/ESM-module/quarturs/code/Instr_Buffer.v|
 !s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/nawaz/OneDrive/Desktop/pdf/winter intern/ESM-module/quarturs/code|C:/Users/nawaz/OneDrive/Desktop/pdf/winter intern/ESM-module/quarturs/code/Instr_Buffer.v|
 !i113 1
@@ -184,7 +184,7 @@ R8
 R9
 n@instr_@buffer
 vIRT
-R1
+R11
 !i10b 1
 !s100 0Ao83TgNjNQj9IjPBW6Y83
 R2
@@ -200,7 +200,7 @@ R5
 r1
 !s85 0
 31
-Z11 !s108 1735758305.000000
+R10
 !s107 C:/Users/nawaz/OneDrive/Desktop/pdf/winter intern/ESM-module/quarturs/code/IRT.v|
 !s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/nawaz/OneDrive/Desktop/pdf/winter intern/ESM-module/quarturs/code|C:/Users/nawaz/OneDrive/Desktop/pdf/winter intern/ESM-module/quarturs/code/IRT.v|
 !i113 1
@@ -209,7 +209,7 @@ R8
 R9
 n@i@r@t
 vmapping_table
-Z12 !s110 1735758305
+R11
 !i10b 1
 !s100 X<5nQB[iXI^6IjWHz>X8B2
 R2
@@ -225,7 +225,7 @@ R5
 r1
 !s85 0
 31
-R11
+R10
 !s107 C:/Users/nawaz/OneDrive/Desktop/pdf/winter intern/ESM-module/quarturs/code/mapping_table.v|
 !s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/nawaz/OneDrive/Desktop/pdf/winter intern/ESM-module/quarturs/code|C:/Users/nawaz/OneDrive/Desktop/pdf/winter intern/ESM-module/quarturs/code/mapping_table.v|
 !i113 1
@@ -233,7 +233,7 @@ R7
 R8
 R9
 vPRNG
-R12
+R11
 !i10b 1
 !s100 N:[3gg`5j[0Vm[l6b`5hi1
 R2
@@ -249,7 +249,7 @@ R5
 r1
 !s85 0
 31
-R11
+R10
 !s107 C:/Users/nawaz/OneDrive/Desktop/pdf/winter intern/ESM-module/quarturs/code/PRNG.v|
 !s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/nawaz/OneDrive/Desktop/pdf/winter intern/ESM-module/quarturs/code|C:/Users/nawaz/OneDrive/Desktop/pdf/winter intern/ESM-module/quarturs/code/PRNG.v|
 !i113 1
@@ -260,16 +260,16 @@ n@p@r@n@g
 vtb
 R1
 !i10b 1
-!s100 >8U@RYQ2;h@E]8B:fiBf40
+!s100 [VlPCAZ@bR=0Y]e[eg3nL0
 R2
-IF5mbGOb_KGF5WA37`8aKf2
+If2EEVZ^nG>1?78]ZK54SI1
 R3
 R0
-w1735758289
+w1735758697
 8C:/Users/nawaz/OneDrive/Desktop/pdf/winter intern/ESM-module/quarturs/.test/tb.v
 FC:/Users/nawaz/OneDrive/Desktop/pdf/winter intern/ESM-module/quarturs/.test/tb.v
 !i122 10
-L0 3 115
+L0 3 108
 R5
 r1
 !s85 0

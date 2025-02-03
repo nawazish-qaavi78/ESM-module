@@ -18,14 +18,15 @@ module mapping_table #(
 
     always @(posedge clk, posedge rst) begin
         if(rst) begin
-				count <= 0;
-            for(i=0; i<bs; i=i+1)
+            for(i=0; i<bs; i=i+1) begin
                 map_table[i] <= 0;
-        end else 
+					 count <= 0;
+				end
+        end else
             for(i=0; i<bs; i=i+1)
                 if(cand_list[i]) begin
-                    map_table[count] <= i; // just matching the size, intention is still map_table[count] = i
-                    count <= (count+1);
+                    map_table[count] <= i; 
+                    count <= count+1;
                 end
     end
 
