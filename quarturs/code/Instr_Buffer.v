@@ -9,7 +9,7 @@ module Instr_Buffer #(
 	 output start // tells when we can start sending the buffer index value based on mapping table, until then buffer_index will just increment
 );
 	 
-	 reg [0:bs-1] valid_entries = {bs{1'b0}}; // tells us which values in the buffer are actually correct
+	 reg [bs-1:0] valid_entries = {bs{1'b0}}; // tells us which values in the buffer are actually correct
     reg [Instr_word_size-1:0] buffer [0:bs-1];
 
     always @(posedge clk, posedge rst) begin
@@ -23,6 +23,8 @@ module Instr_Buffer #(
         end
     end
 	 
+	 
+	 // start logic is incorrect fix it
 	 assign start = (Instr_in == 0) ? 1'b1 : (&valid_entries); // what this is doing is 
 	 // Instr_in == 0 that is it will all the input instructions are over, used in case where no of instr < buffer size
 	 // &valid_entries mean that when buffer is full

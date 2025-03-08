@@ -20,14 +20,16 @@ module mapping_table #(
     always @(posedge clk, posedge rst) begin
         if(rst) begin
             for(i=0; i<bs; i=i+1) begin
-                map_table[i] <= 0;
-					 count <= 0;
+                map_table[i] = 0;
+					 buffer_index = 0;
+					 count = 0;
 				end
-        end else
-            for(i=0; i<bs; i=i+1)
+        end else begin
+					count = 0;
+					for(i=0; i<bs; i=i+1)
                 if(cand_list[i]) begin
-                    map_table[count] <= i; 
-                    count <= count+1;
+                    map_table[count] = i; 
+                    count = count+1;
                 end
 					if(count && start) buffer_index = map_table[map_ready_index]; // when buffer is full, and shuffling can start
 					else buffer_index = buffer_index + 1; // this is for the time when buffer is still not full
@@ -35,11 +37,6 @@ module mapping_table #(
             
     end
 
-    always @(posedge clk, posedge rst) begin
-        if(rst) buffer_index = 0;
-        else if(count && start) buffer_index = map_table[map_ready_index]; // when buffer is full, and shuffling can start
-		  else buffer_index = buffer_index + 1; // this is for the time when buffer is still not full
-    end
 
 	 
     assign map_ready_index = (count!=0) ? (rand_num[bs_bits-1:0] % count): 0;

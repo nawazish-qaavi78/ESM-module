@@ -10,9 +10,9 @@ module ESM_core #(
 
     localparam bs_bits = $clog2(bs);
 
-    wire [bs-1:0] ready_index;
-    ESM_core_IDA #(Instr_word_size, regnum, bs) IDA_core(Instr_in, ALUSrc, RegWrite, clk, rst, buffer_index, ready_index);
+    wire [bs-1:0] ready_positions;
+    ESM_core_IDA #(Instr_word_size, regnum, bs) IDA_core(Instr_in, ALUSrc, RegWrite, clk, rst, buffer_index, ready_positions);
 
-    ESM_core_IIM #(bs) IIM_core(ready_index, clk, rst, start, buffer_index);
+    ESM_core_IIM #(bs) IIM_core(ready_positions, clk, rst, start, buffer_index);
     
 endmodule
