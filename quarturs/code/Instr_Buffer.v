@@ -11,11 +11,15 @@ module Instr_Buffer #(
 	 
 	 reg [bs-1:0] valid_entries = {bs{1'b0}}; // tells us which values in the buffer are actually correct
     reg [Instr_word_size-1:0] buffer [0:bs-1];
+	 integer i;
 
     always @(posedge clk, posedge rst) begin
         if(rst) begin
             valid_entries <= {bs{1'b0}};
 				Instr_out <= {Instr_word_size{1'b0}};
+				for(i=0; i<bs; i=i+1) begin
+					buffer[i] <= {Instr_word_size{1'b0}};
+				end
 		  end else begin
             Instr_out <= buffer[buffer_index];
             buffer[buffer_index] <= Instr_in;

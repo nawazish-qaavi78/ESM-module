@@ -30,7 +30,7 @@ module tb;
     initial begin
         clk = 1'b0;
         rst = 1'b0;
-        rst = 1'b1;
+        #2 rst = 1'b1;
         #5 rst = 1'b0;
         forever #5 clk = ~clk;
     end

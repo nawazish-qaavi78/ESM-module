@@ -1,4 +1,5 @@
 # Reading pref.tcl
+# ERROR: No extended dataflow license exists
 # do ESM_run_msim_rtl_verilog.do
 # if {[file exists rtl_work]} {
 # 	vdel -lib rtl_work -all
@@ -12,119 +13,119 @@
 # 
 # vlog -vlog01compat -work work +incdir+C:/Users/nawaz/OneDrive/Desktop/pdf/winter\ intern/ESM-module/quarturs/code {C:/Users/nawaz/OneDrive/Desktop/pdf/winter intern/ESM-module/quarturs/code/PRNG.v}
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 11:26:37 on Mar 08,2025
+# Start time: 19:54:59 on Mar 09,2025
 # vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/nawaz/OneDrive/Desktop/pdf/winter intern/ESM-module/quarturs/code" C:/Users/nawaz/OneDrive/Desktop/pdf/winter intern/ESM-module/quarturs/code/PRNG.v 
 # -- Compiling module PRNG
 # 
 # Top level modules:
 # 	PRNG
-# End time: 11:26:37 on Mar 08,2025, Elapsed time: 0:00:00
+# End time: 19:54:59 on Mar 09,2025, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -vlog01compat -work work +incdir+C:/Users/nawaz/OneDrive/Desktop/pdf/winter\ intern/ESM-module/quarturs/code {C:/Users/nawaz/OneDrive/Desktop/pdf/winter intern/ESM-module/quarturs/code/mapping_table.v}
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 11:26:37 on Mar 08,2025
+# Start time: 19:54:59 on Mar 09,2025
 # vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/nawaz/OneDrive/Desktop/pdf/winter intern/ESM-module/quarturs/code" C:/Users/nawaz/OneDrive/Desktop/pdf/winter intern/ESM-module/quarturs/code/mapping_table.v 
 # -- Compiling module mapping_table
 # 
 # Top level modules:
 # 	mapping_table
-# End time: 11:26:37 on Mar 08,2025, Elapsed time: 0:00:00
+# End time: 19:54:59 on Mar 09,2025, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -vlog01compat -work work +incdir+C:/Users/nawaz/OneDrive/Desktop/pdf/winter\ intern/ESM-module/quarturs/code {C:/Users/nawaz/OneDrive/Desktop/pdf/winter intern/ESM-module/quarturs/code/IRT.v}
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 11:26:37 on Mar 08,2025
+# Start time: 19:54:59 on Mar 09,2025
 # vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/nawaz/OneDrive/Desktop/pdf/winter intern/ESM-module/quarturs/code" C:/Users/nawaz/OneDrive/Desktop/pdf/winter intern/ESM-module/quarturs/code/IRT.v 
 # -- Compiling module IRT
 # 
 # Top level modules:
 # 	IRT
-# End time: 11:26:38 on Mar 08,2025, Elapsed time: 0:00:01
+# End time: 19:54:59 on Mar 09,2025, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -vlog01compat -work work +incdir+C:/Users/nawaz/OneDrive/Desktop/pdf/winter\ intern/ESM-module/quarturs/code {C:/Users/nawaz/OneDrive/Desktop/pdf/winter intern/ESM-module/quarturs/code/Instr_Buffer.v}
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 11:26:38 on Mar 08,2025
+# Start time: 19:54:59 on Mar 09,2025
 # vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/nawaz/OneDrive/Desktop/pdf/winter intern/ESM-module/quarturs/code" C:/Users/nawaz/OneDrive/Desktop/pdf/winter intern/ESM-module/quarturs/code/Instr_Buffer.v 
 # -- Compiling module Instr_Buffer
 # 
 # Top level modules:
 # 	Instr_Buffer
-# End time: 11:26:38 on Mar 08,2025, Elapsed time: 0:00:00
+# End time: 19:54:59 on Mar 09,2025, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -vlog01compat -work work +incdir+C:/Users/nawaz/OneDrive/Desktop/pdf/winter\ intern/ESM-module/quarturs/code {C:/Users/nawaz/OneDrive/Desktop/pdf/winter intern/ESM-module/quarturs/code/IDT.v}
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 11:26:38 on Mar 08,2025
+# Start time: 19:54:59 on Mar 09,2025
 # vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/nawaz/OneDrive/Desktop/pdf/winter intern/ESM-module/quarturs/code" C:/Users/nawaz/OneDrive/Desktop/pdf/winter intern/ESM-module/quarturs/code/IDT.v 
 # -- Compiling module IDT
 # 
 # Top level modules:
 # 	IDT
-# End time: 11:26:38 on Mar 08,2025, Elapsed time: 0:00:00
+# End time: 19:54:59 on Mar 09,2025, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -vlog01compat -work work +incdir+C:/Users/nawaz/OneDrive/Desktop/pdf/winter\ intern/ESM-module/quarturs/code {C:/Users/nawaz/OneDrive/Desktop/pdf/winter intern/ESM-module/quarturs/code/ESM_core_IIM.v}
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 11:26:38 on Mar 08,2025
+# Start time: 19:54:59 on Mar 09,2025
 # vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/nawaz/OneDrive/Desktop/pdf/winter intern/ESM-module/quarturs/code" C:/Users/nawaz/OneDrive/Desktop/pdf/winter intern/ESM-module/quarturs/code/ESM_core_IIM.v 
 # -- Compiling module ESM_core_IIM
 # 
 # Top level modules:
 # 	ESM_core_IIM
-# End time: 11:26:38 on Mar 08,2025, Elapsed time: 0:00:00
+# End time: 19:54:59 on Mar 09,2025, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -vlog01compat -work work +incdir+C:/Users/nawaz/OneDrive/Desktop/pdf/winter\ intern/ESM-module/quarturs/code {C:/Users/nawaz/OneDrive/Desktop/pdf/winter intern/ESM-module/quarturs/code/ESM_core_IDA.v}
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 11:26:38 on Mar 08,2025
+# Start time: 19:54:59 on Mar 09,2025
 # vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/nawaz/OneDrive/Desktop/pdf/winter intern/ESM-module/quarturs/code" C:/Users/nawaz/OneDrive/Desktop/pdf/winter intern/ESM-module/quarturs/code/ESM_core_IDA.v 
 # -- Compiling module ESM_core_IDA
 # 
 # Top level modules:
 # 	ESM_core_IDA
-# End time: 11:26:38 on Mar 08,2025, Elapsed time: 0:00:00
+# End time: 19:54:59 on Mar 09,2025, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -vlog01compat -work work +incdir+C:/Users/nawaz/OneDrive/Desktop/pdf/winter\ intern/ESM-module/quarturs/code {C:/Users/nawaz/OneDrive/Desktop/pdf/winter intern/ESM-module/quarturs/code/ESM_core.v}
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 11:26:38 on Mar 08,2025
+# Start time: 19:54:59 on Mar 09,2025
 # vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/nawaz/OneDrive/Desktop/pdf/winter intern/ESM-module/quarturs/code" C:/Users/nawaz/OneDrive/Desktop/pdf/winter intern/ESM-module/quarturs/code/ESM_core.v 
 # -- Compiling module ESM_core
 # 
 # Top level modules:
 # 	ESM_core
-# End time: 11:26:38 on Mar 08,2025, Elapsed time: 0:00:00
+# End time: 19:55:00 on Mar 09,2025, Elapsed time: 0:00:01
 # Errors: 0, Warnings: 0
 # vlog -vlog01compat -work work +incdir+C:/Users/nawaz/OneDrive/Desktop/pdf/winter\ intern/ESM-module/quarturs/code {C:/Users/nawaz/OneDrive/Desktop/pdf/winter intern/ESM-module/quarturs/code/ESM.v}
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 11:26:38 on Mar 08,2025
+# Start time: 19:55:00 on Mar 09,2025
 # vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/nawaz/OneDrive/Desktop/pdf/winter intern/ESM-module/quarturs/code" C:/Users/nawaz/OneDrive/Desktop/pdf/winter intern/ESM-module/quarturs/code/ESM.v 
 # -- Compiling module ESM
 # 
 # Top level modules:
 # 	ESM
-# End time: 11:26:38 on Mar 08,2025, Elapsed time: 0:00:00
+# End time: 19:55:00 on Mar 09,2025, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -vlog01compat -work work +incdir+C:/Users/nawaz/OneDrive/Desktop/pdf/winter\ intern/ESM-module/quarturs/code {C:/Users/nawaz/OneDrive/Desktop/pdf/winter intern/ESM-module/quarturs/code/candidate_list.v}
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 11:26:38 on Mar 08,2025
+# Start time: 19:55:00 on Mar 09,2025
 # vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/nawaz/OneDrive/Desktop/pdf/winter intern/ESM-module/quarturs/code" C:/Users/nawaz/OneDrive/Desktop/pdf/winter intern/ESM-module/quarturs/code/candidate_list.v 
 # -- Compiling module candidate_list
 # 
 # Top level modules:
 # 	candidate_list
-# End time: 11:26:38 on Mar 08,2025, Elapsed time: 0:00:00
+# End time: 19:55:00 on Mar 09,2025, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # 
 # vlog -vlog01compat -work work +incdir+C:/Users/nawaz/OneDrive/Desktop/pdf/winter\ intern/ESM-module/quarturs/.test {C:/Users/nawaz/OneDrive/Desktop/pdf/winter intern/ESM-module/quarturs/.test/tb.v}
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 11:26:38 on Mar 08,2025
+# Start time: 19:55:00 on Mar 09,2025
 # vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/nawaz/OneDrive/Desktop/pdf/winter intern/ESM-module/quarturs/.test" C:/Users/nawaz/OneDrive/Desktop/pdf/winter intern/ESM-module/quarturs/.test/tb.v 
 # -- Compiling module tb
 # 
 # Top level modules:
 # 	tb
-# End time: 11:26:39 on Mar 08,2025, Elapsed time: 0:00:01
+# End time: 19:55:00 on Mar 09,2025, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # 
 # vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cycloneive_ver -L rtl_work -L work -voptargs="+acc"  tb
 # vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cycloneive_ver -L rtl_work -L work -voptargs=""+acc"" tb 
-# Start time: 11:26:39 on Mar 08,2025
+# Start time: 19:55:00 on Mar 09,2025
 # Loading work.tb
 # Loading work.ESM
 # Loading work.Instr_Buffer
@@ -143,6 +144,22 @@
 # view signals
 # .main_pane.objects.interior.cs.body.tree
 # run -all
+# No function
+# No function
+# No function
+# No function
+# No function
+# No function
+# No function
+# No function
+# No function
+# No function
+# No function
+# No function
+# No function
+# No function
+# No function
+# No function
 # i1 is executed
 # No function
 # No function
